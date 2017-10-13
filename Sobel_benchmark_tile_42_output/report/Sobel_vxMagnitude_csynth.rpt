@@ -1,0 +1,651 @@
+
+
+================================================================
+== Vivado HLS Report for 'Sobel_vxMagnitude'
+================================================================
+* Date:           Tue Aug 29 16:13:21 2017
+
+* Version:        2016.1 (Build 1538259 on Fri Apr 08 16:12:49 MDT 2016)
+* Project:        Sobel_df_inline_l2_p_l2_u_l1_p
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      8.75|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |  490|  490|  490|  490| dataflow |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        +----------------------------------------------------+----------------------------------------+-----+-----+-----+-----+---------+
+        |                                                    |                                        |  Latency  |  Interval | Pipeline|
+        |                      Instance                      |                 Module                 | min | max | min | max |   Type  |
+        +----------------------------------------------------+----------------------------------------+-----+-----+-----+-----+---------+
+        |grp_Sobel_upstrm2downstrm_array_of_pixel_2_fu_3102  |Sobel_upstrm2downstrm_array_of_pixel_2  |  481|  481|  481|  481|   none  |
+        |grp_Sobel_upstrm2downstrm_array_of_pixel_1_fu_3232  |Sobel_upstrm2downstrm_array_of_pixel_1  |  481|  481|  481|  481|   none  |
+        |grp_Sobel_magnitude_strm_fu_2972                    |Sobel_magnitude_strm                    |  489|  489|  489|  489|   none  |
+        |grp_Sobel_downstrm2upstrm_array_of_pixel_fu_3362    |Sobel_downstrm2upstrm_array_of_pixel    |  481|  481|  481|  481|   none  |
+        +----------------------------------------------------+----------------------------------------+-----+-----+-----+-----+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       -|      -|
+|FIFO             |        0|      -|     630|   2520|
+|Instance         |        -|     84|    4763|  28753|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|      6|
+|Register         |        -|      -|       4|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|     84|    5397|  31279|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|     38|       5|     58|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    +-------------------------------------------+----------------------------------------+---------+-------+------+-------+
+    |                  Instance                 |                 Module                 | BRAM_18K| DSP48E|  FF  |  LUT  |
+    +-------------------------------------------+----------------------------------------+---------+-------+------+-------+
+    |Sobel_downstrm2upstrm_array_of_pixel_U0    |Sobel_downstrm2upstrm_array_of_pixel    |        0|      0|    54|    153|
+    |Sobel_magnitude_strm_U0                    |Sobel_magnitude_strm                    |        0|     84|  4685|  28380|
+    |Sobel_upstrm2downstrm_array_of_pixel_1_U0  |Sobel_upstrm2downstrm_array_of_pixel_1  |        0|      0|    12|    110|
+    |Sobel_upstrm2downstrm_array_of_pixel_2_U0  |Sobel_upstrm2downstrm_array_of_pixel_2  |        0|      0|    12|    110|
+    +-------------------------------------------+----------------------------------------+---------+-------+------+-------+
+    |Total                                      |                                        |        0|     84|  4763|  28753|
+    +-------------------------------------------+----------------------------------------+---------+-------+------+-------+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    +-----------------------------+---------+---+----+------+-----+---------+
+    |             Name            | BRAM_18K| FF| LUT| Depth| Bits| Size:D*B|
+    +-----------------------------+---------+---+----+------+-----+---------+
+    |grad_x_strm_in_V_pixel_0_U   |        0|  5|  20|     1|    8|        8|
+    |grad_x_strm_in_V_pixel_10_U  |        0|  5|  20|     1|    8|        8|
+    |grad_x_strm_in_V_pixel_11_U  |        0|  5|  20|     1|    8|        8|
+    |grad_x_strm_in_V_pixel_12_U  |        0|  5|  20|     1|    8|        8|
+    |grad_x_strm_in_V_pixel_13_U  |        0|  5|  20|     1|    8|        8|
+    |grad_x_strm_in_V_pixel_14_U  |        0|  5|  20|     1|    8|        8|
+    |grad_x_strm_in_V_pixel_15_U  |        0|  5|  20|     1|    8|        8|
+    |grad_x_strm_in_V_pixel_16_U  |        0|  5|  20|     1|    8|        8|
+    |grad_x_strm_in_V_pixel_17_U  |        0|  5|  20|     1|    8|        8|
+    |grad_x_strm_in_V_pixel_18_U  |        0|  5|  20|     1|    8|        8|
+    |grad_x_strm_in_V_pixel_19_U  |        0|  5|  20|     1|    8|        8|
+    |grad_x_strm_in_V_pixel_1_U   |        0|  5|  20|     1|    8|        8|
+    |grad_x_strm_in_V_pixel_20_U  |        0|  5|  20|     1|    8|        8|
+    |grad_x_strm_in_V_pixel_21_U  |        0|  5|  20|     1|    8|        8|
+    |grad_x_strm_in_V_pixel_22_U  |        0|  5|  20|     1|    8|        8|
+    |grad_x_strm_in_V_pixel_23_U  |        0|  5|  20|     1|    8|        8|
+    |grad_x_strm_in_V_pixel_24_U  |        0|  5|  20|     1|    8|        8|
+    |grad_x_strm_in_V_pixel_25_U  |        0|  5|  20|     1|    8|        8|
+    |grad_x_strm_in_V_pixel_26_U  |        0|  5|  20|     1|    8|        8|
+    |grad_x_strm_in_V_pixel_27_U  |        0|  5|  20|     1|    8|        8|
+    |grad_x_strm_in_V_pixel_28_U  |        0|  5|  20|     1|    8|        8|
+    |grad_x_strm_in_V_pixel_29_U  |        0|  5|  20|     1|    8|        8|
+    |grad_x_strm_in_V_pixel_2_U   |        0|  5|  20|     1|    8|        8|
+    |grad_x_strm_in_V_pixel_30_U  |        0|  5|  20|     1|    8|        8|
+    |grad_x_strm_in_V_pixel_31_U  |        0|  5|  20|     1|    8|        8|
+    |grad_x_strm_in_V_pixel_32_U  |        0|  5|  20|     1|    8|        8|
+    |grad_x_strm_in_V_pixel_33_U  |        0|  5|  20|     1|    8|        8|
+    |grad_x_strm_in_V_pixel_34_U  |        0|  5|  20|     1|    8|        8|
+    |grad_x_strm_in_V_pixel_35_U  |        0|  5|  20|     1|    8|        8|
+    |grad_x_strm_in_V_pixel_36_U  |        0|  5|  20|     1|    8|        8|
+    |grad_x_strm_in_V_pixel_37_U  |        0|  5|  20|     1|    8|        8|
+    |grad_x_strm_in_V_pixel_38_U  |        0|  5|  20|     1|    8|        8|
+    |grad_x_strm_in_V_pixel_39_U  |        0|  5|  20|     1|    8|        8|
+    |grad_x_strm_in_V_pixel_3_U   |        0|  5|  20|     1|    8|        8|
+    |grad_x_strm_in_V_pixel_40_U  |        0|  5|  20|     1|    8|        8|
+    |grad_x_strm_in_V_pixel_41_U  |        0|  5|  20|     1|    8|        8|
+    |grad_x_strm_in_V_pixel_4_U   |        0|  5|  20|     1|    8|        8|
+    |grad_x_strm_in_V_pixel_5_U   |        0|  5|  20|     1|    8|        8|
+    |grad_x_strm_in_V_pixel_6_U   |        0|  5|  20|     1|    8|        8|
+    |grad_x_strm_in_V_pixel_7_U   |        0|  5|  20|     1|    8|        8|
+    |grad_x_strm_in_V_pixel_8_U   |        0|  5|  20|     1|    8|        8|
+    |grad_x_strm_in_V_pixel_9_U   |        0|  5|  20|     1|    8|        8|
+    |grad_y_strm_in_V_pixel_0_U   |        0|  5|  20|     1|    8|        8|
+    |grad_y_strm_in_V_pixel_10_U  |        0|  5|  20|     1|    8|        8|
+    |grad_y_strm_in_V_pixel_11_U  |        0|  5|  20|     1|    8|        8|
+    |grad_y_strm_in_V_pixel_12_U  |        0|  5|  20|     1|    8|        8|
+    |grad_y_strm_in_V_pixel_13_U  |        0|  5|  20|     1|    8|        8|
+    |grad_y_strm_in_V_pixel_14_U  |        0|  5|  20|     1|    8|        8|
+    |grad_y_strm_in_V_pixel_15_U  |        0|  5|  20|     1|    8|        8|
+    |grad_y_strm_in_V_pixel_16_U  |        0|  5|  20|     1|    8|        8|
+    |grad_y_strm_in_V_pixel_17_U  |        0|  5|  20|     1|    8|        8|
+    |grad_y_strm_in_V_pixel_18_U  |        0|  5|  20|     1|    8|        8|
+    |grad_y_strm_in_V_pixel_19_U  |        0|  5|  20|     1|    8|        8|
+    |grad_y_strm_in_V_pixel_1_U   |        0|  5|  20|     1|    8|        8|
+    |grad_y_strm_in_V_pixel_20_U  |        0|  5|  20|     1|    8|        8|
+    |grad_y_strm_in_V_pixel_21_U  |        0|  5|  20|     1|    8|        8|
+    |grad_y_strm_in_V_pixel_22_U  |        0|  5|  20|     1|    8|        8|
+    |grad_y_strm_in_V_pixel_23_U  |        0|  5|  20|     1|    8|        8|
+    |grad_y_strm_in_V_pixel_24_U  |        0|  5|  20|     1|    8|        8|
+    |grad_y_strm_in_V_pixel_25_U  |        0|  5|  20|     1|    8|        8|
+    |grad_y_strm_in_V_pixel_26_U  |        0|  5|  20|     1|    8|        8|
+    |grad_y_strm_in_V_pixel_27_U  |        0|  5|  20|     1|    8|        8|
+    |grad_y_strm_in_V_pixel_28_U  |        0|  5|  20|     1|    8|        8|
+    |grad_y_strm_in_V_pixel_29_U  |        0|  5|  20|     1|    8|        8|
+    |grad_y_strm_in_V_pixel_2_U   |        0|  5|  20|     1|    8|        8|
+    |grad_y_strm_in_V_pixel_30_U  |        0|  5|  20|     1|    8|        8|
+    |grad_y_strm_in_V_pixel_31_U  |        0|  5|  20|     1|    8|        8|
+    |grad_y_strm_in_V_pixel_32_U  |        0|  5|  20|     1|    8|        8|
+    |grad_y_strm_in_V_pixel_33_U  |        0|  5|  20|     1|    8|        8|
+    |grad_y_strm_in_V_pixel_34_U  |        0|  5|  20|     1|    8|        8|
+    |grad_y_strm_in_V_pixel_35_U  |        0|  5|  20|     1|    8|        8|
+    |grad_y_strm_in_V_pixel_36_U  |        0|  5|  20|     1|    8|        8|
+    |grad_y_strm_in_V_pixel_37_U  |        0|  5|  20|     1|    8|        8|
+    |grad_y_strm_in_V_pixel_38_U  |        0|  5|  20|     1|    8|        8|
+    |grad_y_strm_in_V_pixel_39_U  |        0|  5|  20|     1|    8|        8|
+    |grad_y_strm_in_V_pixel_3_U   |        0|  5|  20|     1|    8|        8|
+    |grad_y_strm_in_V_pixel_40_U  |        0|  5|  20|     1|    8|        8|
+    |grad_y_strm_in_V_pixel_41_U  |        0|  5|  20|     1|    8|        8|
+    |grad_y_strm_in_V_pixel_4_U   |        0|  5|  20|     1|    8|        8|
+    |grad_y_strm_in_V_pixel_5_U   |        0|  5|  20|     1|    8|        8|
+    |grad_y_strm_in_V_pixel_6_U   |        0|  5|  20|     1|    8|        8|
+    |grad_y_strm_in_V_pixel_7_U   |        0|  5|  20|     1|    8|        8|
+    |grad_y_strm_in_V_pixel_8_U   |        0|  5|  20|     1|    8|        8|
+    |grad_y_strm_in_V_pixel_9_U   |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_0_U         |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_10_U        |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_11_U        |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_12_U        |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_13_U        |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_14_U        |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_15_U        |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_16_U        |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_17_U        |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_18_U        |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_19_U        |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_1_U         |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_20_U        |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_21_U        |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_22_U        |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_23_U        |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_24_U        |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_25_U        |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_26_U        |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_27_U        |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_28_U        |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_29_U        |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_2_U         |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_30_U        |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_31_U        |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_32_U        |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_33_U        |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_34_U        |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_35_U        |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_36_U        |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_37_U        |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_38_U        |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_39_U        |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_3_U         |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_40_U        |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_41_U        |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_4_U         |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_5_U         |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_6_U         |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_7_U         |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_8_U         |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_9_U         |        0|  5|  20|     1|    8|        8|
+    +-----------------------------+---------+---+----+------+-----+---------+
+    |Total                        |        0|630|2520|   126| 1008|     1008|
+    +-----------------------------+---------+---+----+------+-----+---------+
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    +-----------------------------------------------------------+----+-----------+-----+-----------+
+    |                            Name                           | LUT| Input Size| Bits| Total Bits|
+    +-----------------------------------------------------------+----+-----------+-----+-----------+
+    |ap_reg_Sobel_upstrm2downstrm_array_of_pixel_1_U0_ap_ready  |   1|          2|    1|          2|
+    |ap_reg_Sobel_upstrm2downstrm_array_of_pixel_2_U0_ap_ready  |   1|          2|    1|          2|
+    |ap_sig_Sobel_upstrm2downstrm_array_of_pixel_1_U0_ap_ready  |   1|          2|    1|          2|
+    |ap_sig_Sobel_upstrm2downstrm_array_of_pixel_1_U0_ap_start  |   1|          2|    1|          2|
+    |ap_sig_Sobel_upstrm2downstrm_array_of_pixel_2_U0_ap_ready  |   1|          2|    1|          2|
+    |ap_sig_Sobel_upstrm2downstrm_array_of_pixel_2_U0_ap_start  |   1|          2|    1|          2|
+    +-----------------------------------------------------------+----+-----------+-----+-----------+
+    |Total                                                      |   6|         12|    6|         12|
+    +-----------------------------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-----------------------------------------------------------+---+----+-----+-----------+
+    |                            Name                           | FF| LUT| Bits| Const Bits|
+    +-----------------------------------------------------------+---+----+-----+-----------+
+    |Sobel_downstrm2upstrm_array_of_pixel_U0_ap_start           |  1|   0|    1|          0|
+    |Sobel_magnitude_strm_U0_ap_start                           |  1|   0|    1|          0|
+    |ap_reg_Sobel_upstrm2downstrm_array_of_pixel_1_U0_ap_ready  |  1|   0|    1|          0|
+    |ap_reg_Sobel_upstrm2downstrm_array_of_pixel_2_U0_ap_ready  |  1|   0|    1|          0|
+    +-----------------------------------------------------------+---+----+-----+-----------+
+    |Total                                                      |  4|   0|    4|          0|
+    +-----------------------------------------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------------+-----+-----+------------+---------------------+--------------+
+|          RTL Ports          | Dir | Bits|  Protocol  |    Source Object    |    C Type    |
++-----------------------------+-----+-----+------------+---------------------+--------------+
+|grad_x_V_pixel_0_s_dout      |  in |    8|   ap_fifo  |  grad_x_V_pixel_0_s |    pointer   |
+|grad_x_V_pixel_0_s_empty_n   |  in |    1|   ap_fifo  |  grad_x_V_pixel_0_s |    pointer   |
+|grad_x_V_pixel_0_s_read      | out |    1|   ap_fifo  |  grad_x_V_pixel_0_s |    pointer   |
+|grad_x_V_pixel_1_s_dout      |  in |    8|   ap_fifo  |  grad_x_V_pixel_1_s |    pointer   |
+|grad_x_V_pixel_1_s_empty_n   |  in |    1|   ap_fifo  |  grad_x_V_pixel_1_s |    pointer   |
+|grad_x_V_pixel_1_s_read      | out |    1|   ap_fifo  |  grad_x_V_pixel_1_s |    pointer   |
+|grad_x_V_pixel_2_s_dout      |  in |    8|   ap_fifo  |  grad_x_V_pixel_2_s |    pointer   |
+|grad_x_V_pixel_2_s_empty_n   |  in |    1|   ap_fifo  |  grad_x_V_pixel_2_s |    pointer   |
+|grad_x_V_pixel_2_s_read      | out |    1|   ap_fifo  |  grad_x_V_pixel_2_s |    pointer   |
+|grad_x_V_pixel_3_s_dout      |  in |    8|   ap_fifo  |  grad_x_V_pixel_3_s |    pointer   |
+|grad_x_V_pixel_3_s_empty_n   |  in |    1|   ap_fifo  |  grad_x_V_pixel_3_s |    pointer   |
+|grad_x_V_pixel_3_s_read      | out |    1|   ap_fifo  |  grad_x_V_pixel_3_s |    pointer   |
+|grad_x_V_pixel_4_s_dout      |  in |    8|   ap_fifo  |  grad_x_V_pixel_4_s |    pointer   |
+|grad_x_V_pixel_4_s_empty_n   |  in |    1|   ap_fifo  |  grad_x_V_pixel_4_s |    pointer   |
+|grad_x_V_pixel_4_s_read      | out |    1|   ap_fifo  |  grad_x_V_pixel_4_s |    pointer   |
+|grad_x_V_pixel_5_s_dout      |  in |    8|   ap_fifo  |  grad_x_V_pixel_5_s |    pointer   |
+|grad_x_V_pixel_5_s_empty_n   |  in |    1|   ap_fifo  |  grad_x_V_pixel_5_s |    pointer   |
+|grad_x_V_pixel_5_s_read      | out |    1|   ap_fifo  |  grad_x_V_pixel_5_s |    pointer   |
+|grad_x_V_pixel_6_s_dout      |  in |    8|   ap_fifo  |  grad_x_V_pixel_6_s |    pointer   |
+|grad_x_V_pixel_6_s_empty_n   |  in |    1|   ap_fifo  |  grad_x_V_pixel_6_s |    pointer   |
+|grad_x_V_pixel_6_s_read      | out |    1|   ap_fifo  |  grad_x_V_pixel_6_s |    pointer   |
+|grad_x_V_pixel_7_s_dout      |  in |    8|   ap_fifo  |  grad_x_V_pixel_7_s |    pointer   |
+|grad_x_V_pixel_7_s_empty_n   |  in |    1|   ap_fifo  |  grad_x_V_pixel_7_s |    pointer   |
+|grad_x_V_pixel_7_s_read      | out |    1|   ap_fifo  |  grad_x_V_pixel_7_s |    pointer   |
+|grad_x_V_pixel_8_s_dout      |  in |    8|   ap_fifo  |  grad_x_V_pixel_8_s |    pointer   |
+|grad_x_V_pixel_8_s_empty_n   |  in |    1|   ap_fifo  |  grad_x_V_pixel_8_s |    pointer   |
+|grad_x_V_pixel_8_s_read      | out |    1|   ap_fifo  |  grad_x_V_pixel_8_s |    pointer   |
+|grad_x_V_pixel_9_s_dout      |  in |    8|   ap_fifo  |  grad_x_V_pixel_9_s |    pointer   |
+|grad_x_V_pixel_9_s_empty_n   |  in |    1|   ap_fifo  |  grad_x_V_pixel_9_s |    pointer   |
+|grad_x_V_pixel_9_s_read      | out |    1|   ap_fifo  |  grad_x_V_pixel_9_s |    pointer   |
+|grad_x_V_pixel_10_s_dout     |  in |    8|   ap_fifo  | grad_x_V_pixel_10_s |    pointer   |
+|grad_x_V_pixel_10_s_empty_n  |  in |    1|   ap_fifo  | grad_x_V_pixel_10_s |    pointer   |
+|grad_x_V_pixel_10_s_read     | out |    1|   ap_fifo  | grad_x_V_pixel_10_s |    pointer   |
+|grad_x_V_pixel_11_s_dout     |  in |    8|   ap_fifo  | grad_x_V_pixel_11_s |    pointer   |
+|grad_x_V_pixel_11_s_empty_n  |  in |    1|   ap_fifo  | grad_x_V_pixel_11_s |    pointer   |
+|grad_x_V_pixel_11_s_read     | out |    1|   ap_fifo  | grad_x_V_pixel_11_s |    pointer   |
+|grad_x_V_pixel_12_s_dout     |  in |    8|   ap_fifo  | grad_x_V_pixel_12_s |    pointer   |
+|grad_x_V_pixel_12_s_empty_n  |  in |    1|   ap_fifo  | grad_x_V_pixel_12_s |    pointer   |
+|grad_x_V_pixel_12_s_read     | out |    1|   ap_fifo  | grad_x_V_pixel_12_s |    pointer   |
+|grad_x_V_pixel_13_s_dout     |  in |    8|   ap_fifo  | grad_x_V_pixel_13_s |    pointer   |
+|grad_x_V_pixel_13_s_empty_n  |  in |    1|   ap_fifo  | grad_x_V_pixel_13_s |    pointer   |
+|grad_x_V_pixel_13_s_read     | out |    1|   ap_fifo  | grad_x_V_pixel_13_s |    pointer   |
+|grad_x_V_pixel_14_s_dout     |  in |    8|   ap_fifo  | grad_x_V_pixel_14_s |    pointer   |
+|grad_x_V_pixel_14_s_empty_n  |  in |    1|   ap_fifo  | grad_x_V_pixel_14_s |    pointer   |
+|grad_x_V_pixel_14_s_read     | out |    1|   ap_fifo  | grad_x_V_pixel_14_s |    pointer   |
+|grad_x_V_pixel_15_s_dout     |  in |    8|   ap_fifo  | grad_x_V_pixel_15_s |    pointer   |
+|grad_x_V_pixel_15_s_empty_n  |  in |    1|   ap_fifo  | grad_x_V_pixel_15_s |    pointer   |
+|grad_x_V_pixel_15_s_read     | out |    1|   ap_fifo  | grad_x_V_pixel_15_s |    pointer   |
+|grad_x_V_pixel_16_s_dout     |  in |    8|   ap_fifo  | grad_x_V_pixel_16_s |    pointer   |
+|grad_x_V_pixel_16_s_empty_n  |  in |    1|   ap_fifo  | grad_x_V_pixel_16_s |    pointer   |
+|grad_x_V_pixel_16_s_read     | out |    1|   ap_fifo  | grad_x_V_pixel_16_s |    pointer   |
+|grad_x_V_pixel_17_s_dout     |  in |    8|   ap_fifo  | grad_x_V_pixel_17_s |    pointer   |
+|grad_x_V_pixel_17_s_empty_n  |  in |    1|   ap_fifo  | grad_x_V_pixel_17_s |    pointer   |
+|grad_x_V_pixel_17_s_read     | out |    1|   ap_fifo  | grad_x_V_pixel_17_s |    pointer   |
+|grad_x_V_pixel_18_s_dout     |  in |    8|   ap_fifo  | grad_x_V_pixel_18_s |    pointer   |
+|grad_x_V_pixel_18_s_empty_n  |  in |    1|   ap_fifo  | grad_x_V_pixel_18_s |    pointer   |
+|grad_x_V_pixel_18_s_read     | out |    1|   ap_fifo  | grad_x_V_pixel_18_s |    pointer   |
+|grad_x_V_pixel_19_s_dout     |  in |    8|   ap_fifo  | grad_x_V_pixel_19_s |    pointer   |
+|grad_x_V_pixel_19_s_empty_n  |  in |    1|   ap_fifo  | grad_x_V_pixel_19_s |    pointer   |
+|grad_x_V_pixel_19_s_read     | out |    1|   ap_fifo  | grad_x_V_pixel_19_s |    pointer   |
+|grad_x_V_pixel_20_s_dout     |  in |    8|   ap_fifo  | grad_x_V_pixel_20_s |    pointer   |
+|grad_x_V_pixel_20_s_empty_n  |  in |    1|   ap_fifo  | grad_x_V_pixel_20_s |    pointer   |
+|grad_x_V_pixel_20_s_read     | out |    1|   ap_fifo  | grad_x_V_pixel_20_s |    pointer   |
+|grad_x_V_pixel_21_s_dout     |  in |    8|   ap_fifo  | grad_x_V_pixel_21_s |    pointer   |
+|grad_x_V_pixel_21_s_empty_n  |  in |    1|   ap_fifo  | grad_x_V_pixel_21_s |    pointer   |
+|grad_x_V_pixel_21_s_read     | out |    1|   ap_fifo  | grad_x_V_pixel_21_s |    pointer   |
+|grad_x_V_pixel_22_s_dout     |  in |    8|   ap_fifo  | grad_x_V_pixel_22_s |    pointer   |
+|grad_x_V_pixel_22_s_empty_n  |  in |    1|   ap_fifo  | grad_x_V_pixel_22_s |    pointer   |
+|grad_x_V_pixel_22_s_read     | out |    1|   ap_fifo  | grad_x_V_pixel_22_s |    pointer   |
+|grad_x_V_pixel_23_s_dout     |  in |    8|   ap_fifo  | grad_x_V_pixel_23_s |    pointer   |
+|grad_x_V_pixel_23_s_empty_n  |  in |    1|   ap_fifo  | grad_x_V_pixel_23_s |    pointer   |
+|grad_x_V_pixel_23_s_read     | out |    1|   ap_fifo  | grad_x_V_pixel_23_s |    pointer   |
+|grad_x_V_pixel_24_s_dout     |  in |    8|   ap_fifo  | grad_x_V_pixel_24_s |    pointer   |
+|grad_x_V_pixel_24_s_empty_n  |  in |    1|   ap_fifo  | grad_x_V_pixel_24_s |    pointer   |
+|grad_x_V_pixel_24_s_read     | out |    1|   ap_fifo  | grad_x_V_pixel_24_s |    pointer   |
+|grad_x_V_pixel_25_s_dout     |  in |    8|   ap_fifo  | grad_x_V_pixel_25_s |    pointer   |
+|grad_x_V_pixel_25_s_empty_n  |  in |    1|   ap_fifo  | grad_x_V_pixel_25_s |    pointer   |
+|grad_x_V_pixel_25_s_read     | out |    1|   ap_fifo  | grad_x_V_pixel_25_s |    pointer   |
+|grad_x_V_pixel_26_s_dout     |  in |    8|   ap_fifo  | grad_x_V_pixel_26_s |    pointer   |
+|grad_x_V_pixel_26_s_empty_n  |  in |    1|   ap_fifo  | grad_x_V_pixel_26_s |    pointer   |
+|grad_x_V_pixel_26_s_read     | out |    1|   ap_fifo  | grad_x_V_pixel_26_s |    pointer   |
+|grad_x_V_pixel_27_s_dout     |  in |    8|   ap_fifo  | grad_x_V_pixel_27_s |    pointer   |
+|grad_x_V_pixel_27_s_empty_n  |  in |    1|   ap_fifo  | grad_x_V_pixel_27_s |    pointer   |
+|grad_x_V_pixel_27_s_read     | out |    1|   ap_fifo  | grad_x_V_pixel_27_s |    pointer   |
+|grad_x_V_pixel_28_s_dout     |  in |    8|   ap_fifo  | grad_x_V_pixel_28_s |    pointer   |
+|grad_x_V_pixel_28_s_empty_n  |  in |    1|   ap_fifo  | grad_x_V_pixel_28_s |    pointer   |
+|grad_x_V_pixel_28_s_read     | out |    1|   ap_fifo  | grad_x_V_pixel_28_s |    pointer   |
+|grad_x_V_pixel_29_s_dout     |  in |    8|   ap_fifo  | grad_x_V_pixel_29_s |    pointer   |
+|grad_x_V_pixel_29_s_empty_n  |  in |    1|   ap_fifo  | grad_x_V_pixel_29_s |    pointer   |
+|grad_x_V_pixel_29_s_read     | out |    1|   ap_fifo  | grad_x_V_pixel_29_s |    pointer   |
+|grad_x_V_pixel_30_s_dout     |  in |    8|   ap_fifo  | grad_x_V_pixel_30_s |    pointer   |
+|grad_x_V_pixel_30_s_empty_n  |  in |    1|   ap_fifo  | grad_x_V_pixel_30_s |    pointer   |
+|grad_x_V_pixel_30_s_read     | out |    1|   ap_fifo  | grad_x_V_pixel_30_s |    pointer   |
+|grad_x_V_pixel_31_s_dout     |  in |    8|   ap_fifo  | grad_x_V_pixel_31_s |    pointer   |
+|grad_x_V_pixel_31_s_empty_n  |  in |    1|   ap_fifo  | grad_x_V_pixel_31_s |    pointer   |
+|grad_x_V_pixel_31_s_read     | out |    1|   ap_fifo  | grad_x_V_pixel_31_s |    pointer   |
+|grad_x_V_pixel_32_s_dout     |  in |    8|   ap_fifo  | grad_x_V_pixel_32_s |    pointer   |
+|grad_x_V_pixel_32_s_empty_n  |  in |    1|   ap_fifo  | grad_x_V_pixel_32_s |    pointer   |
+|grad_x_V_pixel_32_s_read     | out |    1|   ap_fifo  | grad_x_V_pixel_32_s |    pointer   |
+|grad_x_V_pixel_33_s_dout     |  in |    8|   ap_fifo  | grad_x_V_pixel_33_s |    pointer   |
+|grad_x_V_pixel_33_s_empty_n  |  in |    1|   ap_fifo  | grad_x_V_pixel_33_s |    pointer   |
+|grad_x_V_pixel_33_s_read     | out |    1|   ap_fifo  | grad_x_V_pixel_33_s |    pointer   |
+|grad_x_V_pixel_34_s_dout     |  in |    8|   ap_fifo  | grad_x_V_pixel_34_s |    pointer   |
+|grad_x_V_pixel_34_s_empty_n  |  in |    1|   ap_fifo  | grad_x_V_pixel_34_s |    pointer   |
+|grad_x_V_pixel_34_s_read     | out |    1|   ap_fifo  | grad_x_V_pixel_34_s |    pointer   |
+|grad_x_V_pixel_35_s_dout     |  in |    8|   ap_fifo  | grad_x_V_pixel_35_s |    pointer   |
+|grad_x_V_pixel_35_s_empty_n  |  in |    1|   ap_fifo  | grad_x_V_pixel_35_s |    pointer   |
+|grad_x_V_pixel_35_s_read     | out |    1|   ap_fifo  | grad_x_V_pixel_35_s |    pointer   |
+|grad_x_V_pixel_36_s_dout     |  in |    8|   ap_fifo  | grad_x_V_pixel_36_s |    pointer   |
+|grad_x_V_pixel_36_s_empty_n  |  in |    1|   ap_fifo  | grad_x_V_pixel_36_s |    pointer   |
+|grad_x_V_pixel_36_s_read     | out |    1|   ap_fifo  | grad_x_V_pixel_36_s |    pointer   |
+|grad_x_V_pixel_37_s_dout     |  in |    8|   ap_fifo  | grad_x_V_pixel_37_s |    pointer   |
+|grad_x_V_pixel_37_s_empty_n  |  in |    1|   ap_fifo  | grad_x_V_pixel_37_s |    pointer   |
+|grad_x_V_pixel_37_s_read     | out |    1|   ap_fifo  | grad_x_V_pixel_37_s |    pointer   |
+|grad_x_V_pixel_38_s_dout     |  in |    8|   ap_fifo  | grad_x_V_pixel_38_s |    pointer   |
+|grad_x_V_pixel_38_s_empty_n  |  in |    1|   ap_fifo  | grad_x_V_pixel_38_s |    pointer   |
+|grad_x_V_pixel_38_s_read     | out |    1|   ap_fifo  | grad_x_V_pixel_38_s |    pointer   |
+|grad_x_V_pixel_39_s_dout     |  in |    8|   ap_fifo  | grad_x_V_pixel_39_s |    pointer   |
+|grad_x_V_pixel_39_s_empty_n  |  in |    1|   ap_fifo  | grad_x_V_pixel_39_s |    pointer   |
+|grad_x_V_pixel_39_s_read     | out |    1|   ap_fifo  | grad_x_V_pixel_39_s |    pointer   |
+|grad_x_V_pixel_40_s_dout     |  in |    8|   ap_fifo  | grad_x_V_pixel_40_s |    pointer   |
+|grad_x_V_pixel_40_s_empty_n  |  in |    1|   ap_fifo  | grad_x_V_pixel_40_s |    pointer   |
+|grad_x_V_pixel_40_s_read     | out |    1|   ap_fifo  | grad_x_V_pixel_40_s |    pointer   |
+|grad_x_V_pixel_41_s_dout     |  in |    8|   ap_fifo  | grad_x_V_pixel_41_s |    pointer   |
+|grad_x_V_pixel_41_s_empty_n  |  in |    1|   ap_fifo  | grad_x_V_pixel_41_s |    pointer   |
+|grad_x_V_pixel_41_s_read     | out |    1|   ap_fifo  | grad_x_V_pixel_41_s |    pointer   |
+|grad_y_V_pixel_0_s_dout      |  in |    8|   ap_fifo  |  grad_y_V_pixel_0_s |    pointer   |
+|grad_y_V_pixel_0_s_empty_n   |  in |    1|   ap_fifo  |  grad_y_V_pixel_0_s |    pointer   |
+|grad_y_V_pixel_0_s_read      | out |    1|   ap_fifo  |  grad_y_V_pixel_0_s |    pointer   |
+|grad_y_V_pixel_1_s_dout      |  in |    8|   ap_fifo  |  grad_y_V_pixel_1_s |    pointer   |
+|grad_y_V_pixel_1_s_empty_n   |  in |    1|   ap_fifo  |  grad_y_V_pixel_1_s |    pointer   |
+|grad_y_V_pixel_1_s_read      | out |    1|   ap_fifo  |  grad_y_V_pixel_1_s |    pointer   |
+|grad_y_V_pixel_2_s_dout      |  in |    8|   ap_fifo  |  grad_y_V_pixel_2_s |    pointer   |
+|grad_y_V_pixel_2_s_empty_n   |  in |    1|   ap_fifo  |  grad_y_V_pixel_2_s |    pointer   |
+|grad_y_V_pixel_2_s_read      | out |    1|   ap_fifo  |  grad_y_V_pixel_2_s |    pointer   |
+|grad_y_V_pixel_3_s_dout      |  in |    8|   ap_fifo  |  grad_y_V_pixel_3_s |    pointer   |
+|grad_y_V_pixel_3_s_empty_n   |  in |    1|   ap_fifo  |  grad_y_V_pixel_3_s |    pointer   |
+|grad_y_V_pixel_3_s_read      | out |    1|   ap_fifo  |  grad_y_V_pixel_3_s |    pointer   |
+|grad_y_V_pixel_4_s_dout      |  in |    8|   ap_fifo  |  grad_y_V_pixel_4_s |    pointer   |
+|grad_y_V_pixel_4_s_empty_n   |  in |    1|   ap_fifo  |  grad_y_V_pixel_4_s |    pointer   |
+|grad_y_V_pixel_4_s_read      | out |    1|   ap_fifo  |  grad_y_V_pixel_4_s |    pointer   |
+|grad_y_V_pixel_5_s_dout      |  in |    8|   ap_fifo  |  grad_y_V_pixel_5_s |    pointer   |
+|grad_y_V_pixel_5_s_empty_n   |  in |    1|   ap_fifo  |  grad_y_V_pixel_5_s |    pointer   |
+|grad_y_V_pixel_5_s_read      | out |    1|   ap_fifo  |  grad_y_V_pixel_5_s |    pointer   |
+|grad_y_V_pixel_6_s_dout      |  in |    8|   ap_fifo  |  grad_y_V_pixel_6_s |    pointer   |
+|grad_y_V_pixel_6_s_empty_n   |  in |    1|   ap_fifo  |  grad_y_V_pixel_6_s |    pointer   |
+|grad_y_V_pixel_6_s_read      | out |    1|   ap_fifo  |  grad_y_V_pixel_6_s |    pointer   |
+|grad_y_V_pixel_7_s_dout      |  in |    8|   ap_fifo  |  grad_y_V_pixel_7_s |    pointer   |
+|grad_y_V_pixel_7_s_empty_n   |  in |    1|   ap_fifo  |  grad_y_V_pixel_7_s |    pointer   |
+|grad_y_V_pixel_7_s_read      | out |    1|   ap_fifo  |  grad_y_V_pixel_7_s |    pointer   |
+|grad_y_V_pixel_8_s_dout      |  in |    8|   ap_fifo  |  grad_y_V_pixel_8_s |    pointer   |
+|grad_y_V_pixel_8_s_empty_n   |  in |    1|   ap_fifo  |  grad_y_V_pixel_8_s |    pointer   |
+|grad_y_V_pixel_8_s_read      | out |    1|   ap_fifo  |  grad_y_V_pixel_8_s |    pointer   |
+|grad_y_V_pixel_9_s_dout      |  in |    8|   ap_fifo  |  grad_y_V_pixel_9_s |    pointer   |
+|grad_y_V_pixel_9_s_empty_n   |  in |    1|   ap_fifo  |  grad_y_V_pixel_9_s |    pointer   |
+|grad_y_V_pixel_9_s_read      | out |    1|   ap_fifo  |  grad_y_V_pixel_9_s |    pointer   |
+|grad_y_V_pixel_10_s_dout     |  in |    8|   ap_fifo  | grad_y_V_pixel_10_s |    pointer   |
+|grad_y_V_pixel_10_s_empty_n  |  in |    1|   ap_fifo  | grad_y_V_pixel_10_s |    pointer   |
+|grad_y_V_pixel_10_s_read     | out |    1|   ap_fifo  | grad_y_V_pixel_10_s |    pointer   |
+|grad_y_V_pixel_11_s_dout     |  in |    8|   ap_fifo  | grad_y_V_pixel_11_s |    pointer   |
+|grad_y_V_pixel_11_s_empty_n  |  in |    1|   ap_fifo  | grad_y_V_pixel_11_s |    pointer   |
+|grad_y_V_pixel_11_s_read     | out |    1|   ap_fifo  | grad_y_V_pixel_11_s |    pointer   |
+|grad_y_V_pixel_12_s_dout     |  in |    8|   ap_fifo  | grad_y_V_pixel_12_s |    pointer   |
+|grad_y_V_pixel_12_s_empty_n  |  in |    1|   ap_fifo  | grad_y_V_pixel_12_s |    pointer   |
+|grad_y_V_pixel_12_s_read     | out |    1|   ap_fifo  | grad_y_V_pixel_12_s |    pointer   |
+|grad_y_V_pixel_13_s_dout     |  in |    8|   ap_fifo  | grad_y_V_pixel_13_s |    pointer   |
+|grad_y_V_pixel_13_s_empty_n  |  in |    1|   ap_fifo  | grad_y_V_pixel_13_s |    pointer   |
+|grad_y_V_pixel_13_s_read     | out |    1|   ap_fifo  | grad_y_V_pixel_13_s |    pointer   |
+|grad_y_V_pixel_14_s_dout     |  in |    8|   ap_fifo  | grad_y_V_pixel_14_s |    pointer   |
+|grad_y_V_pixel_14_s_empty_n  |  in |    1|   ap_fifo  | grad_y_V_pixel_14_s |    pointer   |
+|grad_y_V_pixel_14_s_read     | out |    1|   ap_fifo  | grad_y_V_pixel_14_s |    pointer   |
+|grad_y_V_pixel_15_s_dout     |  in |    8|   ap_fifo  | grad_y_V_pixel_15_s |    pointer   |
+|grad_y_V_pixel_15_s_empty_n  |  in |    1|   ap_fifo  | grad_y_V_pixel_15_s |    pointer   |
+|grad_y_V_pixel_15_s_read     | out |    1|   ap_fifo  | grad_y_V_pixel_15_s |    pointer   |
+|grad_y_V_pixel_16_s_dout     |  in |    8|   ap_fifo  | grad_y_V_pixel_16_s |    pointer   |
+|grad_y_V_pixel_16_s_empty_n  |  in |    1|   ap_fifo  | grad_y_V_pixel_16_s |    pointer   |
+|grad_y_V_pixel_16_s_read     | out |    1|   ap_fifo  | grad_y_V_pixel_16_s |    pointer   |
+|grad_y_V_pixel_17_s_dout     |  in |    8|   ap_fifo  | grad_y_V_pixel_17_s |    pointer   |
+|grad_y_V_pixel_17_s_empty_n  |  in |    1|   ap_fifo  | grad_y_V_pixel_17_s |    pointer   |
+|grad_y_V_pixel_17_s_read     | out |    1|   ap_fifo  | grad_y_V_pixel_17_s |    pointer   |
+|grad_y_V_pixel_18_s_dout     |  in |    8|   ap_fifo  | grad_y_V_pixel_18_s |    pointer   |
+|grad_y_V_pixel_18_s_empty_n  |  in |    1|   ap_fifo  | grad_y_V_pixel_18_s |    pointer   |
+|grad_y_V_pixel_18_s_read     | out |    1|   ap_fifo  | grad_y_V_pixel_18_s |    pointer   |
+|grad_y_V_pixel_19_s_dout     |  in |    8|   ap_fifo  | grad_y_V_pixel_19_s |    pointer   |
+|grad_y_V_pixel_19_s_empty_n  |  in |    1|   ap_fifo  | grad_y_V_pixel_19_s |    pointer   |
+|grad_y_V_pixel_19_s_read     | out |    1|   ap_fifo  | grad_y_V_pixel_19_s |    pointer   |
+|grad_y_V_pixel_20_s_dout     |  in |    8|   ap_fifo  | grad_y_V_pixel_20_s |    pointer   |
+|grad_y_V_pixel_20_s_empty_n  |  in |    1|   ap_fifo  | grad_y_V_pixel_20_s |    pointer   |
+|grad_y_V_pixel_20_s_read     | out |    1|   ap_fifo  | grad_y_V_pixel_20_s |    pointer   |
+|grad_y_V_pixel_21_s_dout     |  in |    8|   ap_fifo  | grad_y_V_pixel_21_s |    pointer   |
+|grad_y_V_pixel_21_s_empty_n  |  in |    1|   ap_fifo  | grad_y_V_pixel_21_s |    pointer   |
+|grad_y_V_pixel_21_s_read     | out |    1|   ap_fifo  | grad_y_V_pixel_21_s |    pointer   |
+|grad_y_V_pixel_22_s_dout     |  in |    8|   ap_fifo  | grad_y_V_pixel_22_s |    pointer   |
+|grad_y_V_pixel_22_s_empty_n  |  in |    1|   ap_fifo  | grad_y_V_pixel_22_s |    pointer   |
+|grad_y_V_pixel_22_s_read     | out |    1|   ap_fifo  | grad_y_V_pixel_22_s |    pointer   |
+|grad_y_V_pixel_23_s_dout     |  in |    8|   ap_fifo  | grad_y_V_pixel_23_s |    pointer   |
+|grad_y_V_pixel_23_s_empty_n  |  in |    1|   ap_fifo  | grad_y_V_pixel_23_s |    pointer   |
+|grad_y_V_pixel_23_s_read     | out |    1|   ap_fifo  | grad_y_V_pixel_23_s |    pointer   |
+|grad_y_V_pixel_24_s_dout     |  in |    8|   ap_fifo  | grad_y_V_pixel_24_s |    pointer   |
+|grad_y_V_pixel_24_s_empty_n  |  in |    1|   ap_fifo  | grad_y_V_pixel_24_s |    pointer   |
+|grad_y_V_pixel_24_s_read     | out |    1|   ap_fifo  | grad_y_V_pixel_24_s |    pointer   |
+|grad_y_V_pixel_25_s_dout     |  in |    8|   ap_fifo  | grad_y_V_pixel_25_s |    pointer   |
+|grad_y_V_pixel_25_s_empty_n  |  in |    1|   ap_fifo  | grad_y_V_pixel_25_s |    pointer   |
+|grad_y_V_pixel_25_s_read     | out |    1|   ap_fifo  | grad_y_V_pixel_25_s |    pointer   |
+|grad_y_V_pixel_26_s_dout     |  in |    8|   ap_fifo  | grad_y_V_pixel_26_s |    pointer   |
+|grad_y_V_pixel_26_s_empty_n  |  in |    1|   ap_fifo  | grad_y_V_pixel_26_s |    pointer   |
+|grad_y_V_pixel_26_s_read     | out |    1|   ap_fifo  | grad_y_V_pixel_26_s |    pointer   |
+|grad_y_V_pixel_27_s_dout     |  in |    8|   ap_fifo  | grad_y_V_pixel_27_s |    pointer   |
+|grad_y_V_pixel_27_s_empty_n  |  in |    1|   ap_fifo  | grad_y_V_pixel_27_s |    pointer   |
+|grad_y_V_pixel_27_s_read     | out |    1|   ap_fifo  | grad_y_V_pixel_27_s |    pointer   |
+|grad_y_V_pixel_28_s_dout     |  in |    8|   ap_fifo  | grad_y_V_pixel_28_s |    pointer   |
+|grad_y_V_pixel_28_s_empty_n  |  in |    1|   ap_fifo  | grad_y_V_pixel_28_s |    pointer   |
+|grad_y_V_pixel_28_s_read     | out |    1|   ap_fifo  | grad_y_V_pixel_28_s |    pointer   |
+|grad_y_V_pixel_29_s_dout     |  in |    8|   ap_fifo  | grad_y_V_pixel_29_s |    pointer   |
+|grad_y_V_pixel_29_s_empty_n  |  in |    1|   ap_fifo  | grad_y_V_pixel_29_s |    pointer   |
+|grad_y_V_pixel_29_s_read     | out |    1|   ap_fifo  | grad_y_V_pixel_29_s |    pointer   |
+|grad_y_V_pixel_30_s_dout     |  in |    8|   ap_fifo  | grad_y_V_pixel_30_s |    pointer   |
+|grad_y_V_pixel_30_s_empty_n  |  in |    1|   ap_fifo  | grad_y_V_pixel_30_s |    pointer   |
+|grad_y_V_pixel_30_s_read     | out |    1|   ap_fifo  | grad_y_V_pixel_30_s |    pointer   |
+|grad_y_V_pixel_31_s_dout     |  in |    8|   ap_fifo  | grad_y_V_pixel_31_s |    pointer   |
+|grad_y_V_pixel_31_s_empty_n  |  in |    1|   ap_fifo  | grad_y_V_pixel_31_s |    pointer   |
+|grad_y_V_pixel_31_s_read     | out |    1|   ap_fifo  | grad_y_V_pixel_31_s |    pointer   |
+|grad_y_V_pixel_32_s_dout     |  in |    8|   ap_fifo  | grad_y_V_pixel_32_s |    pointer   |
+|grad_y_V_pixel_32_s_empty_n  |  in |    1|   ap_fifo  | grad_y_V_pixel_32_s |    pointer   |
+|grad_y_V_pixel_32_s_read     | out |    1|   ap_fifo  | grad_y_V_pixel_32_s |    pointer   |
+|grad_y_V_pixel_33_s_dout     |  in |    8|   ap_fifo  | grad_y_V_pixel_33_s |    pointer   |
+|grad_y_V_pixel_33_s_empty_n  |  in |    1|   ap_fifo  | grad_y_V_pixel_33_s |    pointer   |
+|grad_y_V_pixel_33_s_read     | out |    1|   ap_fifo  | grad_y_V_pixel_33_s |    pointer   |
+|grad_y_V_pixel_34_s_dout     |  in |    8|   ap_fifo  | grad_y_V_pixel_34_s |    pointer   |
+|grad_y_V_pixel_34_s_empty_n  |  in |    1|   ap_fifo  | grad_y_V_pixel_34_s |    pointer   |
+|grad_y_V_pixel_34_s_read     | out |    1|   ap_fifo  | grad_y_V_pixel_34_s |    pointer   |
+|grad_y_V_pixel_35_s_dout     |  in |    8|   ap_fifo  | grad_y_V_pixel_35_s |    pointer   |
+|grad_y_V_pixel_35_s_empty_n  |  in |    1|   ap_fifo  | grad_y_V_pixel_35_s |    pointer   |
+|grad_y_V_pixel_35_s_read     | out |    1|   ap_fifo  | grad_y_V_pixel_35_s |    pointer   |
+|grad_y_V_pixel_36_s_dout     |  in |    8|   ap_fifo  | grad_y_V_pixel_36_s |    pointer   |
+|grad_y_V_pixel_36_s_empty_n  |  in |    1|   ap_fifo  | grad_y_V_pixel_36_s |    pointer   |
+|grad_y_V_pixel_36_s_read     | out |    1|   ap_fifo  | grad_y_V_pixel_36_s |    pointer   |
+|grad_y_V_pixel_37_s_dout     |  in |    8|   ap_fifo  | grad_y_V_pixel_37_s |    pointer   |
+|grad_y_V_pixel_37_s_empty_n  |  in |    1|   ap_fifo  | grad_y_V_pixel_37_s |    pointer   |
+|grad_y_V_pixel_37_s_read     | out |    1|   ap_fifo  | grad_y_V_pixel_37_s |    pointer   |
+|grad_y_V_pixel_38_s_dout     |  in |    8|   ap_fifo  | grad_y_V_pixel_38_s |    pointer   |
+|grad_y_V_pixel_38_s_empty_n  |  in |    1|   ap_fifo  | grad_y_V_pixel_38_s |    pointer   |
+|grad_y_V_pixel_38_s_read     | out |    1|   ap_fifo  | grad_y_V_pixel_38_s |    pointer   |
+|grad_y_V_pixel_39_s_dout     |  in |    8|   ap_fifo  | grad_y_V_pixel_39_s |    pointer   |
+|grad_y_V_pixel_39_s_empty_n  |  in |    1|   ap_fifo  | grad_y_V_pixel_39_s |    pointer   |
+|grad_y_V_pixel_39_s_read     | out |    1|   ap_fifo  | grad_y_V_pixel_39_s |    pointer   |
+|grad_y_V_pixel_40_s_dout     |  in |    8|   ap_fifo  | grad_y_V_pixel_40_s |    pointer   |
+|grad_y_V_pixel_40_s_empty_n  |  in |    1|   ap_fifo  | grad_y_V_pixel_40_s |    pointer   |
+|grad_y_V_pixel_40_s_read     | out |    1|   ap_fifo  | grad_y_V_pixel_40_s |    pointer   |
+|grad_y_V_pixel_41_s_dout     |  in |    8|   ap_fifo  | grad_y_V_pixel_41_s |    pointer   |
+|grad_y_V_pixel_41_s_empty_n  |  in |    1|   ap_fifo  | grad_y_V_pixel_41_s |    pointer   |
+|grad_y_V_pixel_41_s_read     | out |    1|   ap_fifo  | grad_y_V_pixel_41_s |    pointer   |
+|output_V_pixel_0_TDATA       | out |    8|    axis    |   output_V_pixel_0  |    pointer   |
+|output_V_pixel_0_TVALID      | out |    1|    axis    |   output_V_pixel_0  |    pointer   |
+|output_V_pixel_0_TREADY      |  in |    1|    axis    |   output_V_pixel_0  |    pointer   |
+|output_V_pixel_1_TDATA       | out |    8|    axis    |   output_V_pixel_1  |    pointer   |
+|output_V_pixel_1_TVALID      | out |    1|    axis    |   output_V_pixel_1  |    pointer   |
+|output_V_pixel_1_TREADY      |  in |    1|    axis    |   output_V_pixel_1  |    pointer   |
+|output_V_pixel_2_TDATA       | out |    8|    axis    |   output_V_pixel_2  |    pointer   |
+|output_V_pixel_2_TVALID      | out |    1|    axis    |   output_V_pixel_2  |    pointer   |
+|output_V_pixel_2_TREADY      |  in |    1|    axis    |   output_V_pixel_2  |    pointer   |
+|output_V_pixel_3_TDATA       | out |    8|    axis    |   output_V_pixel_3  |    pointer   |
+|output_V_pixel_3_TVALID      | out |    1|    axis    |   output_V_pixel_3  |    pointer   |
+|output_V_pixel_3_TREADY      |  in |    1|    axis    |   output_V_pixel_3  |    pointer   |
+|output_V_pixel_4_TDATA       | out |    8|    axis    |   output_V_pixel_4  |    pointer   |
+|output_V_pixel_4_TVALID      | out |    1|    axis    |   output_V_pixel_4  |    pointer   |
+|output_V_pixel_4_TREADY      |  in |    1|    axis    |   output_V_pixel_4  |    pointer   |
+|output_V_pixel_5_TDATA       | out |    8|    axis    |   output_V_pixel_5  |    pointer   |
+|output_V_pixel_5_TVALID      | out |    1|    axis    |   output_V_pixel_5  |    pointer   |
+|output_V_pixel_5_TREADY      |  in |    1|    axis    |   output_V_pixel_5  |    pointer   |
+|output_V_pixel_6_TDATA       | out |    8|    axis    |   output_V_pixel_6  |    pointer   |
+|output_V_pixel_6_TVALID      | out |    1|    axis    |   output_V_pixel_6  |    pointer   |
+|output_V_pixel_6_TREADY      |  in |    1|    axis    |   output_V_pixel_6  |    pointer   |
+|output_V_pixel_7_TDATA       | out |    8|    axis    |   output_V_pixel_7  |    pointer   |
+|output_V_pixel_7_TVALID      | out |    1|    axis    |   output_V_pixel_7  |    pointer   |
+|output_V_pixel_7_TREADY      |  in |    1|    axis    |   output_V_pixel_7  |    pointer   |
+|output_V_pixel_8_TDATA       | out |    8|    axis    |   output_V_pixel_8  |    pointer   |
+|output_V_pixel_8_TVALID      | out |    1|    axis    |   output_V_pixel_8  |    pointer   |
+|output_V_pixel_8_TREADY      |  in |    1|    axis    |   output_V_pixel_8  |    pointer   |
+|output_V_pixel_9_TDATA       | out |    8|    axis    |   output_V_pixel_9  |    pointer   |
+|output_V_pixel_9_TVALID      | out |    1|    axis    |   output_V_pixel_9  |    pointer   |
+|output_V_pixel_9_TREADY      |  in |    1|    axis    |   output_V_pixel_9  |    pointer   |
+|output_V_pixel_10_TDATA      | out |    8|    axis    |  output_V_pixel_10  |    pointer   |
+|output_V_pixel_10_TVALID     | out |    1|    axis    |  output_V_pixel_10  |    pointer   |
+|output_V_pixel_10_TREADY     |  in |    1|    axis    |  output_V_pixel_10  |    pointer   |
+|output_V_pixel_11_TDATA      | out |    8|    axis    |  output_V_pixel_11  |    pointer   |
+|output_V_pixel_11_TVALID     | out |    1|    axis    |  output_V_pixel_11  |    pointer   |
+|output_V_pixel_11_TREADY     |  in |    1|    axis    |  output_V_pixel_11  |    pointer   |
+|output_V_pixel_12_TDATA      | out |    8|    axis    |  output_V_pixel_12  |    pointer   |
+|output_V_pixel_12_TVALID     | out |    1|    axis    |  output_V_pixel_12  |    pointer   |
+|output_V_pixel_12_TREADY     |  in |    1|    axis    |  output_V_pixel_12  |    pointer   |
+|output_V_pixel_13_TDATA      | out |    8|    axis    |  output_V_pixel_13  |    pointer   |
+|output_V_pixel_13_TVALID     | out |    1|    axis    |  output_V_pixel_13  |    pointer   |
+|output_V_pixel_13_TREADY     |  in |    1|    axis    |  output_V_pixel_13  |    pointer   |
+|output_V_pixel_14_TDATA      | out |    8|    axis    |  output_V_pixel_14  |    pointer   |
+|output_V_pixel_14_TVALID     | out |    1|    axis    |  output_V_pixel_14  |    pointer   |
+|output_V_pixel_14_TREADY     |  in |    1|    axis    |  output_V_pixel_14  |    pointer   |
+|output_V_pixel_15_TDATA      | out |    8|    axis    |  output_V_pixel_15  |    pointer   |
+|output_V_pixel_15_TVALID     | out |    1|    axis    |  output_V_pixel_15  |    pointer   |
+|output_V_pixel_15_TREADY     |  in |    1|    axis    |  output_V_pixel_15  |    pointer   |
+|output_V_pixel_16_TDATA      | out |    8|    axis    |  output_V_pixel_16  |    pointer   |
+|output_V_pixel_16_TVALID     | out |    1|    axis    |  output_V_pixel_16  |    pointer   |
+|output_V_pixel_16_TREADY     |  in |    1|    axis    |  output_V_pixel_16  |    pointer   |
+|output_V_pixel_17_TDATA      | out |    8|    axis    |  output_V_pixel_17  |    pointer   |
+|output_V_pixel_17_TVALID     | out |    1|    axis    |  output_V_pixel_17  |    pointer   |
+|output_V_pixel_17_TREADY     |  in |    1|    axis    |  output_V_pixel_17  |    pointer   |
+|output_V_pixel_18_TDATA      | out |    8|    axis    |  output_V_pixel_18  |    pointer   |
+|output_V_pixel_18_TVALID     | out |    1|    axis    |  output_V_pixel_18  |    pointer   |
+|output_V_pixel_18_TREADY     |  in |    1|    axis    |  output_V_pixel_18  |    pointer   |
+|output_V_pixel_19_TDATA      | out |    8|    axis    |  output_V_pixel_19  |    pointer   |
+|output_V_pixel_19_TVALID     | out |    1|    axis    |  output_V_pixel_19  |    pointer   |
+|output_V_pixel_19_TREADY     |  in |    1|    axis    |  output_V_pixel_19  |    pointer   |
+|output_V_pixel_20_TDATA      | out |    8|    axis    |  output_V_pixel_20  |    pointer   |
+|output_V_pixel_20_TVALID     | out |    1|    axis    |  output_V_pixel_20  |    pointer   |
+|output_V_pixel_20_TREADY     |  in |    1|    axis    |  output_V_pixel_20  |    pointer   |
+|output_V_pixel_21_TDATA      | out |    8|    axis    |  output_V_pixel_21  |    pointer   |
+|output_V_pixel_21_TVALID     | out |    1|    axis    |  output_V_pixel_21  |    pointer   |
+|output_V_pixel_21_TREADY     |  in |    1|    axis    |  output_V_pixel_21  |    pointer   |
+|output_V_pixel_22_TDATA      | out |    8|    axis    |  output_V_pixel_22  |    pointer   |
+|output_V_pixel_22_TVALID     | out |    1|    axis    |  output_V_pixel_22  |    pointer   |
+|output_V_pixel_22_TREADY     |  in |    1|    axis    |  output_V_pixel_22  |    pointer   |
+|output_V_pixel_23_TDATA      | out |    8|    axis    |  output_V_pixel_23  |    pointer   |
+|output_V_pixel_23_TVALID     | out |    1|    axis    |  output_V_pixel_23  |    pointer   |
+|output_V_pixel_23_TREADY     |  in |    1|    axis    |  output_V_pixel_23  |    pointer   |
+|output_V_pixel_24_TDATA      | out |    8|    axis    |  output_V_pixel_24  |    pointer   |
+|output_V_pixel_24_TVALID     | out |    1|    axis    |  output_V_pixel_24  |    pointer   |
+|output_V_pixel_24_TREADY     |  in |    1|    axis    |  output_V_pixel_24  |    pointer   |
+|output_V_pixel_25_TDATA      | out |    8|    axis    |  output_V_pixel_25  |    pointer   |
+|output_V_pixel_25_TVALID     | out |    1|    axis    |  output_V_pixel_25  |    pointer   |
+|output_V_pixel_25_TREADY     |  in |    1|    axis    |  output_V_pixel_25  |    pointer   |
+|output_V_pixel_26_TDATA      | out |    8|    axis    |  output_V_pixel_26  |    pointer   |
+|output_V_pixel_26_TVALID     | out |    1|    axis    |  output_V_pixel_26  |    pointer   |
+|output_V_pixel_26_TREADY     |  in |    1|    axis    |  output_V_pixel_26  |    pointer   |
+|output_V_pixel_27_TDATA      | out |    8|    axis    |  output_V_pixel_27  |    pointer   |
+|output_V_pixel_27_TVALID     | out |    1|    axis    |  output_V_pixel_27  |    pointer   |
+|output_V_pixel_27_TREADY     |  in |    1|    axis    |  output_V_pixel_27  |    pointer   |
+|output_V_pixel_28_TDATA      | out |    8|    axis    |  output_V_pixel_28  |    pointer   |
+|output_V_pixel_28_TVALID     | out |    1|    axis    |  output_V_pixel_28  |    pointer   |
+|output_V_pixel_28_TREADY     |  in |    1|    axis    |  output_V_pixel_28  |    pointer   |
+|output_V_pixel_29_TDATA      | out |    8|    axis    |  output_V_pixel_29  |    pointer   |
+|output_V_pixel_29_TVALID     | out |    1|    axis    |  output_V_pixel_29  |    pointer   |
+|output_V_pixel_29_TREADY     |  in |    1|    axis    |  output_V_pixel_29  |    pointer   |
+|output_V_pixel_30_TDATA      | out |    8|    axis    |  output_V_pixel_30  |    pointer   |
+|output_V_pixel_30_TVALID     | out |    1|    axis    |  output_V_pixel_30  |    pointer   |
+|output_V_pixel_30_TREADY     |  in |    1|    axis    |  output_V_pixel_30  |    pointer   |
+|output_V_pixel_31_TDATA      | out |    8|    axis    |  output_V_pixel_31  |    pointer   |
+|output_V_pixel_31_TVALID     | out |    1|    axis    |  output_V_pixel_31  |    pointer   |
+|output_V_pixel_31_TREADY     |  in |    1|    axis    |  output_V_pixel_31  |    pointer   |
+|output_V_pixel_32_TDATA      | out |    8|    axis    |  output_V_pixel_32  |    pointer   |
+|output_V_pixel_32_TVALID     | out |    1|    axis    |  output_V_pixel_32  |    pointer   |
+|output_V_pixel_32_TREADY     |  in |    1|    axis    |  output_V_pixel_32  |    pointer   |
+|output_V_pixel_33_TDATA      | out |    8|    axis    |  output_V_pixel_33  |    pointer   |
+|output_V_pixel_33_TVALID     | out |    1|    axis    |  output_V_pixel_33  |    pointer   |
+|output_V_pixel_33_TREADY     |  in |    1|    axis    |  output_V_pixel_33  |    pointer   |
+|output_V_pixel_34_TDATA      | out |    8|    axis    |  output_V_pixel_34  |    pointer   |
+|output_V_pixel_34_TVALID     | out |    1|    axis    |  output_V_pixel_34  |    pointer   |
+|output_V_pixel_34_TREADY     |  in |    1|    axis    |  output_V_pixel_34  |    pointer   |
+|output_V_pixel_35_TDATA      | out |    8|    axis    |  output_V_pixel_35  |    pointer   |
+|output_V_pixel_35_TVALID     | out |    1|    axis    |  output_V_pixel_35  |    pointer   |
+|output_V_pixel_35_TREADY     |  in |    1|    axis    |  output_V_pixel_35  |    pointer   |
+|output_V_pixel_36_TDATA      | out |    8|    axis    |  output_V_pixel_36  |    pointer   |
+|output_V_pixel_36_TVALID     | out |    1|    axis    |  output_V_pixel_36  |    pointer   |
+|output_V_pixel_36_TREADY     |  in |    1|    axis    |  output_V_pixel_36  |    pointer   |
+|output_V_pixel_37_TDATA      | out |    8|    axis    |  output_V_pixel_37  |    pointer   |
+|output_V_pixel_37_TVALID     | out |    1|    axis    |  output_V_pixel_37  |    pointer   |
+|output_V_pixel_37_TREADY     |  in |    1|    axis    |  output_V_pixel_37  |    pointer   |
+|output_V_pixel_38_TDATA      | out |    8|    axis    |  output_V_pixel_38  |    pointer   |
+|output_V_pixel_38_TVALID     | out |    1|    axis    |  output_V_pixel_38  |    pointer   |
+|output_V_pixel_38_TREADY     |  in |    1|    axis    |  output_V_pixel_38  |    pointer   |
+|output_V_pixel_39_TDATA      | out |    8|    axis    |  output_V_pixel_39  |    pointer   |
+|output_V_pixel_39_TVALID     | out |    1|    axis    |  output_V_pixel_39  |    pointer   |
+|output_V_pixel_39_TREADY     |  in |    1|    axis    |  output_V_pixel_39  |    pointer   |
+|output_V_pixel_40_TDATA      | out |    8|    axis    |  output_V_pixel_40  |    pointer   |
+|output_V_pixel_40_TVALID     | out |    1|    axis    |  output_V_pixel_40  |    pointer   |
+|output_V_pixel_40_TREADY     |  in |    1|    axis    |  output_V_pixel_40  |    pointer   |
+|output_V_pixel_41_TDATA      | out |    8|    axis    |  output_V_pixel_41  |    pointer   |
+|output_V_pixel_41_TVALID     | out |    1|    axis    |  output_V_pixel_41  |    pointer   |
+|output_V_pixel_41_TREADY     |  in |    1|    axis    |  output_V_pixel_41  |    pointer   |
+|ap_clk                       |  in |    1| ap_ctrl_hs |  Sobel_vxMagnitude  | return value |
+|ap_rst                       |  in |    1| ap_ctrl_hs |  Sobel_vxMagnitude  | return value |
+|ap_continue                  |  in |    1| ap_ctrl_hs |  Sobel_vxMagnitude  | return value |
+|ap_done                      | out |    1| ap_ctrl_hs |  Sobel_vxMagnitude  | return value |
+|ap_start                     |  in |    1| ap_ctrl_hs |  Sobel_vxMagnitude  | return value |
+|ap_ready                     | out |    1| ap_ctrl_hs |  Sobel_vxMagnitude  | return value |
+|ap_idle                      | out |    1| ap_ctrl_hs |  Sobel_vxMagnitude  | return value |
++-----------------------------+-----+-----+------------+---------------------+--------------+
+

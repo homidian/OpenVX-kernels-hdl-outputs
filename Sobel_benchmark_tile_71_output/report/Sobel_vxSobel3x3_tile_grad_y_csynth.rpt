@@ -1,0 +1,708 @@
+
+
+================================================================
+== Vivado HLS Report for 'Sobel_vxSobel3x3_tile_grad_y'
+================================================================
+* Date:           Fri Oct 13 12:03:28 2017
+
+* Version:        2016.1 (Build 1538259 on Fri Apr 08 16:12:49 MDT 2016)
+* Project:        Sobel_df_inline_l2_p_l2_u_l1_p
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      8.75|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-------+-------+-------+-------+----------+
+    |    Latency    |    Interval   | Pipeline |
+    |  min  |  max  |  min  |  max  |   Type   |
+    +-------+-------+-------+-------+----------+
+    |  35188|  35188|  35189|  35189| dataflow |
+    +-------+-------+-------+-------+----------+
+
+    + Detail: 
+        * Instance: 
+        +------------------------------------------------+------------------------------------+-------+-------+-------+-------+---------+
+        |                                                |                                    |    Latency    |    Interval   | Pipeline|
+        |                    Instance                    |               Module               |  min  |  max  |  min  |  max  |   Type  |
+        +------------------------------------------------+------------------------------------+-------+-------+-------+-------+---------+
+        |grp_Sobel_upstrm2downstrm_input_array_fu_3920   |Sobel_upstrm2downstrm_input_array   |    483|    483|    483|    483|   none  |
+        |grp_Sobel_conv3x3_tile_strm_fu_3772             |Sobel_conv3x3_tile_strm             |  35188|  35188|  35188|  35188|   none  |
+        |grp_Sobel_downstrm2upstrm_output_array_fu_4143  |Sobel_downstrm2upstrm_output_array  |    481|    481|    481|    481|   none  |
+        +------------------------------------------------+------------------------------------+-------+-------+-------+-------+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       -|      -|
+|FIFO             |        0|      -|     720|   2880|
+|Instance         |        2|      -|    3586|   5092|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|      -|
+|Register         |        -|      -|       2|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        2|      0|    4308|   7972|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |    ~0   |      0|       4|     14|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    +---------------------------------------+------------------------------------+---------+-------+------+------+
+    |                Instance               |               Module               | BRAM_18K| DSP48E|  FF  |  LUT |
+    +---------------------------------------+------------------------------------+---------+-------+------+------+
+    |Sobel_conv3x3_tile_strm_U0             |Sobel_conv3x3_tile_strm             |        2|      0|  3562|  4752|
+    |Sobel_downstrm2upstrm_output_array_U0  |Sobel_downstrm2upstrm_output_array  |        0|      0|    12|   168|
+    |Sobel_upstrm2downstrm_input_array_U0   |Sobel_upstrm2downstrm_input_array   |        0|      0|    12|   172|
+    +---------------------------------------+------------------------------------+---------+-------+------+------+
+    |Total                                  |                                    |        2|      0|  3586|  5092|
+    +---------------------------------------+------------------------------------+---------+-------+------+------+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    +-----------------------+---------+---+----+------+-----+---------+
+    |          Name         | BRAM_18K| FF| LUT| Depth| Bits| Size:D*B|
+    +-----------------------+---------+---+----+------+-----+---------+
+    |strm_in_V_pixel_0_U    |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_10_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_11_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_12_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_13_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_14_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_15_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_16_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_17_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_18_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_19_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_1_U    |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_20_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_21_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_22_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_23_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_24_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_25_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_26_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_27_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_28_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_29_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_2_U    |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_30_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_31_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_32_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_33_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_34_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_35_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_36_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_37_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_38_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_39_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_3_U    |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_40_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_41_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_42_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_43_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_44_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_45_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_46_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_47_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_48_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_49_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_4_U    |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_50_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_51_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_52_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_53_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_54_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_55_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_56_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_57_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_58_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_59_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_5_U    |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_60_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_61_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_62_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_63_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_64_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_65_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_66_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_67_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_68_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_69_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_6_U    |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_70_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_71_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_72_U   |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_7_U    |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_8_U    |        0|  5|  20|     1|    8|        8|
+    |strm_in_V_pixel_9_U    |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_0_U   |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_10_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_11_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_12_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_13_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_14_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_15_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_16_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_17_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_18_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_19_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_1_U   |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_20_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_21_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_22_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_23_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_24_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_25_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_26_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_27_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_28_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_29_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_2_U   |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_30_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_31_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_32_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_33_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_34_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_35_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_36_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_37_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_38_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_39_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_3_U   |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_40_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_41_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_42_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_43_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_44_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_45_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_46_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_47_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_48_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_49_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_4_U   |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_50_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_51_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_52_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_53_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_54_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_55_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_56_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_57_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_58_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_59_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_5_U   |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_60_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_61_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_62_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_63_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_64_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_65_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_66_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_67_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_68_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_69_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_6_U   |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_70_U  |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_7_U   |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_8_U   |        0|  5|  20|     1|    8|        8|
+    |strm_out_V_pixel_9_U   |        0|  5|  20|     1|    8|        8|
+    +-----------------------+---------+---+----+------+-----+---------+
+    |Total                  |        0|720|2880|   144| 1152|     1152|
+    +-----------------------+---------+---+----+------+-----+---------+
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    +------------------------------------------------+---+----+-----+-----------+
+    |                      Name                      | FF| LUT| Bits| Const Bits|
+    +------------------------------------------------+---+----+-----+-----------+
+    |Sobel_conv3x3_tile_strm_U0_ap_start             |  1|   0|    1|          0|
+    |Sobel_downstrm2upstrm_output_array_U0_ap_start  |  1|   0|    1|          0|
+    +------------------------------------------------+---+----+-----+-----------+
+    |Total                                           |  2|   0|    2|          0|
+    +------------------------------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++----------------------------+-----+-----+------------+------------------------------+--------------+
+|          RTL Ports         | Dir | Bits|  Protocol  |         Source Object        |    C Type    |
++----------------------------+-----+-----+------------+------------------------------+--------------+
+|src_V_pixel_0_dout          |  in |    8|   ap_fifo  |         src_V_pixel_0        |    pointer   |
+|src_V_pixel_0_empty_n       |  in |    1|   ap_fifo  |         src_V_pixel_0        |    pointer   |
+|src_V_pixel_0_read          | out |    1|   ap_fifo  |         src_V_pixel_0        |    pointer   |
+|src_V_pixel_1_dout          |  in |    8|   ap_fifo  |         src_V_pixel_1        |    pointer   |
+|src_V_pixel_1_empty_n       |  in |    1|   ap_fifo  |         src_V_pixel_1        |    pointer   |
+|src_V_pixel_1_read          | out |    1|   ap_fifo  |         src_V_pixel_1        |    pointer   |
+|src_V_pixel_2_dout          |  in |    8|   ap_fifo  |         src_V_pixel_2        |    pointer   |
+|src_V_pixel_2_empty_n       |  in |    1|   ap_fifo  |         src_V_pixel_2        |    pointer   |
+|src_V_pixel_2_read          | out |    1|   ap_fifo  |         src_V_pixel_2        |    pointer   |
+|src_V_pixel_3_dout          |  in |    8|   ap_fifo  |         src_V_pixel_3        |    pointer   |
+|src_V_pixel_3_empty_n       |  in |    1|   ap_fifo  |         src_V_pixel_3        |    pointer   |
+|src_V_pixel_3_read          | out |    1|   ap_fifo  |         src_V_pixel_3        |    pointer   |
+|src_V_pixel_4_dout          |  in |    8|   ap_fifo  |         src_V_pixel_4        |    pointer   |
+|src_V_pixel_4_empty_n       |  in |    1|   ap_fifo  |         src_V_pixel_4        |    pointer   |
+|src_V_pixel_4_read          | out |    1|   ap_fifo  |         src_V_pixel_4        |    pointer   |
+|src_V_pixel_5_dout          |  in |    8|   ap_fifo  |         src_V_pixel_5        |    pointer   |
+|src_V_pixel_5_empty_n       |  in |    1|   ap_fifo  |         src_V_pixel_5        |    pointer   |
+|src_V_pixel_5_read          | out |    1|   ap_fifo  |         src_V_pixel_5        |    pointer   |
+|src_V_pixel_6_dout          |  in |    8|   ap_fifo  |         src_V_pixel_6        |    pointer   |
+|src_V_pixel_6_empty_n       |  in |    1|   ap_fifo  |         src_V_pixel_6        |    pointer   |
+|src_V_pixel_6_read          | out |    1|   ap_fifo  |         src_V_pixel_6        |    pointer   |
+|src_V_pixel_7_dout          |  in |    8|   ap_fifo  |         src_V_pixel_7        |    pointer   |
+|src_V_pixel_7_empty_n       |  in |    1|   ap_fifo  |         src_V_pixel_7        |    pointer   |
+|src_V_pixel_7_read          | out |    1|   ap_fifo  |         src_V_pixel_7        |    pointer   |
+|src_V_pixel_8_dout          |  in |    8|   ap_fifo  |         src_V_pixel_8        |    pointer   |
+|src_V_pixel_8_empty_n       |  in |    1|   ap_fifo  |         src_V_pixel_8        |    pointer   |
+|src_V_pixel_8_read          | out |    1|   ap_fifo  |         src_V_pixel_8        |    pointer   |
+|src_V_pixel_9_dout          |  in |    8|   ap_fifo  |         src_V_pixel_9        |    pointer   |
+|src_V_pixel_9_empty_n       |  in |    1|   ap_fifo  |         src_V_pixel_9        |    pointer   |
+|src_V_pixel_9_read          | out |    1|   ap_fifo  |         src_V_pixel_9        |    pointer   |
+|src_V_pixel_10_dout         |  in |    8|   ap_fifo  |        src_V_pixel_10        |    pointer   |
+|src_V_pixel_10_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_10        |    pointer   |
+|src_V_pixel_10_read         | out |    1|   ap_fifo  |        src_V_pixel_10        |    pointer   |
+|src_V_pixel_11_dout         |  in |    8|   ap_fifo  |        src_V_pixel_11        |    pointer   |
+|src_V_pixel_11_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_11        |    pointer   |
+|src_V_pixel_11_read         | out |    1|   ap_fifo  |        src_V_pixel_11        |    pointer   |
+|src_V_pixel_12_dout         |  in |    8|   ap_fifo  |        src_V_pixel_12        |    pointer   |
+|src_V_pixel_12_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_12        |    pointer   |
+|src_V_pixel_12_read         | out |    1|   ap_fifo  |        src_V_pixel_12        |    pointer   |
+|src_V_pixel_13_dout         |  in |    8|   ap_fifo  |        src_V_pixel_13        |    pointer   |
+|src_V_pixel_13_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_13        |    pointer   |
+|src_V_pixel_13_read         | out |    1|   ap_fifo  |        src_V_pixel_13        |    pointer   |
+|src_V_pixel_14_dout         |  in |    8|   ap_fifo  |        src_V_pixel_14        |    pointer   |
+|src_V_pixel_14_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_14        |    pointer   |
+|src_V_pixel_14_read         | out |    1|   ap_fifo  |        src_V_pixel_14        |    pointer   |
+|src_V_pixel_15_dout         |  in |    8|   ap_fifo  |        src_V_pixel_15        |    pointer   |
+|src_V_pixel_15_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_15        |    pointer   |
+|src_V_pixel_15_read         | out |    1|   ap_fifo  |        src_V_pixel_15        |    pointer   |
+|src_V_pixel_16_dout         |  in |    8|   ap_fifo  |        src_V_pixel_16        |    pointer   |
+|src_V_pixel_16_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_16        |    pointer   |
+|src_V_pixel_16_read         | out |    1|   ap_fifo  |        src_V_pixel_16        |    pointer   |
+|src_V_pixel_17_dout         |  in |    8|   ap_fifo  |        src_V_pixel_17        |    pointer   |
+|src_V_pixel_17_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_17        |    pointer   |
+|src_V_pixel_17_read         | out |    1|   ap_fifo  |        src_V_pixel_17        |    pointer   |
+|src_V_pixel_18_dout         |  in |    8|   ap_fifo  |        src_V_pixel_18        |    pointer   |
+|src_V_pixel_18_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_18        |    pointer   |
+|src_V_pixel_18_read         | out |    1|   ap_fifo  |        src_V_pixel_18        |    pointer   |
+|src_V_pixel_19_dout         |  in |    8|   ap_fifo  |        src_V_pixel_19        |    pointer   |
+|src_V_pixel_19_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_19        |    pointer   |
+|src_V_pixel_19_read         | out |    1|   ap_fifo  |        src_V_pixel_19        |    pointer   |
+|src_V_pixel_20_dout         |  in |    8|   ap_fifo  |        src_V_pixel_20        |    pointer   |
+|src_V_pixel_20_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_20        |    pointer   |
+|src_V_pixel_20_read         | out |    1|   ap_fifo  |        src_V_pixel_20        |    pointer   |
+|src_V_pixel_21_dout         |  in |    8|   ap_fifo  |        src_V_pixel_21        |    pointer   |
+|src_V_pixel_21_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_21        |    pointer   |
+|src_V_pixel_21_read         | out |    1|   ap_fifo  |        src_V_pixel_21        |    pointer   |
+|src_V_pixel_22_dout         |  in |    8|   ap_fifo  |        src_V_pixel_22        |    pointer   |
+|src_V_pixel_22_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_22        |    pointer   |
+|src_V_pixel_22_read         | out |    1|   ap_fifo  |        src_V_pixel_22        |    pointer   |
+|src_V_pixel_23_dout         |  in |    8|   ap_fifo  |        src_V_pixel_23        |    pointer   |
+|src_V_pixel_23_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_23        |    pointer   |
+|src_V_pixel_23_read         | out |    1|   ap_fifo  |        src_V_pixel_23        |    pointer   |
+|src_V_pixel_24_dout         |  in |    8|   ap_fifo  |        src_V_pixel_24        |    pointer   |
+|src_V_pixel_24_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_24        |    pointer   |
+|src_V_pixel_24_read         | out |    1|   ap_fifo  |        src_V_pixel_24        |    pointer   |
+|src_V_pixel_25_dout         |  in |    8|   ap_fifo  |        src_V_pixel_25        |    pointer   |
+|src_V_pixel_25_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_25        |    pointer   |
+|src_V_pixel_25_read         | out |    1|   ap_fifo  |        src_V_pixel_25        |    pointer   |
+|src_V_pixel_26_dout         |  in |    8|   ap_fifo  |        src_V_pixel_26        |    pointer   |
+|src_V_pixel_26_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_26        |    pointer   |
+|src_V_pixel_26_read         | out |    1|   ap_fifo  |        src_V_pixel_26        |    pointer   |
+|src_V_pixel_27_dout         |  in |    8|   ap_fifo  |        src_V_pixel_27        |    pointer   |
+|src_V_pixel_27_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_27        |    pointer   |
+|src_V_pixel_27_read         | out |    1|   ap_fifo  |        src_V_pixel_27        |    pointer   |
+|src_V_pixel_28_dout         |  in |    8|   ap_fifo  |        src_V_pixel_28        |    pointer   |
+|src_V_pixel_28_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_28        |    pointer   |
+|src_V_pixel_28_read         | out |    1|   ap_fifo  |        src_V_pixel_28        |    pointer   |
+|src_V_pixel_29_dout         |  in |    8|   ap_fifo  |        src_V_pixel_29        |    pointer   |
+|src_V_pixel_29_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_29        |    pointer   |
+|src_V_pixel_29_read         | out |    1|   ap_fifo  |        src_V_pixel_29        |    pointer   |
+|src_V_pixel_30_dout         |  in |    8|   ap_fifo  |        src_V_pixel_30        |    pointer   |
+|src_V_pixel_30_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_30        |    pointer   |
+|src_V_pixel_30_read         | out |    1|   ap_fifo  |        src_V_pixel_30        |    pointer   |
+|src_V_pixel_31_dout         |  in |    8|   ap_fifo  |        src_V_pixel_31        |    pointer   |
+|src_V_pixel_31_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_31        |    pointer   |
+|src_V_pixel_31_read         | out |    1|   ap_fifo  |        src_V_pixel_31        |    pointer   |
+|src_V_pixel_32_dout         |  in |    8|   ap_fifo  |        src_V_pixel_32        |    pointer   |
+|src_V_pixel_32_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_32        |    pointer   |
+|src_V_pixel_32_read         | out |    1|   ap_fifo  |        src_V_pixel_32        |    pointer   |
+|src_V_pixel_33_dout         |  in |    8|   ap_fifo  |        src_V_pixel_33        |    pointer   |
+|src_V_pixel_33_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_33        |    pointer   |
+|src_V_pixel_33_read         | out |    1|   ap_fifo  |        src_V_pixel_33        |    pointer   |
+|src_V_pixel_34_dout         |  in |    8|   ap_fifo  |        src_V_pixel_34        |    pointer   |
+|src_V_pixel_34_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_34        |    pointer   |
+|src_V_pixel_34_read         | out |    1|   ap_fifo  |        src_V_pixel_34        |    pointer   |
+|src_V_pixel_35_dout         |  in |    8|   ap_fifo  |        src_V_pixel_35        |    pointer   |
+|src_V_pixel_35_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_35        |    pointer   |
+|src_V_pixel_35_read         | out |    1|   ap_fifo  |        src_V_pixel_35        |    pointer   |
+|src_V_pixel_36_dout         |  in |    8|   ap_fifo  |        src_V_pixel_36        |    pointer   |
+|src_V_pixel_36_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_36        |    pointer   |
+|src_V_pixel_36_read         | out |    1|   ap_fifo  |        src_V_pixel_36        |    pointer   |
+|src_V_pixel_37_dout         |  in |    8|   ap_fifo  |        src_V_pixel_37        |    pointer   |
+|src_V_pixel_37_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_37        |    pointer   |
+|src_V_pixel_37_read         | out |    1|   ap_fifo  |        src_V_pixel_37        |    pointer   |
+|src_V_pixel_38_dout         |  in |    8|   ap_fifo  |        src_V_pixel_38        |    pointer   |
+|src_V_pixel_38_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_38        |    pointer   |
+|src_V_pixel_38_read         | out |    1|   ap_fifo  |        src_V_pixel_38        |    pointer   |
+|src_V_pixel_39_dout         |  in |    8|   ap_fifo  |        src_V_pixel_39        |    pointer   |
+|src_V_pixel_39_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_39        |    pointer   |
+|src_V_pixel_39_read         | out |    1|   ap_fifo  |        src_V_pixel_39        |    pointer   |
+|src_V_pixel_40_dout         |  in |    8|   ap_fifo  |        src_V_pixel_40        |    pointer   |
+|src_V_pixel_40_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_40        |    pointer   |
+|src_V_pixel_40_read         | out |    1|   ap_fifo  |        src_V_pixel_40        |    pointer   |
+|src_V_pixel_41_dout         |  in |    8|   ap_fifo  |        src_V_pixel_41        |    pointer   |
+|src_V_pixel_41_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_41        |    pointer   |
+|src_V_pixel_41_read         | out |    1|   ap_fifo  |        src_V_pixel_41        |    pointer   |
+|src_V_pixel_42_dout         |  in |    8|   ap_fifo  |        src_V_pixel_42        |    pointer   |
+|src_V_pixel_42_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_42        |    pointer   |
+|src_V_pixel_42_read         | out |    1|   ap_fifo  |        src_V_pixel_42        |    pointer   |
+|src_V_pixel_43_dout         |  in |    8|   ap_fifo  |        src_V_pixel_43        |    pointer   |
+|src_V_pixel_43_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_43        |    pointer   |
+|src_V_pixel_43_read         | out |    1|   ap_fifo  |        src_V_pixel_43        |    pointer   |
+|src_V_pixel_44_dout         |  in |    8|   ap_fifo  |        src_V_pixel_44        |    pointer   |
+|src_V_pixel_44_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_44        |    pointer   |
+|src_V_pixel_44_read         | out |    1|   ap_fifo  |        src_V_pixel_44        |    pointer   |
+|src_V_pixel_45_dout         |  in |    8|   ap_fifo  |        src_V_pixel_45        |    pointer   |
+|src_V_pixel_45_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_45        |    pointer   |
+|src_V_pixel_45_read         | out |    1|   ap_fifo  |        src_V_pixel_45        |    pointer   |
+|src_V_pixel_46_dout         |  in |    8|   ap_fifo  |        src_V_pixel_46        |    pointer   |
+|src_V_pixel_46_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_46        |    pointer   |
+|src_V_pixel_46_read         | out |    1|   ap_fifo  |        src_V_pixel_46        |    pointer   |
+|src_V_pixel_47_dout         |  in |    8|   ap_fifo  |        src_V_pixel_47        |    pointer   |
+|src_V_pixel_47_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_47        |    pointer   |
+|src_V_pixel_47_read         | out |    1|   ap_fifo  |        src_V_pixel_47        |    pointer   |
+|src_V_pixel_48_dout         |  in |    8|   ap_fifo  |        src_V_pixel_48        |    pointer   |
+|src_V_pixel_48_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_48        |    pointer   |
+|src_V_pixel_48_read         | out |    1|   ap_fifo  |        src_V_pixel_48        |    pointer   |
+|src_V_pixel_49_dout         |  in |    8|   ap_fifo  |        src_V_pixel_49        |    pointer   |
+|src_V_pixel_49_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_49        |    pointer   |
+|src_V_pixel_49_read         | out |    1|   ap_fifo  |        src_V_pixel_49        |    pointer   |
+|src_V_pixel_50_dout         |  in |    8|   ap_fifo  |        src_V_pixel_50        |    pointer   |
+|src_V_pixel_50_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_50        |    pointer   |
+|src_V_pixel_50_read         | out |    1|   ap_fifo  |        src_V_pixel_50        |    pointer   |
+|src_V_pixel_51_dout         |  in |    8|   ap_fifo  |        src_V_pixel_51        |    pointer   |
+|src_V_pixel_51_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_51        |    pointer   |
+|src_V_pixel_51_read         | out |    1|   ap_fifo  |        src_V_pixel_51        |    pointer   |
+|src_V_pixel_52_dout         |  in |    8|   ap_fifo  |        src_V_pixel_52        |    pointer   |
+|src_V_pixel_52_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_52        |    pointer   |
+|src_V_pixel_52_read         | out |    1|   ap_fifo  |        src_V_pixel_52        |    pointer   |
+|src_V_pixel_53_dout         |  in |    8|   ap_fifo  |        src_V_pixel_53        |    pointer   |
+|src_V_pixel_53_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_53        |    pointer   |
+|src_V_pixel_53_read         | out |    1|   ap_fifo  |        src_V_pixel_53        |    pointer   |
+|src_V_pixel_54_dout         |  in |    8|   ap_fifo  |        src_V_pixel_54        |    pointer   |
+|src_V_pixel_54_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_54        |    pointer   |
+|src_V_pixel_54_read         | out |    1|   ap_fifo  |        src_V_pixel_54        |    pointer   |
+|src_V_pixel_55_dout         |  in |    8|   ap_fifo  |        src_V_pixel_55        |    pointer   |
+|src_V_pixel_55_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_55        |    pointer   |
+|src_V_pixel_55_read         | out |    1|   ap_fifo  |        src_V_pixel_55        |    pointer   |
+|src_V_pixel_56_dout         |  in |    8|   ap_fifo  |        src_V_pixel_56        |    pointer   |
+|src_V_pixel_56_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_56        |    pointer   |
+|src_V_pixel_56_read         | out |    1|   ap_fifo  |        src_V_pixel_56        |    pointer   |
+|src_V_pixel_57_dout         |  in |    8|   ap_fifo  |        src_V_pixel_57        |    pointer   |
+|src_V_pixel_57_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_57        |    pointer   |
+|src_V_pixel_57_read         | out |    1|   ap_fifo  |        src_V_pixel_57        |    pointer   |
+|src_V_pixel_58_dout         |  in |    8|   ap_fifo  |        src_V_pixel_58        |    pointer   |
+|src_V_pixel_58_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_58        |    pointer   |
+|src_V_pixel_58_read         | out |    1|   ap_fifo  |        src_V_pixel_58        |    pointer   |
+|src_V_pixel_59_dout         |  in |    8|   ap_fifo  |        src_V_pixel_59        |    pointer   |
+|src_V_pixel_59_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_59        |    pointer   |
+|src_V_pixel_59_read         | out |    1|   ap_fifo  |        src_V_pixel_59        |    pointer   |
+|src_V_pixel_60_dout         |  in |    8|   ap_fifo  |        src_V_pixel_60        |    pointer   |
+|src_V_pixel_60_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_60        |    pointer   |
+|src_V_pixel_60_read         | out |    1|   ap_fifo  |        src_V_pixel_60        |    pointer   |
+|src_V_pixel_61_dout         |  in |    8|   ap_fifo  |        src_V_pixel_61        |    pointer   |
+|src_V_pixel_61_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_61        |    pointer   |
+|src_V_pixel_61_read         | out |    1|   ap_fifo  |        src_V_pixel_61        |    pointer   |
+|src_V_pixel_62_dout         |  in |    8|   ap_fifo  |        src_V_pixel_62        |    pointer   |
+|src_V_pixel_62_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_62        |    pointer   |
+|src_V_pixel_62_read         | out |    1|   ap_fifo  |        src_V_pixel_62        |    pointer   |
+|src_V_pixel_63_dout         |  in |    8|   ap_fifo  |        src_V_pixel_63        |    pointer   |
+|src_V_pixel_63_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_63        |    pointer   |
+|src_V_pixel_63_read         | out |    1|   ap_fifo  |        src_V_pixel_63        |    pointer   |
+|src_V_pixel_64_dout         |  in |    8|   ap_fifo  |        src_V_pixel_64        |    pointer   |
+|src_V_pixel_64_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_64        |    pointer   |
+|src_V_pixel_64_read         | out |    1|   ap_fifo  |        src_V_pixel_64        |    pointer   |
+|src_V_pixel_65_dout         |  in |    8|   ap_fifo  |        src_V_pixel_65        |    pointer   |
+|src_V_pixel_65_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_65        |    pointer   |
+|src_V_pixel_65_read         | out |    1|   ap_fifo  |        src_V_pixel_65        |    pointer   |
+|src_V_pixel_66_dout         |  in |    8|   ap_fifo  |        src_V_pixel_66        |    pointer   |
+|src_V_pixel_66_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_66        |    pointer   |
+|src_V_pixel_66_read         | out |    1|   ap_fifo  |        src_V_pixel_66        |    pointer   |
+|src_V_pixel_67_dout         |  in |    8|   ap_fifo  |        src_V_pixel_67        |    pointer   |
+|src_V_pixel_67_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_67        |    pointer   |
+|src_V_pixel_67_read         | out |    1|   ap_fifo  |        src_V_pixel_67        |    pointer   |
+|src_V_pixel_68_dout         |  in |    8|   ap_fifo  |        src_V_pixel_68        |    pointer   |
+|src_V_pixel_68_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_68        |    pointer   |
+|src_V_pixel_68_read         | out |    1|   ap_fifo  |        src_V_pixel_68        |    pointer   |
+|src_V_pixel_69_dout         |  in |    8|   ap_fifo  |        src_V_pixel_69        |    pointer   |
+|src_V_pixel_69_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_69        |    pointer   |
+|src_V_pixel_69_read         | out |    1|   ap_fifo  |        src_V_pixel_69        |    pointer   |
+|src_V_pixel_70_dout         |  in |    8|   ap_fifo  |        src_V_pixel_70        |    pointer   |
+|src_V_pixel_70_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_70        |    pointer   |
+|src_V_pixel_70_read         | out |    1|   ap_fifo  |        src_V_pixel_70        |    pointer   |
+|src_V_pixel_71_dout         |  in |    8|   ap_fifo  |        src_V_pixel_71        |    pointer   |
+|src_V_pixel_71_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_71        |    pointer   |
+|src_V_pixel_71_read         | out |    1|   ap_fifo  |        src_V_pixel_71        |    pointer   |
+|src_V_pixel_72_dout         |  in |    8|   ap_fifo  |        src_V_pixel_72        |    pointer   |
+|src_V_pixel_72_empty_n      |  in |    1|   ap_fifo  |        src_V_pixel_72        |    pointer   |
+|src_V_pixel_72_read         | out |    1|   ap_fifo  |        src_V_pixel_72        |    pointer   |
+|grad_y_V_pixel_0_s_din      | out |    8|   ap_fifo  |      grad_y_V_pixel_0_s      |    pointer   |
+|grad_y_V_pixel_0_s_full_n   |  in |    1|   ap_fifo  |      grad_y_V_pixel_0_s      |    pointer   |
+|grad_y_V_pixel_0_s_write    | out |    1|   ap_fifo  |      grad_y_V_pixel_0_s      |    pointer   |
+|grad_y_V_pixel_1_s_din      | out |    8|   ap_fifo  |      grad_y_V_pixel_1_s      |    pointer   |
+|grad_y_V_pixel_1_s_full_n   |  in |    1|   ap_fifo  |      grad_y_V_pixel_1_s      |    pointer   |
+|grad_y_V_pixel_1_s_write    | out |    1|   ap_fifo  |      grad_y_V_pixel_1_s      |    pointer   |
+|grad_y_V_pixel_2_s_din      | out |    8|   ap_fifo  |      grad_y_V_pixel_2_s      |    pointer   |
+|grad_y_V_pixel_2_s_full_n   |  in |    1|   ap_fifo  |      grad_y_V_pixel_2_s      |    pointer   |
+|grad_y_V_pixel_2_s_write    | out |    1|   ap_fifo  |      grad_y_V_pixel_2_s      |    pointer   |
+|grad_y_V_pixel_3_s_din      | out |    8|   ap_fifo  |      grad_y_V_pixel_3_s      |    pointer   |
+|grad_y_V_pixel_3_s_full_n   |  in |    1|   ap_fifo  |      grad_y_V_pixel_3_s      |    pointer   |
+|grad_y_V_pixel_3_s_write    | out |    1|   ap_fifo  |      grad_y_V_pixel_3_s      |    pointer   |
+|grad_y_V_pixel_4_s_din      | out |    8|   ap_fifo  |      grad_y_V_pixel_4_s      |    pointer   |
+|grad_y_V_pixel_4_s_full_n   |  in |    1|   ap_fifo  |      grad_y_V_pixel_4_s      |    pointer   |
+|grad_y_V_pixel_4_s_write    | out |    1|   ap_fifo  |      grad_y_V_pixel_4_s      |    pointer   |
+|grad_y_V_pixel_5_s_din      | out |    8|   ap_fifo  |      grad_y_V_pixel_5_s      |    pointer   |
+|grad_y_V_pixel_5_s_full_n   |  in |    1|   ap_fifo  |      grad_y_V_pixel_5_s      |    pointer   |
+|grad_y_V_pixel_5_s_write    | out |    1|   ap_fifo  |      grad_y_V_pixel_5_s      |    pointer   |
+|grad_y_V_pixel_6_s_din      | out |    8|   ap_fifo  |      grad_y_V_pixel_6_s      |    pointer   |
+|grad_y_V_pixel_6_s_full_n   |  in |    1|   ap_fifo  |      grad_y_V_pixel_6_s      |    pointer   |
+|grad_y_V_pixel_6_s_write    | out |    1|   ap_fifo  |      grad_y_V_pixel_6_s      |    pointer   |
+|grad_y_V_pixel_7_s_din      | out |    8|   ap_fifo  |      grad_y_V_pixel_7_s      |    pointer   |
+|grad_y_V_pixel_7_s_full_n   |  in |    1|   ap_fifo  |      grad_y_V_pixel_7_s      |    pointer   |
+|grad_y_V_pixel_7_s_write    | out |    1|   ap_fifo  |      grad_y_V_pixel_7_s      |    pointer   |
+|grad_y_V_pixel_8_s_din      | out |    8|   ap_fifo  |      grad_y_V_pixel_8_s      |    pointer   |
+|grad_y_V_pixel_8_s_full_n   |  in |    1|   ap_fifo  |      grad_y_V_pixel_8_s      |    pointer   |
+|grad_y_V_pixel_8_s_write    | out |    1|   ap_fifo  |      grad_y_V_pixel_8_s      |    pointer   |
+|grad_y_V_pixel_9_s_din      | out |    8|   ap_fifo  |      grad_y_V_pixel_9_s      |    pointer   |
+|grad_y_V_pixel_9_s_full_n   |  in |    1|   ap_fifo  |      grad_y_V_pixel_9_s      |    pointer   |
+|grad_y_V_pixel_9_s_write    | out |    1|   ap_fifo  |      grad_y_V_pixel_9_s      |    pointer   |
+|grad_y_V_pixel_10_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_10_s     |    pointer   |
+|grad_y_V_pixel_10_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_10_s     |    pointer   |
+|grad_y_V_pixel_10_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_10_s     |    pointer   |
+|grad_y_V_pixel_11_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_11_s     |    pointer   |
+|grad_y_V_pixel_11_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_11_s     |    pointer   |
+|grad_y_V_pixel_11_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_11_s     |    pointer   |
+|grad_y_V_pixel_12_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_12_s     |    pointer   |
+|grad_y_V_pixel_12_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_12_s     |    pointer   |
+|grad_y_V_pixel_12_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_12_s     |    pointer   |
+|grad_y_V_pixel_13_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_13_s     |    pointer   |
+|grad_y_V_pixel_13_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_13_s     |    pointer   |
+|grad_y_V_pixel_13_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_13_s     |    pointer   |
+|grad_y_V_pixel_14_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_14_s     |    pointer   |
+|grad_y_V_pixel_14_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_14_s     |    pointer   |
+|grad_y_V_pixel_14_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_14_s     |    pointer   |
+|grad_y_V_pixel_15_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_15_s     |    pointer   |
+|grad_y_V_pixel_15_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_15_s     |    pointer   |
+|grad_y_V_pixel_15_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_15_s     |    pointer   |
+|grad_y_V_pixel_16_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_16_s     |    pointer   |
+|grad_y_V_pixel_16_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_16_s     |    pointer   |
+|grad_y_V_pixel_16_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_16_s     |    pointer   |
+|grad_y_V_pixel_17_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_17_s     |    pointer   |
+|grad_y_V_pixel_17_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_17_s     |    pointer   |
+|grad_y_V_pixel_17_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_17_s     |    pointer   |
+|grad_y_V_pixel_18_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_18_s     |    pointer   |
+|grad_y_V_pixel_18_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_18_s     |    pointer   |
+|grad_y_V_pixel_18_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_18_s     |    pointer   |
+|grad_y_V_pixel_19_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_19_s     |    pointer   |
+|grad_y_V_pixel_19_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_19_s     |    pointer   |
+|grad_y_V_pixel_19_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_19_s     |    pointer   |
+|grad_y_V_pixel_20_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_20_s     |    pointer   |
+|grad_y_V_pixel_20_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_20_s     |    pointer   |
+|grad_y_V_pixel_20_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_20_s     |    pointer   |
+|grad_y_V_pixel_21_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_21_s     |    pointer   |
+|grad_y_V_pixel_21_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_21_s     |    pointer   |
+|grad_y_V_pixel_21_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_21_s     |    pointer   |
+|grad_y_V_pixel_22_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_22_s     |    pointer   |
+|grad_y_V_pixel_22_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_22_s     |    pointer   |
+|grad_y_V_pixel_22_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_22_s     |    pointer   |
+|grad_y_V_pixel_23_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_23_s     |    pointer   |
+|grad_y_V_pixel_23_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_23_s     |    pointer   |
+|grad_y_V_pixel_23_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_23_s     |    pointer   |
+|grad_y_V_pixel_24_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_24_s     |    pointer   |
+|grad_y_V_pixel_24_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_24_s     |    pointer   |
+|grad_y_V_pixel_24_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_24_s     |    pointer   |
+|grad_y_V_pixel_25_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_25_s     |    pointer   |
+|grad_y_V_pixel_25_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_25_s     |    pointer   |
+|grad_y_V_pixel_25_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_25_s     |    pointer   |
+|grad_y_V_pixel_26_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_26_s     |    pointer   |
+|grad_y_V_pixel_26_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_26_s     |    pointer   |
+|grad_y_V_pixel_26_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_26_s     |    pointer   |
+|grad_y_V_pixel_27_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_27_s     |    pointer   |
+|grad_y_V_pixel_27_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_27_s     |    pointer   |
+|grad_y_V_pixel_27_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_27_s     |    pointer   |
+|grad_y_V_pixel_28_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_28_s     |    pointer   |
+|grad_y_V_pixel_28_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_28_s     |    pointer   |
+|grad_y_V_pixel_28_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_28_s     |    pointer   |
+|grad_y_V_pixel_29_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_29_s     |    pointer   |
+|grad_y_V_pixel_29_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_29_s     |    pointer   |
+|grad_y_V_pixel_29_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_29_s     |    pointer   |
+|grad_y_V_pixel_30_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_30_s     |    pointer   |
+|grad_y_V_pixel_30_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_30_s     |    pointer   |
+|grad_y_V_pixel_30_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_30_s     |    pointer   |
+|grad_y_V_pixel_31_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_31_s     |    pointer   |
+|grad_y_V_pixel_31_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_31_s     |    pointer   |
+|grad_y_V_pixel_31_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_31_s     |    pointer   |
+|grad_y_V_pixel_32_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_32_s     |    pointer   |
+|grad_y_V_pixel_32_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_32_s     |    pointer   |
+|grad_y_V_pixel_32_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_32_s     |    pointer   |
+|grad_y_V_pixel_33_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_33_s     |    pointer   |
+|grad_y_V_pixel_33_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_33_s     |    pointer   |
+|grad_y_V_pixel_33_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_33_s     |    pointer   |
+|grad_y_V_pixel_34_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_34_s     |    pointer   |
+|grad_y_V_pixel_34_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_34_s     |    pointer   |
+|grad_y_V_pixel_34_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_34_s     |    pointer   |
+|grad_y_V_pixel_35_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_35_s     |    pointer   |
+|grad_y_V_pixel_35_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_35_s     |    pointer   |
+|grad_y_V_pixel_35_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_35_s     |    pointer   |
+|grad_y_V_pixel_36_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_36_s     |    pointer   |
+|grad_y_V_pixel_36_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_36_s     |    pointer   |
+|grad_y_V_pixel_36_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_36_s     |    pointer   |
+|grad_y_V_pixel_37_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_37_s     |    pointer   |
+|grad_y_V_pixel_37_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_37_s     |    pointer   |
+|grad_y_V_pixel_37_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_37_s     |    pointer   |
+|grad_y_V_pixel_38_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_38_s     |    pointer   |
+|grad_y_V_pixel_38_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_38_s     |    pointer   |
+|grad_y_V_pixel_38_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_38_s     |    pointer   |
+|grad_y_V_pixel_39_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_39_s     |    pointer   |
+|grad_y_V_pixel_39_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_39_s     |    pointer   |
+|grad_y_V_pixel_39_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_39_s     |    pointer   |
+|grad_y_V_pixel_40_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_40_s     |    pointer   |
+|grad_y_V_pixel_40_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_40_s     |    pointer   |
+|grad_y_V_pixel_40_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_40_s     |    pointer   |
+|grad_y_V_pixel_41_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_41_s     |    pointer   |
+|grad_y_V_pixel_41_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_41_s     |    pointer   |
+|grad_y_V_pixel_41_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_41_s     |    pointer   |
+|grad_y_V_pixel_42_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_42_s     |    pointer   |
+|grad_y_V_pixel_42_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_42_s     |    pointer   |
+|grad_y_V_pixel_42_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_42_s     |    pointer   |
+|grad_y_V_pixel_43_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_43_s     |    pointer   |
+|grad_y_V_pixel_43_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_43_s     |    pointer   |
+|grad_y_V_pixel_43_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_43_s     |    pointer   |
+|grad_y_V_pixel_44_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_44_s     |    pointer   |
+|grad_y_V_pixel_44_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_44_s     |    pointer   |
+|grad_y_V_pixel_44_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_44_s     |    pointer   |
+|grad_y_V_pixel_45_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_45_s     |    pointer   |
+|grad_y_V_pixel_45_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_45_s     |    pointer   |
+|grad_y_V_pixel_45_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_45_s     |    pointer   |
+|grad_y_V_pixel_46_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_46_s     |    pointer   |
+|grad_y_V_pixel_46_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_46_s     |    pointer   |
+|grad_y_V_pixel_46_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_46_s     |    pointer   |
+|grad_y_V_pixel_47_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_47_s     |    pointer   |
+|grad_y_V_pixel_47_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_47_s     |    pointer   |
+|grad_y_V_pixel_47_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_47_s     |    pointer   |
+|grad_y_V_pixel_48_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_48_s     |    pointer   |
+|grad_y_V_pixel_48_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_48_s     |    pointer   |
+|grad_y_V_pixel_48_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_48_s     |    pointer   |
+|grad_y_V_pixel_49_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_49_s     |    pointer   |
+|grad_y_V_pixel_49_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_49_s     |    pointer   |
+|grad_y_V_pixel_49_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_49_s     |    pointer   |
+|grad_y_V_pixel_50_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_50_s     |    pointer   |
+|grad_y_V_pixel_50_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_50_s     |    pointer   |
+|grad_y_V_pixel_50_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_50_s     |    pointer   |
+|grad_y_V_pixel_51_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_51_s     |    pointer   |
+|grad_y_V_pixel_51_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_51_s     |    pointer   |
+|grad_y_V_pixel_51_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_51_s     |    pointer   |
+|grad_y_V_pixel_52_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_52_s     |    pointer   |
+|grad_y_V_pixel_52_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_52_s     |    pointer   |
+|grad_y_V_pixel_52_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_52_s     |    pointer   |
+|grad_y_V_pixel_53_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_53_s     |    pointer   |
+|grad_y_V_pixel_53_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_53_s     |    pointer   |
+|grad_y_V_pixel_53_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_53_s     |    pointer   |
+|grad_y_V_pixel_54_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_54_s     |    pointer   |
+|grad_y_V_pixel_54_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_54_s     |    pointer   |
+|grad_y_V_pixel_54_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_54_s     |    pointer   |
+|grad_y_V_pixel_55_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_55_s     |    pointer   |
+|grad_y_V_pixel_55_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_55_s     |    pointer   |
+|grad_y_V_pixel_55_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_55_s     |    pointer   |
+|grad_y_V_pixel_56_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_56_s     |    pointer   |
+|grad_y_V_pixel_56_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_56_s     |    pointer   |
+|grad_y_V_pixel_56_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_56_s     |    pointer   |
+|grad_y_V_pixel_57_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_57_s     |    pointer   |
+|grad_y_V_pixel_57_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_57_s     |    pointer   |
+|grad_y_V_pixel_57_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_57_s     |    pointer   |
+|grad_y_V_pixel_58_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_58_s     |    pointer   |
+|grad_y_V_pixel_58_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_58_s     |    pointer   |
+|grad_y_V_pixel_58_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_58_s     |    pointer   |
+|grad_y_V_pixel_59_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_59_s     |    pointer   |
+|grad_y_V_pixel_59_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_59_s     |    pointer   |
+|grad_y_V_pixel_59_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_59_s     |    pointer   |
+|grad_y_V_pixel_60_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_60_s     |    pointer   |
+|grad_y_V_pixel_60_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_60_s     |    pointer   |
+|grad_y_V_pixel_60_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_60_s     |    pointer   |
+|grad_y_V_pixel_61_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_61_s     |    pointer   |
+|grad_y_V_pixel_61_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_61_s     |    pointer   |
+|grad_y_V_pixel_61_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_61_s     |    pointer   |
+|grad_y_V_pixel_62_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_62_s     |    pointer   |
+|grad_y_V_pixel_62_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_62_s     |    pointer   |
+|grad_y_V_pixel_62_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_62_s     |    pointer   |
+|grad_y_V_pixel_63_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_63_s     |    pointer   |
+|grad_y_V_pixel_63_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_63_s     |    pointer   |
+|grad_y_V_pixel_63_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_63_s     |    pointer   |
+|grad_y_V_pixel_64_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_64_s     |    pointer   |
+|grad_y_V_pixel_64_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_64_s     |    pointer   |
+|grad_y_V_pixel_64_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_64_s     |    pointer   |
+|grad_y_V_pixel_65_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_65_s     |    pointer   |
+|grad_y_V_pixel_65_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_65_s     |    pointer   |
+|grad_y_V_pixel_65_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_65_s     |    pointer   |
+|grad_y_V_pixel_66_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_66_s     |    pointer   |
+|grad_y_V_pixel_66_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_66_s     |    pointer   |
+|grad_y_V_pixel_66_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_66_s     |    pointer   |
+|grad_y_V_pixel_67_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_67_s     |    pointer   |
+|grad_y_V_pixel_67_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_67_s     |    pointer   |
+|grad_y_V_pixel_67_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_67_s     |    pointer   |
+|grad_y_V_pixel_68_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_68_s     |    pointer   |
+|grad_y_V_pixel_68_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_68_s     |    pointer   |
+|grad_y_V_pixel_68_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_68_s     |    pointer   |
+|grad_y_V_pixel_69_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_69_s     |    pointer   |
+|grad_y_V_pixel_69_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_69_s     |    pointer   |
+|grad_y_V_pixel_69_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_69_s     |    pointer   |
+|grad_y_V_pixel_70_s_din     | out |    8|   ap_fifo  |      grad_y_V_pixel_70_s     |    pointer   |
+|grad_y_V_pixel_70_s_full_n  |  in |    1|   ap_fifo  |      grad_y_V_pixel_70_s     |    pointer   |
+|grad_y_V_pixel_70_s_write   | out |    1|   ap_fifo  |      grad_y_V_pixel_70_s     |    pointer   |
+|ap_clk                      |  in |    1| ap_ctrl_hs | Sobel_vxSobel3x3_tile_grad_y | return value |
+|ap_rst                      |  in |    1| ap_ctrl_hs | Sobel_vxSobel3x3_tile_grad_y | return value |
+|ap_continue                 |  in |    1| ap_ctrl_hs | Sobel_vxSobel3x3_tile_grad_y | return value |
+|ap_done                     | out |    1| ap_ctrl_hs | Sobel_vxSobel3x3_tile_grad_y | return value |
+|ap_start                    |  in |    1| ap_ctrl_hs | Sobel_vxSobel3x3_tile_grad_y | return value |
+|ap_ready                    | out |    1| ap_ctrl_hs | Sobel_vxSobel3x3_tile_grad_y | return value |
+|ap_idle                     | out |    1| ap_ctrl_hs | Sobel_vxSobel3x3_tile_grad_y | return value |
++----------------------------+-----+-----+------------+------------------------------+--------------+
+

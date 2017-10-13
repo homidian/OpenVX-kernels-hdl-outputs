@@ -1,0 +1,1259 @@
+
+
+================================================================
+== Vivado HLS Report for 'Sobel'
+================================================================
+* Date:           Tue Aug 29 16:14:39 2017
+
+* Version:        2016.1 (Build 1538259 on Fri Apr 08 16:12:49 MDT 2016)
+* Project:        Sobel_df_inline_l2_p_l2_u_l1_p
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      9.40|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |  508|  508|  490|  490| dataflow |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        +----------------------------------------------------+----------------------------------------+-----+-----+-----+-----+----------+
+        |                                                    |                                        |  Latency  |  Interval | Pipeline |
+        |                      Instance                      |                 Module                 | min | max | min | max |   Type   |
+        +----------------------------------------------------+----------------------------------------+-----+-----+-----+-----+----------+
+        |grp_Sobel_vxConvertColor_tile_fu_8572               |Sobel_vxConvertColor_tile               |  485|  485|  485|  485| dataflow |
+        |grp_Sobel_array_of_pixels_yuv_t_to_input_fu_9264    |Sobel_array_of_pixels_yuv_t_to_input    |  481|  481|  481|  481|   none   |
+        |grp_Sobel_vxGaussian3x3_fu_8302                     |Sobel_vxGaussian3x3                     |  487|  487|  487|  487| dataflow |
+        |grp_Sobel_split_output_array_of_pixels_t_fu_8870    |Sobel_split_output_array_of_pixels_t    |  481|  481|  481|  481|   none   |
+        |grp_Sobel_vxSobel3x3_tile_grad_x_fu_8392            |Sobel_vxSobel3x3_tile_grad_x            |  487|  487|  487|  487| dataflow |
+        |grp_Sobel_vxSobel3x3_tile_grad_y_fu_8482            |Sobel_vxSobel3x3_tile_grad_y            |  486|  486|  486|  486| dataflow |
+        |grp_Sobel_split_output_array_of_pixels_t_1_fu_9004  |Sobel_split_output_array_of_pixels_t_1  |  481|  481|  481|  481|   none   |
+        |grp_Sobel_split_output_array_of_pixels_t_2_fu_9134  |Sobel_split_output_array_of_pixels_t_2  |  481|  481|  481|  481|   none   |
+        |grp_Sobel_vxMagnitude_fu_8130                       |Sobel_vxMagnitude                       |  490|  490|  490|  490| dataflow |
+        |grp_Sobel_vxPhase_fu_7958                           |Sobel_vxPhase                           |  488|  488|  488|  488| dataflow |
+        +----------------------------------------------------+----------------------------------------+-----+-----+-----+-----+----------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       -|      -|
+|FIFO             |        0|      -|    2340|   9360|
+|Instance         |        0|    168|   23277|  87123|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|      2|
+|Register         |        -|      -|      11|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|    168|   25628|  96485|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|     76|      24|    181|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    +-------------------------------------------+----------------------------------------+---------+-------+------+-------+
+    |                  Instance                 |                 Module                 | BRAM_18K| DSP48E|  FF  |  LUT  |
+    +-------------------------------------------+----------------------------------------+---------+-------+------+-------+
+    |Sobel_array_of_pixels_yuv_t_to_input_U0    |Sobel_array_of_pixels_yuv_t_to_input    |        0|      0|    12|    112|
+    |Sobel_split_output_array_of_pixels_t_U0    |Sobel_split_output_array_of_pixels_t    |        0|      0|    12|    157|
+    |Sobel_split_output_array_of_pixels_t_1_U0  |Sobel_split_output_array_of_pixels_t_1  |        0|      0|    12|    153|
+    |Sobel_split_output_array_of_pixels_t_2_U0  |Sobel_split_output_array_of_pixels_t_2  |        0|      0|    12|    153|
+    |Sobel_vxConvertColor_tile_U0               |Sobel_vxConvertColor_tile               |        0|     84|  2228|   4826|
+    |Sobel_vxGaussian3x3_U0                     |Sobel_vxGaussian3x3                     |        0|      0|  2543|   4160|
+    |Sobel_vxMagnitude_U0                       |Sobel_vxMagnitude                       |        0|     84|  5397|  31279|
+    |Sobel_vxPhase_U0                           |Sobel_vxPhase                           |        0|      0|  8713|  38545|
+    |Sobel_vxSobel3x3_tile_grad_x_U0            |Sobel_vxSobel3x3_tile_grad_x            |        0|      0|  2581|   3660|
+    |Sobel_vxSobel3x3_tile_grad_y_U0            |Sobel_vxSobel3x3_tile_grad_y            |        0|      0|  1767|   4078|
+    +-------------------------------------------+----------------------------------------+---------+-------+------+-------+
+    |Total                                      |                                        |        0|    168| 23277|  87123|
+    +-------------------------------------------+----------------------------------------+---------+-------+------+-------+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    +-------------------------+---------+----+----+------+-----+---------+
+    |           Name          | BRAM_18K| FF | LUT| Depth| Bits| Size:D*B|
+    +-------------------------+---------+----+----+------+-----+---------+
+    |gauss_V_pixel_0_U        |        0|   5|  20|     1|    8|        8|
+    |gauss_V_pixel_10_U       |        0|   5|  20|     1|    8|        8|
+    |gauss_V_pixel_11_U       |        0|   5|  20|     1|    8|        8|
+    |gauss_V_pixel_12_U       |        0|   5|  20|     1|    8|        8|
+    |gauss_V_pixel_13_U       |        0|   5|  20|     1|    8|        8|
+    |gauss_V_pixel_14_U       |        0|   5|  20|     1|    8|        8|
+    |gauss_V_pixel_15_U       |        0|   5|  20|     1|    8|        8|
+    |gauss_V_pixel_16_U       |        0|   5|  20|     1|    8|        8|
+    |gauss_V_pixel_17_U       |        0|   5|  20|     1|    8|        8|
+    |gauss_V_pixel_18_U       |        0|   5|  20|     1|    8|        8|
+    |gauss_V_pixel_19_U       |        0|   5|  20|     1|    8|        8|
+    |gauss_V_pixel_1_U        |        0|   5|  20|     1|    8|        8|
+    |gauss_V_pixel_20_U       |        0|   5|  20|     1|    8|        8|
+    |gauss_V_pixel_21_U       |        0|   5|  20|     1|    8|        8|
+    |gauss_V_pixel_22_U       |        0|   5|  20|     1|    8|        8|
+    |gauss_V_pixel_23_U       |        0|   5|  20|     1|    8|        8|
+    |gauss_V_pixel_24_U       |        0|   5|  20|     1|    8|        8|
+    |gauss_V_pixel_25_U       |        0|   5|  20|     1|    8|        8|
+    |gauss_V_pixel_26_U       |        0|   5|  20|     1|    8|        8|
+    |gauss_V_pixel_27_U       |        0|   5|  20|     1|    8|        8|
+    |gauss_V_pixel_28_U       |        0|   5|  20|     1|    8|        8|
+    |gauss_V_pixel_29_U       |        0|   5|  20|     1|    8|        8|
+    |gauss_V_pixel_2_U        |        0|   5|  20|     1|    8|        8|
+    |gauss_V_pixel_30_U       |        0|   5|  20|     1|    8|        8|
+    |gauss_V_pixel_31_U       |        0|   5|  20|     1|    8|        8|
+    |gauss_V_pixel_32_U       |        0|   5|  20|     1|    8|        8|
+    |gauss_V_pixel_33_U       |        0|   5|  20|     1|    8|        8|
+    |gauss_V_pixel_34_U       |        0|   5|  20|     1|    8|        8|
+    |gauss_V_pixel_35_U       |        0|   5|  20|     1|    8|        8|
+    |gauss_V_pixel_36_U       |        0|   5|  20|     1|    8|        8|
+    |gauss_V_pixel_37_U       |        0|   5|  20|     1|    8|        8|
+    |gauss_V_pixel_38_U       |        0|   5|  20|     1|    8|        8|
+    |gauss_V_pixel_39_U       |        0|   5|  20|     1|    8|        8|
+    |gauss_V_pixel_3_U        |        0|   5|  20|     1|    8|        8|
+    |gauss_V_pixel_40_U       |        0|   5|  20|     1|    8|        8|
+    |gauss_V_pixel_41_U       |        0|   5|  20|     1|    8|        8|
+    |gauss_V_pixel_4_U        |        0|   5|  20|     1|    8|        8|
+    |gauss_V_pixel_5_U        |        0|   5|  20|     1|    8|        8|
+    |gauss_V_pixel_6_U        |        0|   5|  20|     1|    8|        8|
+    |gauss_V_pixel_7_U        |        0|   5|  20|     1|    8|        8|
+    |gauss_V_pixel_8_U        |        0|   5|  20|     1|    8|        8|
+    |gauss_V_pixel_9_U        |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_1_V_pixel_0_U   |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_1_V_pixel_10_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_1_V_pixel_11_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_1_V_pixel_12_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_1_V_pixel_13_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_1_V_pixel_14_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_1_V_pixel_15_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_1_V_pixel_16_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_1_V_pixel_17_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_1_V_pixel_18_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_1_V_pixel_19_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_1_V_pixel_1_U   |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_1_V_pixel_20_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_1_V_pixel_21_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_1_V_pixel_22_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_1_V_pixel_23_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_1_V_pixel_24_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_1_V_pixel_25_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_1_V_pixel_26_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_1_V_pixel_27_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_1_V_pixel_28_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_1_V_pixel_29_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_1_V_pixel_2_U   |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_1_V_pixel_30_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_1_V_pixel_31_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_1_V_pixel_32_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_1_V_pixel_33_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_1_V_pixel_34_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_1_V_pixel_35_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_1_V_pixel_36_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_1_V_pixel_37_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_1_V_pixel_38_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_1_V_pixel_39_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_1_V_pixel_3_U   |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_1_V_pixel_40_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_1_V_pixel_41_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_1_V_pixel_42_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_1_V_pixel_43_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_1_V_pixel_4_U   |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_1_V_pixel_5_U   |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_1_V_pixel_6_U   |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_1_V_pixel_7_U   |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_1_V_pixel_8_U   |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_1_V_pixel_9_U   |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_2_V_pixel_0_U   |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_2_V_pixel_10_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_2_V_pixel_11_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_2_V_pixel_12_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_2_V_pixel_13_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_2_V_pixel_14_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_2_V_pixel_15_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_2_V_pixel_16_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_2_V_pixel_17_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_2_V_pixel_18_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_2_V_pixel_19_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_2_V_pixel_1_U   |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_2_V_pixel_20_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_2_V_pixel_21_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_2_V_pixel_22_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_2_V_pixel_23_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_2_V_pixel_24_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_2_V_pixel_25_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_2_V_pixel_26_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_2_V_pixel_27_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_2_V_pixel_28_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_2_V_pixel_29_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_2_V_pixel_2_U   |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_2_V_pixel_30_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_2_V_pixel_31_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_2_V_pixel_32_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_2_V_pixel_33_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_2_V_pixel_34_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_2_V_pixel_35_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_2_V_pixel_36_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_2_V_pixel_37_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_2_V_pixel_38_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_2_V_pixel_39_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_2_V_pixel_3_U   |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_2_V_pixel_40_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_2_V_pixel_41_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_2_V_pixel_42_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_2_V_pixel_43_U  |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_2_V_pixel_4_U   |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_2_V_pixel_5_U   |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_2_V_pixel_6_U   |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_2_V_pixel_7_U   |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_2_V_pixel_8_U   |        0|   5|  20|     1|    8|        8|
+    |gauss_wb_2_V_pixel_9_U   |        0|   5|  20|     1|    8|        8|
+    |grad_x_1_V_pixel_0_U     |        0|   5|  20|     1|    8|        8|
+    |grad_x_1_V_pixel_10_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_1_V_pixel_11_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_1_V_pixel_12_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_1_V_pixel_13_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_1_V_pixel_14_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_1_V_pixel_15_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_1_V_pixel_16_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_1_V_pixel_17_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_1_V_pixel_18_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_1_V_pixel_19_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_1_V_pixel_1_U     |        0|   5|  20|     1|    8|        8|
+    |grad_x_1_V_pixel_20_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_1_V_pixel_21_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_1_V_pixel_22_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_1_V_pixel_23_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_1_V_pixel_24_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_1_V_pixel_25_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_1_V_pixel_26_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_1_V_pixel_27_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_1_V_pixel_28_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_1_V_pixel_29_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_1_V_pixel_2_U     |        0|   5|  20|     1|    8|        8|
+    |grad_x_1_V_pixel_30_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_1_V_pixel_31_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_1_V_pixel_32_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_1_V_pixel_33_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_1_V_pixel_34_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_1_V_pixel_35_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_1_V_pixel_36_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_1_V_pixel_37_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_1_V_pixel_38_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_1_V_pixel_39_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_1_V_pixel_3_U     |        0|   5|  20|     1|    8|        8|
+    |grad_x_1_V_pixel_40_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_1_V_pixel_41_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_1_V_pixel_4_U     |        0|   5|  20|     1|    8|        8|
+    |grad_x_1_V_pixel_5_U     |        0|   5|  20|     1|    8|        8|
+    |grad_x_1_V_pixel_6_U     |        0|   5|  20|     1|    8|        8|
+    |grad_x_1_V_pixel_7_U     |        0|   5|  20|     1|    8|        8|
+    |grad_x_1_V_pixel_8_U     |        0|   5|  20|     1|    8|        8|
+    |grad_x_1_V_pixel_9_U     |        0|   5|  20|     1|    8|        8|
+    |grad_x_2_V_pixel_0_U     |        0|   5|  20|     1|    8|        8|
+    |grad_x_2_V_pixel_10_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_2_V_pixel_11_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_2_V_pixel_12_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_2_V_pixel_13_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_2_V_pixel_14_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_2_V_pixel_15_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_2_V_pixel_16_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_2_V_pixel_17_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_2_V_pixel_18_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_2_V_pixel_19_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_2_V_pixel_1_U     |        0|   5|  20|     1|    8|        8|
+    |grad_x_2_V_pixel_20_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_2_V_pixel_21_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_2_V_pixel_22_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_2_V_pixel_23_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_2_V_pixel_24_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_2_V_pixel_25_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_2_V_pixel_26_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_2_V_pixel_27_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_2_V_pixel_28_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_2_V_pixel_29_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_2_V_pixel_2_U     |        0|   5|  20|     1|    8|        8|
+    |grad_x_2_V_pixel_30_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_2_V_pixel_31_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_2_V_pixel_32_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_2_V_pixel_33_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_2_V_pixel_34_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_2_V_pixel_35_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_2_V_pixel_36_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_2_V_pixel_37_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_2_V_pixel_38_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_2_V_pixel_39_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_2_V_pixel_3_U     |        0|   5|  20|     1|    8|        8|
+    |grad_x_2_V_pixel_40_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_2_V_pixel_41_U    |        0|   5|  20|     1|    8|        8|
+    |grad_x_2_V_pixel_4_U     |        0|   5|  20|     1|    8|        8|
+    |grad_x_2_V_pixel_5_U     |        0|   5|  20|     1|    8|        8|
+    |grad_x_2_V_pixel_6_U     |        0|   5|  20|     1|    8|        8|
+    |grad_x_2_V_pixel_7_U     |        0|   5|  20|     1|    8|        8|
+    |grad_x_2_V_pixel_8_U     |        0|   5|  20|     1|    8|        8|
+    |grad_x_2_V_pixel_9_U     |        0|   5|  20|     1|    8|        8|
+    |grad_x_V_pixel_0_U       |        0|   5|  20|     1|    8|        8|
+    |grad_x_V_pixel_10_U      |        0|   5|  20|     1|    8|        8|
+    |grad_x_V_pixel_11_U      |        0|   5|  20|     1|    8|        8|
+    |grad_x_V_pixel_12_U      |        0|   5|  20|     1|    8|        8|
+    |grad_x_V_pixel_13_U      |        0|   5|  20|     1|    8|        8|
+    |grad_x_V_pixel_14_U      |        0|   5|  20|     1|    8|        8|
+    |grad_x_V_pixel_15_U      |        0|   5|  20|     1|    8|        8|
+    |grad_x_V_pixel_16_U      |        0|   5|  20|     1|    8|        8|
+    |grad_x_V_pixel_17_U      |        0|   5|  20|     1|    8|        8|
+    |grad_x_V_pixel_18_U      |        0|   5|  20|     1|    8|        8|
+    |grad_x_V_pixel_19_U      |        0|   5|  20|     1|    8|        8|
+    |grad_x_V_pixel_1_U       |        0|   5|  20|     1|    8|        8|
+    |grad_x_V_pixel_20_U      |        0|   5|  20|     1|    8|        8|
+    |grad_x_V_pixel_21_U      |        0|   5|  20|     1|    8|        8|
+    |grad_x_V_pixel_22_U      |        0|   5|  20|     1|    8|        8|
+    |grad_x_V_pixel_23_U      |        0|   5|  20|     1|    8|        8|
+    |grad_x_V_pixel_24_U      |        0|   5|  20|     1|    8|        8|
+    |grad_x_V_pixel_25_U      |        0|   5|  20|     1|    8|        8|
+    |grad_x_V_pixel_26_U      |        0|   5|  20|     1|    8|        8|
+    |grad_x_V_pixel_27_U      |        0|   5|  20|     1|    8|        8|
+    |grad_x_V_pixel_28_U      |        0|   5|  20|     1|    8|        8|
+    |grad_x_V_pixel_29_U      |        0|   5|  20|     1|    8|        8|
+    |grad_x_V_pixel_2_U       |        0|   5|  20|     1|    8|        8|
+    |grad_x_V_pixel_30_U      |        0|   5|  20|     1|    8|        8|
+    |grad_x_V_pixel_31_U      |        0|   5|  20|     1|    8|        8|
+    |grad_x_V_pixel_32_U      |        0|   5|  20|     1|    8|        8|
+    |grad_x_V_pixel_33_U      |        0|   5|  20|     1|    8|        8|
+    |grad_x_V_pixel_34_U      |        0|   5|  20|     1|    8|        8|
+    |grad_x_V_pixel_35_U      |        0|   5|  20|     1|    8|        8|
+    |grad_x_V_pixel_36_U      |        0|   5|  20|     1|    8|        8|
+    |grad_x_V_pixel_37_U      |        0|   5|  20|     1|    8|        8|
+    |grad_x_V_pixel_38_U      |        0|   5|  20|     1|    8|        8|
+    |grad_x_V_pixel_39_U      |        0|   5|  20|     1|    8|        8|
+    |grad_x_V_pixel_3_U       |        0|   5|  20|     1|    8|        8|
+    |grad_x_V_pixel_40_U      |        0|   5|  20|     1|    8|        8|
+    |grad_x_V_pixel_41_U      |        0|   5|  20|     1|    8|        8|
+    |grad_x_V_pixel_4_U       |        0|   5|  20|     1|    8|        8|
+    |grad_x_V_pixel_5_U       |        0|   5|  20|     1|    8|        8|
+    |grad_x_V_pixel_6_U       |        0|   5|  20|     1|    8|        8|
+    |grad_x_V_pixel_7_U       |        0|   5|  20|     1|    8|        8|
+    |grad_x_V_pixel_8_U       |        0|   5|  20|     1|    8|        8|
+    |grad_x_V_pixel_9_U       |        0|   5|  20|     1|    8|        8|
+    |grad_y_1_V_pixel_0_U     |        0|   5|  20|     1|    8|        8|
+    |grad_y_1_V_pixel_10_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_1_V_pixel_11_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_1_V_pixel_12_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_1_V_pixel_13_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_1_V_pixel_14_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_1_V_pixel_15_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_1_V_pixel_16_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_1_V_pixel_17_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_1_V_pixel_18_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_1_V_pixel_19_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_1_V_pixel_1_U     |        0|   5|  20|     1|    8|        8|
+    |grad_y_1_V_pixel_20_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_1_V_pixel_21_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_1_V_pixel_22_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_1_V_pixel_23_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_1_V_pixel_24_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_1_V_pixel_25_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_1_V_pixel_26_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_1_V_pixel_27_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_1_V_pixel_28_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_1_V_pixel_29_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_1_V_pixel_2_U     |        0|   5|  20|     1|    8|        8|
+    |grad_y_1_V_pixel_30_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_1_V_pixel_31_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_1_V_pixel_32_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_1_V_pixel_33_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_1_V_pixel_34_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_1_V_pixel_35_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_1_V_pixel_36_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_1_V_pixel_37_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_1_V_pixel_38_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_1_V_pixel_39_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_1_V_pixel_3_U     |        0|   5|  20|     1|    8|        8|
+    |grad_y_1_V_pixel_40_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_1_V_pixel_41_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_1_V_pixel_4_U     |        0|   5|  20|     1|    8|        8|
+    |grad_y_1_V_pixel_5_U     |        0|   5|  20|     1|    8|        8|
+    |grad_y_1_V_pixel_6_U     |        0|   5|  20|     1|    8|        8|
+    |grad_y_1_V_pixel_7_U     |        0|   5|  20|     1|    8|        8|
+    |grad_y_1_V_pixel_8_U     |        0|   5|  20|     1|    8|        8|
+    |grad_y_1_V_pixel_9_U     |        0|   5|  20|     1|    8|        8|
+    |grad_y_2_V_pixel_0_U     |        0|   5|  20|     1|    8|        8|
+    |grad_y_2_V_pixel_10_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_2_V_pixel_11_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_2_V_pixel_12_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_2_V_pixel_13_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_2_V_pixel_14_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_2_V_pixel_15_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_2_V_pixel_16_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_2_V_pixel_17_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_2_V_pixel_18_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_2_V_pixel_19_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_2_V_pixel_1_U     |        0|   5|  20|     1|    8|        8|
+    |grad_y_2_V_pixel_20_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_2_V_pixel_21_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_2_V_pixel_22_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_2_V_pixel_23_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_2_V_pixel_24_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_2_V_pixel_25_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_2_V_pixel_26_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_2_V_pixel_27_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_2_V_pixel_28_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_2_V_pixel_29_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_2_V_pixel_2_U     |        0|   5|  20|     1|    8|        8|
+    |grad_y_2_V_pixel_30_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_2_V_pixel_31_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_2_V_pixel_32_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_2_V_pixel_33_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_2_V_pixel_34_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_2_V_pixel_35_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_2_V_pixel_36_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_2_V_pixel_37_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_2_V_pixel_38_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_2_V_pixel_39_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_2_V_pixel_3_U     |        0|   5|  20|     1|    8|        8|
+    |grad_y_2_V_pixel_40_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_2_V_pixel_41_U    |        0|   5|  20|     1|    8|        8|
+    |grad_y_2_V_pixel_4_U     |        0|   5|  20|     1|    8|        8|
+    |grad_y_2_V_pixel_5_U     |        0|   5|  20|     1|    8|        8|
+    |grad_y_2_V_pixel_6_U     |        0|   5|  20|     1|    8|        8|
+    |grad_y_2_V_pixel_7_U     |        0|   5|  20|     1|    8|        8|
+    |grad_y_2_V_pixel_8_U     |        0|   5|  20|     1|    8|        8|
+    |grad_y_2_V_pixel_9_U     |        0|   5|  20|     1|    8|        8|
+    |grad_y_V_pixel_0_U       |        0|   5|  20|     1|    8|        8|
+    |grad_y_V_pixel_10_U      |        0|   5|  20|     1|    8|        8|
+    |grad_y_V_pixel_11_U      |        0|   5|  20|     1|    8|        8|
+    |grad_y_V_pixel_12_U      |        0|   5|  20|     1|    8|        8|
+    |grad_y_V_pixel_13_U      |        0|   5|  20|     1|    8|        8|
+    |grad_y_V_pixel_14_U      |        0|   5|  20|     1|    8|        8|
+    |grad_y_V_pixel_15_U      |        0|   5|  20|     1|    8|        8|
+    |grad_y_V_pixel_16_U      |        0|   5|  20|     1|    8|        8|
+    |grad_y_V_pixel_17_U      |        0|   5|  20|     1|    8|        8|
+    |grad_y_V_pixel_18_U      |        0|   5|  20|     1|    8|        8|
+    |grad_y_V_pixel_19_U      |        0|   5|  20|     1|    8|        8|
+    |grad_y_V_pixel_1_U       |        0|   5|  20|     1|    8|        8|
+    |grad_y_V_pixel_20_U      |        0|   5|  20|     1|    8|        8|
+    |grad_y_V_pixel_21_U      |        0|   5|  20|     1|    8|        8|
+    |grad_y_V_pixel_22_U      |        0|   5|  20|     1|    8|        8|
+    |grad_y_V_pixel_23_U      |        0|   5|  20|     1|    8|        8|
+    |grad_y_V_pixel_24_U      |        0|   5|  20|     1|    8|        8|
+    |grad_y_V_pixel_25_U      |        0|   5|  20|     1|    8|        8|
+    |grad_y_V_pixel_26_U      |        0|   5|  20|     1|    8|        8|
+    |grad_y_V_pixel_27_U      |        0|   5|  20|     1|    8|        8|
+    |grad_y_V_pixel_28_U      |        0|   5|  20|     1|    8|        8|
+    |grad_y_V_pixel_29_U      |        0|   5|  20|     1|    8|        8|
+    |grad_y_V_pixel_2_U       |        0|   5|  20|     1|    8|        8|
+    |grad_y_V_pixel_30_U      |        0|   5|  20|     1|    8|        8|
+    |grad_y_V_pixel_31_U      |        0|   5|  20|     1|    8|        8|
+    |grad_y_V_pixel_32_U      |        0|   5|  20|     1|    8|        8|
+    |grad_y_V_pixel_33_U      |        0|   5|  20|     1|    8|        8|
+    |grad_y_V_pixel_34_U      |        0|   5|  20|     1|    8|        8|
+    |grad_y_V_pixel_35_U      |        0|   5|  20|     1|    8|        8|
+    |grad_y_V_pixel_36_U      |        0|   5|  20|     1|    8|        8|
+    |grad_y_V_pixel_37_U      |        0|   5|  20|     1|    8|        8|
+    |grad_y_V_pixel_38_U      |        0|   5|  20|     1|    8|        8|
+    |grad_y_V_pixel_39_U      |        0|   5|  20|     1|    8|        8|
+    |grad_y_V_pixel_3_U       |        0|   5|  20|     1|    8|        8|
+    |grad_y_V_pixel_40_U      |        0|   5|  20|     1|    8|        8|
+    |grad_y_V_pixel_41_U      |        0|   5|  20|     1|    8|        8|
+    |grad_y_V_pixel_4_U       |        0|   5|  20|     1|    8|        8|
+    |grad_y_V_pixel_5_U       |        0|   5|  20|     1|    8|        8|
+    |grad_y_V_pixel_6_U       |        0|   5|  20|     1|    8|        8|
+    |grad_y_V_pixel_7_U       |        0|   5|  20|     1|    8|        8|
+    |grad_y_V_pixel_8_U       |        0|   5|  20|     1|    8|        8|
+    |grad_y_V_pixel_9_U       |        0|   5|  20|     1|    8|        8|
+    |grey_V_pixel_0_luma_U    |        0|   5|  20|     1|    8|        8|
+    |grey_V_pixel_10_luma_U   |        0|   5|  20|     1|    8|        8|
+    |grey_V_pixel_11_luma_U   |        0|   5|  20|     1|    8|        8|
+    |grey_V_pixel_12_luma_U   |        0|   5|  20|     1|    8|        8|
+    |grey_V_pixel_13_luma_U   |        0|   5|  20|     1|    8|        8|
+    |grey_V_pixel_14_luma_U   |        0|   5|  20|     1|    8|        8|
+    |grey_V_pixel_15_luma_U   |        0|   5|  20|     1|    8|        8|
+    |grey_V_pixel_16_luma_U   |        0|   5|  20|     1|    8|        8|
+    |grey_V_pixel_17_luma_U   |        0|   5|  20|     1|    8|        8|
+    |grey_V_pixel_18_luma_U   |        0|   5|  20|     1|    8|        8|
+    |grey_V_pixel_19_luma_U   |        0|   5|  20|     1|    8|        8|
+    |grey_V_pixel_1_luma_U    |        0|   5|  20|     1|    8|        8|
+    |grey_V_pixel_20_luma_U   |        0|   5|  20|     1|    8|        8|
+    |grey_V_pixel_21_luma_U   |        0|   5|  20|     1|    8|        8|
+    |grey_V_pixel_22_luma_U   |        0|   5|  20|     1|    8|        8|
+    |grey_V_pixel_23_luma_U   |        0|   5|  20|     1|    8|        8|
+    |grey_V_pixel_24_luma_U   |        0|   5|  20|     1|    8|        8|
+    |grey_V_pixel_25_luma_U   |        0|   5|  20|     1|    8|        8|
+    |grey_V_pixel_26_luma_U   |        0|   5|  20|     1|    8|        8|
+    |grey_V_pixel_27_luma_U   |        0|   5|  20|     1|    8|        8|
+    |grey_V_pixel_28_luma_U   |        0|   5|  20|     1|    8|        8|
+    |grey_V_pixel_29_luma_U   |        0|   5|  20|     1|    8|        8|
+    |grey_V_pixel_2_luma_U    |        0|   5|  20|     1|    8|        8|
+    |grey_V_pixel_30_luma_U   |        0|   5|  20|     1|    8|        8|
+    |grey_V_pixel_31_luma_U   |        0|   5|  20|     1|    8|        8|
+    |grey_V_pixel_32_luma_U   |        0|   5|  20|     1|    8|        8|
+    |grey_V_pixel_33_luma_U   |        0|   5|  20|     1|    8|        8|
+    |grey_V_pixel_34_luma_U   |        0|   5|  20|     1|    8|        8|
+    |grey_V_pixel_35_luma_U   |        0|   5|  20|     1|    8|        8|
+    |grey_V_pixel_36_luma_U   |        0|   5|  20|     1|    8|        8|
+    |grey_V_pixel_37_luma_U   |        0|   5|  20|     1|    8|        8|
+    |grey_V_pixel_38_luma_U   |        0|   5|  20|     1|    8|        8|
+    |grey_V_pixel_39_luma_U   |        0|   5|  20|     1|    8|        8|
+    |grey_V_pixel_3_luma_U    |        0|   5|  20|     1|    8|        8|
+    |grey_V_pixel_40_luma_U   |        0|   5|  20|     1|    8|        8|
+    |grey_V_pixel_41_luma_U   |        0|   5|  20|     1|    8|        8|
+    |grey_V_pixel_4_luma_U    |        0|   5|  20|     1|    8|        8|
+    |grey_V_pixel_5_luma_U    |        0|   5|  20|     1|    8|        8|
+    |grey_V_pixel_6_luma_U    |        0|   5|  20|     1|    8|        8|
+    |grey_V_pixel_7_luma_U    |        0|   5|  20|     1|    8|        8|
+    |grey_V_pixel_8_luma_U    |        0|   5|  20|     1|    8|        8|
+    |grey_V_pixel_9_luma_U    |        0|   5|  20|     1|    8|        8|
+    |grey_wb_V_pixel_0_U      |        0|   5|  20|     1|    8|        8|
+    |grey_wb_V_pixel_10_U     |        0|   5|  20|     1|    8|        8|
+    |grey_wb_V_pixel_11_U     |        0|   5|  20|     1|    8|        8|
+    |grey_wb_V_pixel_12_U     |        0|   5|  20|     1|    8|        8|
+    |grey_wb_V_pixel_13_U     |        0|   5|  20|     1|    8|        8|
+    |grey_wb_V_pixel_14_U     |        0|   5|  20|     1|    8|        8|
+    |grey_wb_V_pixel_15_U     |        0|   5|  20|     1|    8|        8|
+    |grey_wb_V_pixel_16_U     |        0|   5|  20|     1|    8|        8|
+    |grey_wb_V_pixel_17_U     |        0|   5|  20|     1|    8|        8|
+    |grey_wb_V_pixel_18_U     |        0|   5|  20|     1|    8|        8|
+    |grey_wb_V_pixel_19_U     |        0|   5|  20|     1|    8|        8|
+    |grey_wb_V_pixel_1_U      |        0|   5|  20|     1|    8|        8|
+    |grey_wb_V_pixel_20_U     |        0|   5|  20|     1|    8|        8|
+    |grey_wb_V_pixel_21_U     |        0|   5|  20|     1|    8|        8|
+    |grey_wb_V_pixel_22_U     |        0|   5|  20|     1|    8|        8|
+    |grey_wb_V_pixel_23_U     |        0|   5|  20|     1|    8|        8|
+    |grey_wb_V_pixel_24_U     |        0|   5|  20|     1|    8|        8|
+    |grey_wb_V_pixel_25_U     |        0|   5|  20|     1|    8|        8|
+    |grey_wb_V_pixel_26_U     |        0|   5|  20|     1|    8|        8|
+    |grey_wb_V_pixel_27_U     |        0|   5|  20|     1|    8|        8|
+    |grey_wb_V_pixel_28_U     |        0|   5|  20|     1|    8|        8|
+    |grey_wb_V_pixel_29_U     |        0|   5|  20|     1|    8|        8|
+    |grey_wb_V_pixel_2_U      |        0|   5|  20|     1|    8|        8|
+    |grey_wb_V_pixel_30_U     |        0|   5|  20|     1|    8|        8|
+    |grey_wb_V_pixel_31_U     |        0|   5|  20|     1|    8|        8|
+    |grey_wb_V_pixel_32_U     |        0|   5|  20|     1|    8|        8|
+    |grey_wb_V_pixel_33_U     |        0|   5|  20|     1|    8|        8|
+    |grey_wb_V_pixel_34_U     |        0|   5|  20|     1|    8|        8|
+    |grey_wb_V_pixel_35_U     |        0|   5|  20|     1|    8|        8|
+    |grey_wb_V_pixel_36_U     |        0|   5|  20|     1|    8|        8|
+    |grey_wb_V_pixel_37_U     |        0|   5|  20|     1|    8|        8|
+    |grey_wb_V_pixel_38_U     |        0|   5|  20|     1|    8|        8|
+    |grey_wb_V_pixel_39_U     |        0|   5|  20|     1|    8|        8|
+    |grey_wb_V_pixel_3_U      |        0|   5|  20|     1|    8|        8|
+    |grey_wb_V_pixel_40_U     |        0|   5|  20|     1|    8|        8|
+    |grey_wb_V_pixel_41_U     |        0|   5|  20|     1|    8|        8|
+    |grey_wb_V_pixel_42_U     |        0|   5|  20|     1|    8|        8|
+    |grey_wb_V_pixel_43_U     |        0|   5|  20|     1|    8|        8|
+    |grey_wb_V_pixel_4_U      |        0|   5|  20|     1|    8|        8|
+    |grey_wb_V_pixel_5_U      |        0|   5|  20|     1|    8|        8|
+    |grey_wb_V_pixel_6_U      |        0|   5|  20|     1|    8|        8|
+    |grey_wb_V_pixel_7_U      |        0|   5|  20|     1|    8|        8|
+    |grey_wb_V_pixel_8_U      |        0|   5|  20|     1|    8|        8|
+    |grey_wb_V_pixel_9_U      |        0|   5|  20|     1|    8|        8|
+    +-------------------------+---------+----+----+------+-----+---------+
+    |Total                    |        0|2340|9360|   468| 3744|     3744|
+    +-------------------------+---------+----+----+------+-----+---------+
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    +-------------------------------------+----+-----------+-----+-----------+
+    |                 Name                | LUT| Input Size| Bits| Total Bits|
+    +-------------------------------------+----+-----------+-----+-----------+
+    |ap_reg_Sobel_vxMagnitude_U0_ap_done  |   1|          2|    1|          2|
+    |ap_reg_Sobel_vxPhase_U0_ap_done      |   1|          2|    1|          2|
+    +-------------------------------------+----+-----------+-----+-----------+
+    |Total                                |   2|          4|    2|          4|
+    +-------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------------------------------------+---+----+-----+-----------+
+    |                        Name                        | FF| LUT| Bits| Const Bits|
+    +----------------------------------------------------+---+----+-----+-----------+
+    |Sobel_array_of_pixels_yuv_t_to_input_U0_ap_start    |  1|   0|    1|          0|
+    |Sobel_split_output_array_of_pixels_t_1_U0_ap_start  |  1|   0|    1|          0|
+    |Sobel_split_output_array_of_pixels_t_2_U0_ap_start  |  1|   0|    1|          0|
+    |Sobel_split_output_array_of_pixels_t_U0_ap_start    |  1|   0|    1|          0|
+    |Sobel_vxGaussian3x3_U0_ap_start                     |  1|   0|    1|          0|
+    |Sobel_vxMagnitude_U0_ap_start                       |  1|   0|    1|          0|
+    |Sobel_vxPhase_U0_ap_start                           |  1|   0|    1|          0|
+    |Sobel_vxSobel3x3_tile_grad_x_U0_ap_start            |  1|   0|    1|          0|
+    |Sobel_vxSobel3x3_tile_grad_y_U0_ap_start            |  1|   0|    1|          0|
+    |ap_reg_Sobel_vxMagnitude_U0_ap_done                 |  1|   0|    1|          0|
+    |ap_reg_Sobel_vxPhase_U0_ap_done                     |  1|   0|    1|          0|
+    +----------------------------------------------------+---+----+-----+-----------+
+    |Total                                               | 11|   0|   11|          0|
+    +----------------------------------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------------+-----+-----+------------+------------------+--------------+
+|        RTL Ports        | Dir | Bits|  Protocol  |   Source Object  |    C Type    |
++-------------------------+-----+-----+------------+------------------+--------------+
+|src_V_pixel_0_r_TDATA    |  in |    8|    axis    |  src_V_pixel_0_r |    pointer   |
+|src_V_pixel_0_r_TVALID   |  in |    1|    axis    |  src_V_pixel_0_r |    pointer   |
+|src_V_pixel_0_r_TREADY   | out |    1|    axis    |  src_V_pixel_0_r |    pointer   |
+|src_V_pixel_1_r_TDATA    |  in |    8|    axis    |  src_V_pixel_1_r |    pointer   |
+|src_V_pixel_1_r_TVALID   |  in |    1|    axis    |  src_V_pixel_1_r |    pointer   |
+|src_V_pixel_1_r_TREADY   | out |    1|    axis    |  src_V_pixel_1_r |    pointer   |
+|src_V_pixel_2_r_TDATA    |  in |    8|    axis    |  src_V_pixel_2_r |    pointer   |
+|src_V_pixel_2_r_TVALID   |  in |    1|    axis    |  src_V_pixel_2_r |    pointer   |
+|src_V_pixel_2_r_TREADY   | out |    1|    axis    |  src_V_pixel_2_r |    pointer   |
+|src_V_pixel_3_r_TDATA    |  in |    8|    axis    |  src_V_pixel_3_r |    pointer   |
+|src_V_pixel_3_r_TVALID   |  in |    1|    axis    |  src_V_pixel_3_r |    pointer   |
+|src_V_pixel_3_r_TREADY   | out |    1|    axis    |  src_V_pixel_3_r |    pointer   |
+|src_V_pixel_4_r_TDATA    |  in |    8|    axis    |  src_V_pixel_4_r |    pointer   |
+|src_V_pixel_4_r_TVALID   |  in |    1|    axis    |  src_V_pixel_4_r |    pointer   |
+|src_V_pixel_4_r_TREADY   | out |    1|    axis    |  src_V_pixel_4_r |    pointer   |
+|src_V_pixel_5_r_TDATA    |  in |    8|    axis    |  src_V_pixel_5_r |    pointer   |
+|src_V_pixel_5_r_TVALID   |  in |    1|    axis    |  src_V_pixel_5_r |    pointer   |
+|src_V_pixel_5_r_TREADY   | out |    1|    axis    |  src_V_pixel_5_r |    pointer   |
+|src_V_pixel_6_r_TDATA    |  in |    8|    axis    |  src_V_pixel_6_r |    pointer   |
+|src_V_pixel_6_r_TVALID   |  in |    1|    axis    |  src_V_pixel_6_r |    pointer   |
+|src_V_pixel_6_r_TREADY   | out |    1|    axis    |  src_V_pixel_6_r |    pointer   |
+|src_V_pixel_7_r_TDATA    |  in |    8|    axis    |  src_V_pixel_7_r |    pointer   |
+|src_V_pixel_7_r_TVALID   |  in |    1|    axis    |  src_V_pixel_7_r |    pointer   |
+|src_V_pixel_7_r_TREADY   | out |    1|    axis    |  src_V_pixel_7_r |    pointer   |
+|src_V_pixel_8_r_TDATA    |  in |    8|    axis    |  src_V_pixel_8_r |    pointer   |
+|src_V_pixel_8_r_TVALID   |  in |    1|    axis    |  src_V_pixel_8_r |    pointer   |
+|src_V_pixel_8_r_TREADY   | out |    1|    axis    |  src_V_pixel_8_r |    pointer   |
+|src_V_pixel_9_r_TDATA    |  in |    8|    axis    |  src_V_pixel_9_r |    pointer   |
+|src_V_pixel_9_r_TVALID   |  in |    1|    axis    |  src_V_pixel_9_r |    pointer   |
+|src_V_pixel_9_r_TREADY   | out |    1|    axis    |  src_V_pixel_9_r |    pointer   |
+|src_V_pixel_10_r_TDATA   |  in |    8|    axis    | src_V_pixel_10_r |    pointer   |
+|src_V_pixel_10_r_TVALID  |  in |    1|    axis    | src_V_pixel_10_r |    pointer   |
+|src_V_pixel_10_r_TREADY  | out |    1|    axis    | src_V_pixel_10_r |    pointer   |
+|src_V_pixel_11_r_TDATA   |  in |    8|    axis    | src_V_pixel_11_r |    pointer   |
+|src_V_pixel_11_r_TVALID  |  in |    1|    axis    | src_V_pixel_11_r |    pointer   |
+|src_V_pixel_11_r_TREADY  | out |    1|    axis    | src_V_pixel_11_r |    pointer   |
+|src_V_pixel_12_r_TDATA   |  in |    8|    axis    | src_V_pixel_12_r |    pointer   |
+|src_V_pixel_12_r_TVALID  |  in |    1|    axis    | src_V_pixel_12_r |    pointer   |
+|src_V_pixel_12_r_TREADY  | out |    1|    axis    | src_V_pixel_12_r |    pointer   |
+|src_V_pixel_13_r_TDATA   |  in |    8|    axis    | src_V_pixel_13_r |    pointer   |
+|src_V_pixel_13_r_TVALID  |  in |    1|    axis    | src_V_pixel_13_r |    pointer   |
+|src_V_pixel_13_r_TREADY  | out |    1|    axis    | src_V_pixel_13_r |    pointer   |
+|src_V_pixel_14_r_TDATA   |  in |    8|    axis    | src_V_pixel_14_r |    pointer   |
+|src_V_pixel_14_r_TVALID  |  in |    1|    axis    | src_V_pixel_14_r |    pointer   |
+|src_V_pixel_14_r_TREADY  | out |    1|    axis    | src_V_pixel_14_r |    pointer   |
+|src_V_pixel_15_r_TDATA   |  in |    8|    axis    | src_V_pixel_15_r |    pointer   |
+|src_V_pixel_15_r_TVALID  |  in |    1|    axis    | src_V_pixel_15_r |    pointer   |
+|src_V_pixel_15_r_TREADY  | out |    1|    axis    | src_V_pixel_15_r |    pointer   |
+|src_V_pixel_16_r_TDATA   |  in |    8|    axis    | src_V_pixel_16_r |    pointer   |
+|src_V_pixel_16_r_TVALID  |  in |    1|    axis    | src_V_pixel_16_r |    pointer   |
+|src_V_pixel_16_r_TREADY  | out |    1|    axis    | src_V_pixel_16_r |    pointer   |
+|src_V_pixel_17_r_TDATA   |  in |    8|    axis    | src_V_pixel_17_r |    pointer   |
+|src_V_pixel_17_r_TVALID  |  in |    1|    axis    | src_V_pixel_17_r |    pointer   |
+|src_V_pixel_17_r_TREADY  | out |    1|    axis    | src_V_pixel_17_r |    pointer   |
+|src_V_pixel_18_r_TDATA   |  in |    8|    axis    | src_V_pixel_18_r |    pointer   |
+|src_V_pixel_18_r_TVALID  |  in |    1|    axis    | src_V_pixel_18_r |    pointer   |
+|src_V_pixel_18_r_TREADY  | out |    1|    axis    | src_V_pixel_18_r |    pointer   |
+|src_V_pixel_19_r_TDATA   |  in |    8|    axis    | src_V_pixel_19_r |    pointer   |
+|src_V_pixel_19_r_TVALID  |  in |    1|    axis    | src_V_pixel_19_r |    pointer   |
+|src_V_pixel_19_r_TREADY  | out |    1|    axis    | src_V_pixel_19_r |    pointer   |
+|src_V_pixel_20_r_TDATA   |  in |    8|    axis    | src_V_pixel_20_r |    pointer   |
+|src_V_pixel_20_r_TVALID  |  in |    1|    axis    | src_V_pixel_20_r |    pointer   |
+|src_V_pixel_20_r_TREADY  | out |    1|    axis    | src_V_pixel_20_r |    pointer   |
+|src_V_pixel_21_r_TDATA   |  in |    8|    axis    | src_V_pixel_21_r |    pointer   |
+|src_V_pixel_21_r_TVALID  |  in |    1|    axis    | src_V_pixel_21_r |    pointer   |
+|src_V_pixel_21_r_TREADY  | out |    1|    axis    | src_V_pixel_21_r |    pointer   |
+|src_V_pixel_22_r_TDATA   |  in |    8|    axis    | src_V_pixel_22_r |    pointer   |
+|src_V_pixel_22_r_TVALID  |  in |    1|    axis    | src_V_pixel_22_r |    pointer   |
+|src_V_pixel_22_r_TREADY  | out |    1|    axis    | src_V_pixel_22_r |    pointer   |
+|src_V_pixel_23_r_TDATA   |  in |    8|    axis    | src_V_pixel_23_r |    pointer   |
+|src_V_pixel_23_r_TVALID  |  in |    1|    axis    | src_V_pixel_23_r |    pointer   |
+|src_V_pixel_23_r_TREADY  | out |    1|    axis    | src_V_pixel_23_r |    pointer   |
+|src_V_pixel_24_r_TDATA   |  in |    8|    axis    | src_V_pixel_24_r |    pointer   |
+|src_V_pixel_24_r_TVALID  |  in |    1|    axis    | src_V_pixel_24_r |    pointer   |
+|src_V_pixel_24_r_TREADY  | out |    1|    axis    | src_V_pixel_24_r |    pointer   |
+|src_V_pixel_25_r_TDATA   |  in |    8|    axis    | src_V_pixel_25_r |    pointer   |
+|src_V_pixel_25_r_TVALID  |  in |    1|    axis    | src_V_pixel_25_r |    pointer   |
+|src_V_pixel_25_r_TREADY  | out |    1|    axis    | src_V_pixel_25_r |    pointer   |
+|src_V_pixel_26_r_TDATA   |  in |    8|    axis    | src_V_pixel_26_r |    pointer   |
+|src_V_pixel_26_r_TVALID  |  in |    1|    axis    | src_V_pixel_26_r |    pointer   |
+|src_V_pixel_26_r_TREADY  | out |    1|    axis    | src_V_pixel_26_r |    pointer   |
+|src_V_pixel_27_r_TDATA   |  in |    8|    axis    | src_V_pixel_27_r |    pointer   |
+|src_V_pixel_27_r_TVALID  |  in |    1|    axis    | src_V_pixel_27_r |    pointer   |
+|src_V_pixel_27_r_TREADY  | out |    1|    axis    | src_V_pixel_27_r |    pointer   |
+|src_V_pixel_28_r_TDATA   |  in |    8|    axis    | src_V_pixel_28_r |    pointer   |
+|src_V_pixel_28_r_TVALID  |  in |    1|    axis    | src_V_pixel_28_r |    pointer   |
+|src_V_pixel_28_r_TREADY  | out |    1|    axis    | src_V_pixel_28_r |    pointer   |
+|src_V_pixel_29_r_TDATA   |  in |    8|    axis    | src_V_pixel_29_r |    pointer   |
+|src_V_pixel_29_r_TVALID  |  in |    1|    axis    | src_V_pixel_29_r |    pointer   |
+|src_V_pixel_29_r_TREADY  | out |    1|    axis    | src_V_pixel_29_r |    pointer   |
+|src_V_pixel_30_r_TDATA   |  in |    8|    axis    | src_V_pixel_30_r |    pointer   |
+|src_V_pixel_30_r_TVALID  |  in |    1|    axis    | src_V_pixel_30_r |    pointer   |
+|src_V_pixel_30_r_TREADY  | out |    1|    axis    | src_V_pixel_30_r |    pointer   |
+|src_V_pixel_31_r_TDATA   |  in |    8|    axis    | src_V_pixel_31_r |    pointer   |
+|src_V_pixel_31_r_TVALID  |  in |    1|    axis    | src_V_pixel_31_r |    pointer   |
+|src_V_pixel_31_r_TREADY  | out |    1|    axis    | src_V_pixel_31_r |    pointer   |
+|src_V_pixel_32_r_TDATA   |  in |    8|    axis    | src_V_pixel_32_r |    pointer   |
+|src_V_pixel_32_r_TVALID  |  in |    1|    axis    | src_V_pixel_32_r |    pointer   |
+|src_V_pixel_32_r_TREADY  | out |    1|    axis    | src_V_pixel_32_r |    pointer   |
+|src_V_pixel_33_r_TDATA   |  in |    8|    axis    | src_V_pixel_33_r |    pointer   |
+|src_V_pixel_33_r_TVALID  |  in |    1|    axis    | src_V_pixel_33_r |    pointer   |
+|src_V_pixel_33_r_TREADY  | out |    1|    axis    | src_V_pixel_33_r |    pointer   |
+|src_V_pixel_34_r_TDATA   |  in |    8|    axis    | src_V_pixel_34_r |    pointer   |
+|src_V_pixel_34_r_TVALID  |  in |    1|    axis    | src_V_pixel_34_r |    pointer   |
+|src_V_pixel_34_r_TREADY  | out |    1|    axis    | src_V_pixel_34_r |    pointer   |
+|src_V_pixel_35_r_TDATA   |  in |    8|    axis    | src_V_pixel_35_r |    pointer   |
+|src_V_pixel_35_r_TVALID  |  in |    1|    axis    | src_V_pixel_35_r |    pointer   |
+|src_V_pixel_35_r_TREADY  | out |    1|    axis    | src_V_pixel_35_r |    pointer   |
+|src_V_pixel_36_r_TDATA   |  in |    8|    axis    | src_V_pixel_36_r |    pointer   |
+|src_V_pixel_36_r_TVALID  |  in |    1|    axis    | src_V_pixel_36_r |    pointer   |
+|src_V_pixel_36_r_TREADY  | out |    1|    axis    | src_V_pixel_36_r |    pointer   |
+|src_V_pixel_37_r_TDATA   |  in |    8|    axis    | src_V_pixel_37_r |    pointer   |
+|src_V_pixel_37_r_TVALID  |  in |    1|    axis    | src_V_pixel_37_r |    pointer   |
+|src_V_pixel_37_r_TREADY  | out |    1|    axis    | src_V_pixel_37_r |    pointer   |
+|src_V_pixel_38_r_TDATA   |  in |    8|    axis    | src_V_pixel_38_r |    pointer   |
+|src_V_pixel_38_r_TVALID  |  in |    1|    axis    | src_V_pixel_38_r |    pointer   |
+|src_V_pixel_38_r_TREADY  | out |    1|    axis    | src_V_pixel_38_r |    pointer   |
+|src_V_pixel_39_r_TDATA   |  in |    8|    axis    | src_V_pixel_39_r |    pointer   |
+|src_V_pixel_39_r_TVALID  |  in |    1|    axis    | src_V_pixel_39_r |    pointer   |
+|src_V_pixel_39_r_TREADY  | out |    1|    axis    | src_V_pixel_39_r |    pointer   |
+|src_V_pixel_40_r_TDATA   |  in |    8|    axis    | src_V_pixel_40_r |    pointer   |
+|src_V_pixel_40_r_TVALID  |  in |    1|    axis    | src_V_pixel_40_r |    pointer   |
+|src_V_pixel_40_r_TREADY  | out |    1|    axis    | src_V_pixel_40_r |    pointer   |
+|src_V_pixel_41_r_TDATA   |  in |    8|    axis    | src_V_pixel_41_r |    pointer   |
+|src_V_pixel_41_r_TVALID  |  in |    1|    axis    | src_V_pixel_41_r |    pointer   |
+|src_V_pixel_41_r_TREADY  | out |    1|    axis    | src_V_pixel_41_r |    pointer   |
+|src_V_pixel_0_g_TDATA    |  in |    8|    axis    |  src_V_pixel_0_g |    pointer   |
+|src_V_pixel_0_g_TVALID   |  in |    1|    axis    |  src_V_pixel_0_g |    pointer   |
+|src_V_pixel_0_g_TREADY   | out |    1|    axis    |  src_V_pixel_0_g |    pointer   |
+|src_V_pixel_1_g_TDATA    |  in |    8|    axis    |  src_V_pixel_1_g |    pointer   |
+|src_V_pixel_1_g_TVALID   |  in |    1|    axis    |  src_V_pixel_1_g |    pointer   |
+|src_V_pixel_1_g_TREADY   | out |    1|    axis    |  src_V_pixel_1_g |    pointer   |
+|src_V_pixel_2_g_TDATA    |  in |    8|    axis    |  src_V_pixel_2_g |    pointer   |
+|src_V_pixel_2_g_TVALID   |  in |    1|    axis    |  src_V_pixel_2_g |    pointer   |
+|src_V_pixel_2_g_TREADY   | out |    1|    axis    |  src_V_pixel_2_g |    pointer   |
+|src_V_pixel_3_g_TDATA    |  in |    8|    axis    |  src_V_pixel_3_g |    pointer   |
+|src_V_pixel_3_g_TVALID   |  in |    1|    axis    |  src_V_pixel_3_g |    pointer   |
+|src_V_pixel_3_g_TREADY   | out |    1|    axis    |  src_V_pixel_3_g |    pointer   |
+|src_V_pixel_4_g_TDATA    |  in |    8|    axis    |  src_V_pixel_4_g |    pointer   |
+|src_V_pixel_4_g_TVALID   |  in |    1|    axis    |  src_V_pixel_4_g |    pointer   |
+|src_V_pixel_4_g_TREADY   | out |    1|    axis    |  src_V_pixel_4_g |    pointer   |
+|src_V_pixel_5_g_TDATA    |  in |    8|    axis    |  src_V_pixel_5_g |    pointer   |
+|src_V_pixel_5_g_TVALID   |  in |    1|    axis    |  src_V_pixel_5_g |    pointer   |
+|src_V_pixel_5_g_TREADY   | out |    1|    axis    |  src_V_pixel_5_g |    pointer   |
+|src_V_pixel_6_g_TDATA    |  in |    8|    axis    |  src_V_pixel_6_g |    pointer   |
+|src_V_pixel_6_g_TVALID   |  in |    1|    axis    |  src_V_pixel_6_g |    pointer   |
+|src_V_pixel_6_g_TREADY   | out |    1|    axis    |  src_V_pixel_6_g |    pointer   |
+|src_V_pixel_7_g_TDATA    |  in |    8|    axis    |  src_V_pixel_7_g |    pointer   |
+|src_V_pixel_7_g_TVALID   |  in |    1|    axis    |  src_V_pixel_7_g |    pointer   |
+|src_V_pixel_7_g_TREADY   | out |    1|    axis    |  src_V_pixel_7_g |    pointer   |
+|src_V_pixel_8_g_TDATA    |  in |    8|    axis    |  src_V_pixel_8_g |    pointer   |
+|src_V_pixel_8_g_TVALID   |  in |    1|    axis    |  src_V_pixel_8_g |    pointer   |
+|src_V_pixel_8_g_TREADY   | out |    1|    axis    |  src_V_pixel_8_g |    pointer   |
+|src_V_pixel_9_g_TDATA    |  in |    8|    axis    |  src_V_pixel_9_g |    pointer   |
+|src_V_pixel_9_g_TVALID   |  in |    1|    axis    |  src_V_pixel_9_g |    pointer   |
+|src_V_pixel_9_g_TREADY   | out |    1|    axis    |  src_V_pixel_9_g |    pointer   |
+|src_V_pixel_10_g_TDATA   |  in |    8|    axis    | src_V_pixel_10_g |    pointer   |
+|src_V_pixel_10_g_TVALID  |  in |    1|    axis    | src_V_pixel_10_g |    pointer   |
+|src_V_pixel_10_g_TREADY  | out |    1|    axis    | src_V_pixel_10_g |    pointer   |
+|src_V_pixel_11_g_TDATA   |  in |    8|    axis    | src_V_pixel_11_g |    pointer   |
+|src_V_pixel_11_g_TVALID  |  in |    1|    axis    | src_V_pixel_11_g |    pointer   |
+|src_V_pixel_11_g_TREADY  | out |    1|    axis    | src_V_pixel_11_g |    pointer   |
+|src_V_pixel_12_g_TDATA   |  in |    8|    axis    | src_V_pixel_12_g |    pointer   |
+|src_V_pixel_12_g_TVALID  |  in |    1|    axis    | src_V_pixel_12_g |    pointer   |
+|src_V_pixel_12_g_TREADY  | out |    1|    axis    | src_V_pixel_12_g |    pointer   |
+|src_V_pixel_13_g_TDATA   |  in |    8|    axis    | src_V_pixel_13_g |    pointer   |
+|src_V_pixel_13_g_TVALID  |  in |    1|    axis    | src_V_pixel_13_g |    pointer   |
+|src_V_pixel_13_g_TREADY  | out |    1|    axis    | src_V_pixel_13_g |    pointer   |
+|src_V_pixel_14_g_TDATA   |  in |    8|    axis    | src_V_pixel_14_g |    pointer   |
+|src_V_pixel_14_g_TVALID  |  in |    1|    axis    | src_V_pixel_14_g |    pointer   |
+|src_V_pixel_14_g_TREADY  | out |    1|    axis    | src_V_pixel_14_g |    pointer   |
+|src_V_pixel_15_g_TDATA   |  in |    8|    axis    | src_V_pixel_15_g |    pointer   |
+|src_V_pixel_15_g_TVALID  |  in |    1|    axis    | src_V_pixel_15_g |    pointer   |
+|src_V_pixel_15_g_TREADY  | out |    1|    axis    | src_V_pixel_15_g |    pointer   |
+|src_V_pixel_16_g_TDATA   |  in |    8|    axis    | src_V_pixel_16_g |    pointer   |
+|src_V_pixel_16_g_TVALID  |  in |    1|    axis    | src_V_pixel_16_g |    pointer   |
+|src_V_pixel_16_g_TREADY  | out |    1|    axis    | src_V_pixel_16_g |    pointer   |
+|src_V_pixel_17_g_TDATA   |  in |    8|    axis    | src_V_pixel_17_g |    pointer   |
+|src_V_pixel_17_g_TVALID  |  in |    1|    axis    | src_V_pixel_17_g |    pointer   |
+|src_V_pixel_17_g_TREADY  | out |    1|    axis    | src_V_pixel_17_g |    pointer   |
+|src_V_pixel_18_g_TDATA   |  in |    8|    axis    | src_V_pixel_18_g |    pointer   |
+|src_V_pixel_18_g_TVALID  |  in |    1|    axis    | src_V_pixel_18_g |    pointer   |
+|src_V_pixel_18_g_TREADY  | out |    1|    axis    | src_V_pixel_18_g |    pointer   |
+|src_V_pixel_19_g_TDATA   |  in |    8|    axis    | src_V_pixel_19_g |    pointer   |
+|src_V_pixel_19_g_TVALID  |  in |    1|    axis    | src_V_pixel_19_g |    pointer   |
+|src_V_pixel_19_g_TREADY  | out |    1|    axis    | src_V_pixel_19_g |    pointer   |
+|src_V_pixel_20_g_TDATA   |  in |    8|    axis    | src_V_pixel_20_g |    pointer   |
+|src_V_pixel_20_g_TVALID  |  in |    1|    axis    | src_V_pixel_20_g |    pointer   |
+|src_V_pixel_20_g_TREADY  | out |    1|    axis    | src_V_pixel_20_g |    pointer   |
+|src_V_pixel_21_g_TDATA   |  in |    8|    axis    | src_V_pixel_21_g |    pointer   |
+|src_V_pixel_21_g_TVALID  |  in |    1|    axis    | src_V_pixel_21_g |    pointer   |
+|src_V_pixel_21_g_TREADY  | out |    1|    axis    | src_V_pixel_21_g |    pointer   |
+|src_V_pixel_22_g_TDATA   |  in |    8|    axis    | src_V_pixel_22_g |    pointer   |
+|src_V_pixel_22_g_TVALID  |  in |    1|    axis    | src_V_pixel_22_g |    pointer   |
+|src_V_pixel_22_g_TREADY  | out |    1|    axis    | src_V_pixel_22_g |    pointer   |
+|src_V_pixel_23_g_TDATA   |  in |    8|    axis    | src_V_pixel_23_g |    pointer   |
+|src_V_pixel_23_g_TVALID  |  in |    1|    axis    | src_V_pixel_23_g |    pointer   |
+|src_V_pixel_23_g_TREADY  | out |    1|    axis    | src_V_pixel_23_g |    pointer   |
+|src_V_pixel_24_g_TDATA   |  in |    8|    axis    | src_V_pixel_24_g |    pointer   |
+|src_V_pixel_24_g_TVALID  |  in |    1|    axis    | src_V_pixel_24_g |    pointer   |
+|src_V_pixel_24_g_TREADY  | out |    1|    axis    | src_V_pixel_24_g |    pointer   |
+|src_V_pixel_25_g_TDATA   |  in |    8|    axis    | src_V_pixel_25_g |    pointer   |
+|src_V_pixel_25_g_TVALID  |  in |    1|    axis    | src_V_pixel_25_g |    pointer   |
+|src_V_pixel_25_g_TREADY  | out |    1|    axis    | src_V_pixel_25_g |    pointer   |
+|src_V_pixel_26_g_TDATA   |  in |    8|    axis    | src_V_pixel_26_g |    pointer   |
+|src_V_pixel_26_g_TVALID  |  in |    1|    axis    | src_V_pixel_26_g |    pointer   |
+|src_V_pixel_26_g_TREADY  | out |    1|    axis    | src_V_pixel_26_g |    pointer   |
+|src_V_pixel_27_g_TDATA   |  in |    8|    axis    | src_V_pixel_27_g |    pointer   |
+|src_V_pixel_27_g_TVALID  |  in |    1|    axis    | src_V_pixel_27_g |    pointer   |
+|src_V_pixel_27_g_TREADY  | out |    1|    axis    | src_V_pixel_27_g |    pointer   |
+|src_V_pixel_28_g_TDATA   |  in |    8|    axis    | src_V_pixel_28_g |    pointer   |
+|src_V_pixel_28_g_TVALID  |  in |    1|    axis    | src_V_pixel_28_g |    pointer   |
+|src_V_pixel_28_g_TREADY  | out |    1|    axis    | src_V_pixel_28_g |    pointer   |
+|src_V_pixel_29_g_TDATA   |  in |    8|    axis    | src_V_pixel_29_g |    pointer   |
+|src_V_pixel_29_g_TVALID  |  in |    1|    axis    | src_V_pixel_29_g |    pointer   |
+|src_V_pixel_29_g_TREADY  | out |    1|    axis    | src_V_pixel_29_g |    pointer   |
+|src_V_pixel_30_g_TDATA   |  in |    8|    axis    | src_V_pixel_30_g |    pointer   |
+|src_V_pixel_30_g_TVALID  |  in |    1|    axis    | src_V_pixel_30_g |    pointer   |
+|src_V_pixel_30_g_TREADY  | out |    1|    axis    | src_V_pixel_30_g |    pointer   |
+|src_V_pixel_31_g_TDATA   |  in |    8|    axis    | src_V_pixel_31_g |    pointer   |
+|src_V_pixel_31_g_TVALID  |  in |    1|    axis    | src_V_pixel_31_g |    pointer   |
+|src_V_pixel_31_g_TREADY  | out |    1|    axis    | src_V_pixel_31_g |    pointer   |
+|src_V_pixel_32_g_TDATA   |  in |    8|    axis    | src_V_pixel_32_g |    pointer   |
+|src_V_pixel_32_g_TVALID  |  in |    1|    axis    | src_V_pixel_32_g |    pointer   |
+|src_V_pixel_32_g_TREADY  | out |    1|    axis    | src_V_pixel_32_g |    pointer   |
+|src_V_pixel_33_g_TDATA   |  in |    8|    axis    | src_V_pixel_33_g |    pointer   |
+|src_V_pixel_33_g_TVALID  |  in |    1|    axis    | src_V_pixel_33_g |    pointer   |
+|src_V_pixel_33_g_TREADY  | out |    1|    axis    | src_V_pixel_33_g |    pointer   |
+|src_V_pixel_34_g_TDATA   |  in |    8|    axis    | src_V_pixel_34_g |    pointer   |
+|src_V_pixel_34_g_TVALID  |  in |    1|    axis    | src_V_pixel_34_g |    pointer   |
+|src_V_pixel_34_g_TREADY  | out |    1|    axis    | src_V_pixel_34_g |    pointer   |
+|src_V_pixel_35_g_TDATA   |  in |    8|    axis    | src_V_pixel_35_g |    pointer   |
+|src_V_pixel_35_g_TVALID  |  in |    1|    axis    | src_V_pixel_35_g |    pointer   |
+|src_V_pixel_35_g_TREADY  | out |    1|    axis    | src_V_pixel_35_g |    pointer   |
+|src_V_pixel_36_g_TDATA   |  in |    8|    axis    | src_V_pixel_36_g |    pointer   |
+|src_V_pixel_36_g_TVALID  |  in |    1|    axis    | src_V_pixel_36_g |    pointer   |
+|src_V_pixel_36_g_TREADY  | out |    1|    axis    | src_V_pixel_36_g |    pointer   |
+|src_V_pixel_37_g_TDATA   |  in |    8|    axis    | src_V_pixel_37_g |    pointer   |
+|src_V_pixel_37_g_TVALID  |  in |    1|    axis    | src_V_pixel_37_g |    pointer   |
+|src_V_pixel_37_g_TREADY  | out |    1|    axis    | src_V_pixel_37_g |    pointer   |
+|src_V_pixel_38_g_TDATA   |  in |    8|    axis    | src_V_pixel_38_g |    pointer   |
+|src_V_pixel_38_g_TVALID  |  in |    1|    axis    | src_V_pixel_38_g |    pointer   |
+|src_V_pixel_38_g_TREADY  | out |    1|    axis    | src_V_pixel_38_g |    pointer   |
+|src_V_pixel_39_g_TDATA   |  in |    8|    axis    | src_V_pixel_39_g |    pointer   |
+|src_V_pixel_39_g_TVALID  |  in |    1|    axis    | src_V_pixel_39_g |    pointer   |
+|src_V_pixel_39_g_TREADY  | out |    1|    axis    | src_V_pixel_39_g |    pointer   |
+|src_V_pixel_40_g_TDATA   |  in |    8|    axis    | src_V_pixel_40_g |    pointer   |
+|src_V_pixel_40_g_TVALID  |  in |    1|    axis    | src_V_pixel_40_g |    pointer   |
+|src_V_pixel_40_g_TREADY  | out |    1|    axis    | src_V_pixel_40_g |    pointer   |
+|src_V_pixel_41_g_TDATA   |  in |    8|    axis    | src_V_pixel_41_g |    pointer   |
+|src_V_pixel_41_g_TVALID  |  in |    1|    axis    | src_V_pixel_41_g |    pointer   |
+|src_V_pixel_41_g_TREADY  | out |    1|    axis    | src_V_pixel_41_g |    pointer   |
+|src_V_pixel_0_b_TDATA    |  in |    8|    axis    |  src_V_pixel_0_b |    pointer   |
+|src_V_pixel_0_b_TVALID   |  in |    1|    axis    |  src_V_pixel_0_b |    pointer   |
+|src_V_pixel_0_b_TREADY   | out |    1|    axis    |  src_V_pixel_0_b |    pointer   |
+|src_V_pixel_1_b_TDATA    |  in |    8|    axis    |  src_V_pixel_1_b |    pointer   |
+|src_V_pixel_1_b_TVALID   |  in |    1|    axis    |  src_V_pixel_1_b |    pointer   |
+|src_V_pixel_1_b_TREADY   | out |    1|    axis    |  src_V_pixel_1_b |    pointer   |
+|src_V_pixel_2_b_TDATA    |  in |    8|    axis    |  src_V_pixel_2_b |    pointer   |
+|src_V_pixel_2_b_TVALID   |  in |    1|    axis    |  src_V_pixel_2_b |    pointer   |
+|src_V_pixel_2_b_TREADY   | out |    1|    axis    |  src_V_pixel_2_b |    pointer   |
+|src_V_pixel_3_b_TDATA    |  in |    8|    axis    |  src_V_pixel_3_b |    pointer   |
+|src_V_pixel_3_b_TVALID   |  in |    1|    axis    |  src_V_pixel_3_b |    pointer   |
+|src_V_pixel_3_b_TREADY   | out |    1|    axis    |  src_V_pixel_3_b |    pointer   |
+|src_V_pixel_4_b_TDATA    |  in |    8|    axis    |  src_V_pixel_4_b |    pointer   |
+|src_V_pixel_4_b_TVALID   |  in |    1|    axis    |  src_V_pixel_4_b |    pointer   |
+|src_V_pixel_4_b_TREADY   | out |    1|    axis    |  src_V_pixel_4_b |    pointer   |
+|src_V_pixel_5_b_TDATA    |  in |    8|    axis    |  src_V_pixel_5_b |    pointer   |
+|src_V_pixel_5_b_TVALID   |  in |    1|    axis    |  src_V_pixel_5_b |    pointer   |
+|src_V_pixel_5_b_TREADY   | out |    1|    axis    |  src_V_pixel_5_b |    pointer   |
+|src_V_pixel_6_b_TDATA    |  in |    8|    axis    |  src_V_pixel_6_b |    pointer   |
+|src_V_pixel_6_b_TVALID   |  in |    1|    axis    |  src_V_pixel_6_b |    pointer   |
+|src_V_pixel_6_b_TREADY   | out |    1|    axis    |  src_V_pixel_6_b |    pointer   |
+|src_V_pixel_7_b_TDATA    |  in |    8|    axis    |  src_V_pixel_7_b |    pointer   |
+|src_V_pixel_7_b_TVALID   |  in |    1|    axis    |  src_V_pixel_7_b |    pointer   |
+|src_V_pixel_7_b_TREADY   | out |    1|    axis    |  src_V_pixel_7_b |    pointer   |
+|src_V_pixel_8_b_TDATA    |  in |    8|    axis    |  src_V_pixel_8_b |    pointer   |
+|src_V_pixel_8_b_TVALID   |  in |    1|    axis    |  src_V_pixel_8_b |    pointer   |
+|src_V_pixel_8_b_TREADY   | out |    1|    axis    |  src_V_pixel_8_b |    pointer   |
+|src_V_pixel_9_b_TDATA    |  in |    8|    axis    |  src_V_pixel_9_b |    pointer   |
+|src_V_pixel_9_b_TVALID   |  in |    1|    axis    |  src_V_pixel_9_b |    pointer   |
+|src_V_pixel_9_b_TREADY   | out |    1|    axis    |  src_V_pixel_9_b |    pointer   |
+|src_V_pixel_10_b_TDATA   |  in |    8|    axis    | src_V_pixel_10_b |    pointer   |
+|src_V_pixel_10_b_TVALID  |  in |    1|    axis    | src_V_pixel_10_b |    pointer   |
+|src_V_pixel_10_b_TREADY  | out |    1|    axis    | src_V_pixel_10_b |    pointer   |
+|src_V_pixel_11_b_TDATA   |  in |    8|    axis    | src_V_pixel_11_b |    pointer   |
+|src_V_pixel_11_b_TVALID  |  in |    1|    axis    | src_V_pixel_11_b |    pointer   |
+|src_V_pixel_11_b_TREADY  | out |    1|    axis    | src_V_pixel_11_b |    pointer   |
+|src_V_pixel_12_b_TDATA   |  in |    8|    axis    | src_V_pixel_12_b |    pointer   |
+|src_V_pixel_12_b_TVALID  |  in |    1|    axis    | src_V_pixel_12_b |    pointer   |
+|src_V_pixel_12_b_TREADY  | out |    1|    axis    | src_V_pixel_12_b |    pointer   |
+|src_V_pixel_13_b_TDATA   |  in |    8|    axis    | src_V_pixel_13_b |    pointer   |
+|src_V_pixel_13_b_TVALID  |  in |    1|    axis    | src_V_pixel_13_b |    pointer   |
+|src_V_pixel_13_b_TREADY  | out |    1|    axis    | src_V_pixel_13_b |    pointer   |
+|src_V_pixel_14_b_TDATA   |  in |    8|    axis    | src_V_pixel_14_b |    pointer   |
+|src_V_pixel_14_b_TVALID  |  in |    1|    axis    | src_V_pixel_14_b |    pointer   |
+|src_V_pixel_14_b_TREADY  | out |    1|    axis    | src_V_pixel_14_b |    pointer   |
+|src_V_pixel_15_b_TDATA   |  in |    8|    axis    | src_V_pixel_15_b |    pointer   |
+|src_V_pixel_15_b_TVALID  |  in |    1|    axis    | src_V_pixel_15_b |    pointer   |
+|src_V_pixel_15_b_TREADY  | out |    1|    axis    | src_V_pixel_15_b |    pointer   |
+|src_V_pixel_16_b_TDATA   |  in |    8|    axis    | src_V_pixel_16_b |    pointer   |
+|src_V_pixel_16_b_TVALID  |  in |    1|    axis    | src_V_pixel_16_b |    pointer   |
+|src_V_pixel_16_b_TREADY  | out |    1|    axis    | src_V_pixel_16_b |    pointer   |
+|src_V_pixel_17_b_TDATA   |  in |    8|    axis    | src_V_pixel_17_b |    pointer   |
+|src_V_pixel_17_b_TVALID  |  in |    1|    axis    | src_V_pixel_17_b |    pointer   |
+|src_V_pixel_17_b_TREADY  | out |    1|    axis    | src_V_pixel_17_b |    pointer   |
+|src_V_pixel_18_b_TDATA   |  in |    8|    axis    | src_V_pixel_18_b |    pointer   |
+|src_V_pixel_18_b_TVALID  |  in |    1|    axis    | src_V_pixel_18_b |    pointer   |
+|src_V_pixel_18_b_TREADY  | out |    1|    axis    | src_V_pixel_18_b |    pointer   |
+|src_V_pixel_19_b_TDATA   |  in |    8|    axis    | src_V_pixel_19_b |    pointer   |
+|src_V_pixel_19_b_TVALID  |  in |    1|    axis    | src_V_pixel_19_b |    pointer   |
+|src_V_pixel_19_b_TREADY  | out |    1|    axis    | src_V_pixel_19_b |    pointer   |
+|src_V_pixel_20_b_TDATA   |  in |    8|    axis    | src_V_pixel_20_b |    pointer   |
+|src_V_pixel_20_b_TVALID  |  in |    1|    axis    | src_V_pixel_20_b |    pointer   |
+|src_V_pixel_20_b_TREADY  | out |    1|    axis    | src_V_pixel_20_b |    pointer   |
+|src_V_pixel_21_b_TDATA   |  in |    8|    axis    | src_V_pixel_21_b |    pointer   |
+|src_V_pixel_21_b_TVALID  |  in |    1|    axis    | src_V_pixel_21_b |    pointer   |
+|src_V_pixel_21_b_TREADY  | out |    1|    axis    | src_V_pixel_21_b |    pointer   |
+|src_V_pixel_22_b_TDATA   |  in |    8|    axis    | src_V_pixel_22_b |    pointer   |
+|src_V_pixel_22_b_TVALID  |  in |    1|    axis    | src_V_pixel_22_b |    pointer   |
+|src_V_pixel_22_b_TREADY  | out |    1|    axis    | src_V_pixel_22_b |    pointer   |
+|src_V_pixel_23_b_TDATA   |  in |    8|    axis    | src_V_pixel_23_b |    pointer   |
+|src_V_pixel_23_b_TVALID  |  in |    1|    axis    | src_V_pixel_23_b |    pointer   |
+|src_V_pixel_23_b_TREADY  | out |    1|    axis    | src_V_pixel_23_b |    pointer   |
+|src_V_pixel_24_b_TDATA   |  in |    8|    axis    | src_V_pixel_24_b |    pointer   |
+|src_V_pixel_24_b_TVALID  |  in |    1|    axis    | src_V_pixel_24_b |    pointer   |
+|src_V_pixel_24_b_TREADY  | out |    1|    axis    | src_V_pixel_24_b |    pointer   |
+|src_V_pixel_25_b_TDATA   |  in |    8|    axis    | src_V_pixel_25_b |    pointer   |
+|src_V_pixel_25_b_TVALID  |  in |    1|    axis    | src_V_pixel_25_b |    pointer   |
+|src_V_pixel_25_b_TREADY  | out |    1|    axis    | src_V_pixel_25_b |    pointer   |
+|src_V_pixel_26_b_TDATA   |  in |    8|    axis    | src_V_pixel_26_b |    pointer   |
+|src_V_pixel_26_b_TVALID  |  in |    1|    axis    | src_V_pixel_26_b |    pointer   |
+|src_V_pixel_26_b_TREADY  | out |    1|    axis    | src_V_pixel_26_b |    pointer   |
+|src_V_pixel_27_b_TDATA   |  in |    8|    axis    | src_V_pixel_27_b |    pointer   |
+|src_V_pixel_27_b_TVALID  |  in |    1|    axis    | src_V_pixel_27_b |    pointer   |
+|src_V_pixel_27_b_TREADY  | out |    1|    axis    | src_V_pixel_27_b |    pointer   |
+|src_V_pixel_28_b_TDATA   |  in |    8|    axis    | src_V_pixel_28_b |    pointer   |
+|src_V_pixel_28_b_TVALID  |  in |    1|    axis    | src_V_pixel_28_b |    pointer   |
+|src_V_pixel_28_b_TREADY  | out |    1|    axis    | src_V_pixel_28_b |    pointer   |
+|src_V_pixel_29_b_TDATA   |  in |    8|    axis    | src_V_pixel_29_b |    pointer   |
+|src_V_pixel_29_b_TVALID  |  in |    1|    axis    | src_V_pixel_29_b |    pointer   |
+|src_V_pixel_29_b_TREADY  | out |    1|    axis    | src_V_pixel_29_b |    pointer   |
+|src_V_pixel_30_b_TDATA   |  in |    8|    axis    | src_V_pixel_30_b |    pointer   |
+|src_V_pixel_30_b_TVALID  |  in |    1|    axis    | src_V_pixel_30_b |    pointer   |
+|src_V_pixel_30_b_TREADY  | out |    1|    axis    | src_V_pixel_30_b |    pointer   |
+|src_V_pixel_31_b_TDATA   |  in |    8|    axis    | src_V_pixel_31_b |    pointer   |
+|src_V_pixel_31_b_TVALID  |  in |    1|    axis    | src_V_pixel_31_b |    pointer   |
+|src_V_pixel_31_b_TREADY  | out |    1|    axis    | src_V_pixel_31_b |    pointer   |
+|src_V_pixel_32_b_TDATA   |  in |    8|    axis    | src_V_pixel_32_b |    pointer   |
+|src_V_pixel_32_b_TVALID  |  in |    1|    axis    | src_V_pixel_32_b |    pointer   |
+|src_V_pixel_32_b_TREADY  | out |    1|    axis    | src_V_pixel_32_b |    pointer   |
+|src_V_pixel_33_b_TDATA   |  in |    8|    axis    | src_V_pixel_33_b |    pointer   |
+|src_V_pixel_33_b_TVALID  |  in |    1|    axis    | src_V_pixel_33_b |    pointer   |
+|src_V_pixel_33_b_TREADY  | out |    1|    axis    | src_V_pixel_33_b |    pointer   |
+|src_V_pixel_34_b_TDATA   |  in |    8|    axis    | src_V_pixel_34_b |    pointer   |
+|src_V_pixel_34_b_TVALID  |  in |    1|    axis    | src_V_pixel_34_b |    pointer   |
+|src_V_pixel_34_b_TREADY  | out |    1|    axis    | src_V_pixel_34_b |    pointer   |
+|src_V_pixel_35_b_TDATA   |  in |    8|    axis    | src_V_pixel_35_b |    pointer   |
+|src_V_pixel_35_b_TVALID  |  in |    1|    axis    | src_V_pixel_35_b |    pointer   |
+|src_V_pixel_35_b_TREADY  | out |    1|    axis    | src_V_pixel_35_b |    pointer   |
+|src_V_pixel_36_b_TDATA   |  in |    8|    axis    | src_V_pixel_36_b |    pointer   |
+|src_V_pixel_36_b_TVALID  |  in |    1|    axis    | src_V_pixel_36_b |    pointer   |
+|src_V_pixel_36_b_TREADY  | out |    1|    axis    | src_V_pixel_36_b |    pointer   |
+|src_V_pixel_37_b_TDATA   |  in |    8|    axis    | src_V_pixel_37_b |    pointer   |
+|src_V_pixel_37_b_TVALID  |  in |    1|    axis    | src_V_pixel_37_b |    pointer   |
+|src_V_pixel_37_b_TREADY  | out |    1|    axis    | src_V_pixel_37_b |    pointer   |
+|src_V_pixel_38_b_TDATA   |  in |    8|    axis    | src_V_pixel_38_b |    pointer   |
+|src_V_pixel_38_b_TVALID  |  in |    1|    axis    | src_V_pixel_38_b |    pointer   |
+|src_V_pixel_38_b_TREADY  | out |    1|    axis    | src_V_pixel_38_b |    pointer   |
+|src_V_pixel_39_b_TDATA   |  in |    8|    axis    | src_V_pixel_39_b |    pointer   |
+|src_V_pixel_39_b_TVALID  |  in |    1|    axis    | src_V_pixel_39_b |    pointer   |
+|src_V_pixel_39_b_TREADY  | out |    1|    axis    | src_V_pixel_39_b |    pointer   |
+|src_V_pixel_40_b_TDATA   |  in |    8|    axis    | src_V_pixel_40_b |    pointer   |
+|src_V_pixel_40_b_TVALID  |  in |    1|    axis    | src_V_pixel_40_b |    pointer   |
+|src_V_pixel_40_b_TREADY  | out |    1|    axis    | src_V_pixel_40_b |    pointer   |
+|src_V_pixel_41_b_TDATA   |  in |    8|    axis    | src_V_pixel_41_b |    pointer   |
+|src_V_pixel_41_b_TVALID  |  in |    1|    axis    | src_V_pixel_41_b |    pointer   |
+|src_V_pixel_41_b_TREADY  | out |    1|    axis    | src_V_pixel_41_b |    pointer   |
+|mag_V_pixel_0_TDATA      | out |    8|    axis    |   mag_V_pixel_0  |    pointer   |
+|mag_V_pixel_0_TVALID     | out |    1|    axis    |   mag_V_pixel_0  |    pointer   |
+|mag_V_pixel_0_TREADY     |  in |    1|    axis    |   mag_V_pixel_0  |    pointer   |
+|mag_V_pixel_1_TDATA      | out |    8|    axis    |   mag_V_pixel_1  |    pointer   |
+|mag_V_pixel_1_TVALID     | out |    1|    axis    |   mag_V_pixel_1  |    pointer   |
+|mag_V_pixel_1_TREADY     |  in |    1|    axis    |   mag_V_pixel_1  |    pointer   |
+|mag_V_pixel_2_TDATA      | out |    8|    axis    |   mag_V_pixel_2  |    pointer   |
+|mag_V_pixel_2_TVALID     | out |    1|    axis    |   mag_V_pixel_2  |    pointer   |
+|mag_V_pixel_2_TREADY     |  in |    1|    axis    |   mag_V_pixel_2  |    pointer   |
+|mag_V_pixel_3_TDATA      | out |    8|    axis    |   mag_V_pixel_3  |    pointer   |
+|mag_V_pixel_3_TVALID     | out |    1|    axis    |   mag_V_pixel_3  |    pointer   |
+|mag_V_pixel_3_TREADY     |  in |    1|    axis    |   mag_V_pixel_3  |    pointer   |
+|mag_V_pixel_4_TDATA      | out |    8|    axis    |   mag_V_pixel_4  |    pointer   |
+|mag_V_pixel_4_TVALID     | out |    1|    axis    |   mag_V_pixel_4  |    pointer   |
+|mag_V_pixel_4_TREADY     |  in |    1|    axis    |   mag_V_pixel_4  |    pointer   |
+|mag_V_pixel_5_TDATA      | out |    8|    axis    |   mag_V_pixel_5  |    pointer   |
+|mag_V_pixel_5_TVALID     | out |    1|    axis    |   mag_V_pixel_5  |    pointer   |
+|mag_V_pixel_5_TREADY     |  in |    1|    axis    |   mag_V_pixel_5  |    pointer   |
+|mag_V_pixel_6_TDATA      | out |    8|    axis    |   mag_V_pixel_6  |    pointer   |
+|mag_V_pixel_6_TVALID     | out |    1|    axis    |   mag_V_pixel_6  |    pointer   |
+|mag_V_pixel_6_TREADY     |  in |    1|    axis    |   mag_V_pixel_6  |    pointer   |
+|mag_V_pixel_7_TDATA      | out |    8|    axis    |   mag_V_pixel_7  |    pointer   |
+|mag_V_pixel_7_TVALID     | out |    1|    axis    |   mag_V_pixel_7  |    pointer   |
+|mag_V_pixel_7_TREADY     |  in |    1|    axis    |   mag_V_pixel_7  |    pointer   |
+|mag_V_pixel_8_TDATA      | out |    8|    axis    |   mag_V_pixel_8  |    pointer   |
+|mag_V_pixel_8_TVALID     | out |    1|    axis    |   mag_V_pixel_8  |    pointer   |
+|mag_V_pixel_8_TREADY     |  in |    1|    axis    |   mag_V_pixel_8  |    pointer   |
+|mag_V_pixel_9_TDATA      | out |    8|    axis    |   mag_V_pixel_9  |    pointer   |
+|mag_V_pixel_9_TVALID     | out |    1|    axis    |   mag_V_pixel_9  |    pointer   |
+|mag_V_pixel_9_TREADY     |  in |    1|    axis    |   mag_V_pixel_9  |    pointer   |
+|mag_V_pixel_10_TDATA     | out |    8|    axis    |  mag_V_pixel_10  |    pointer   |
+|mag_V_pixel_10_TVALID    | out |    1|    axis    |  mag_V_pixel_10  |    pointer   |
+|mag_V_pixel_10_TREADY    |  in |    1|    axis    |  mag_V_pixel_10  |    pointer   |
+|mag_V_pixel_11_TDATA     | out |    8|    axis    |  mag_V_pixel_11  |    pointer   |
+|mag_V_pixel_11_TVALID    | out |    1|    axis    |  mag_V_pixel_11  |    pointer   |
+|mag_V_pixel_11_TREADY    |  in |    1|    axis    |  mag_V_pixel_11  |    pointer   |
+|mag_V_pixel_12_TDATA     | out |    8|    axis    |  mag_V_pixel_12  |    pointer   |
+|mag_V_pixel_12_TVALID    | out |    1|    axis    |  mag_V_pixel_12  |    pointer   |
+|mag_V_pixel_12_TREADY    |  in |    1|    axis    |  mag_V_pixel_12  |    pointer   |
+|mag_V_pixel_13_TDATA     | out |    8|    axis    |  mag_V_pixel_13  |    pointer   |
+|mag_V_pixel_13_TVALID    | out |    1|    axis    |  mag_V_pixel_13  |    pointer   |
+|mag_V_pixel_13_TREADY    |  in |    1|    axis    |  mag_V_pixel_13  |    pointer   |
+|mag_V_pixel_14_TDATA     | out |    8|    axis    |  mag_V_pixel_14  |    pointer   |
+|mag_V_pixel_14_TVALID    | out |    1|    axis    |  mag_V_pixel_14  |    pointer   |
+|mag_V_pixel_14_TREADY    |  in |    1|    axis    |  mag_V_pixel_14  |    pointer   |
+|mag_V_pixel_15_TDATA     | out |    8|    axis    |  mag_V_pixel_15  |    pointer   |
+|mag_V_pixel_15_TVALID    | out |    1|    axis    |  mag_V_pixel_15  |    pointer   |
+|mag_V_pixel_15_TREADY    |  in |    1|    axis    |  mag_V_pixel_15  |    pointer   |
+|mag_V_pixel_16_TDATA     | out |    8|    axis    |  mag_V_pixel_16  |    pointer   |
+|mag_V_pixel_16_TVALID    | out |    1|    axis    |  mag_V_pixel_16  |    pointer   |
+|mag_V_pixel_16_TREADY    |  in |    1|    axis    |  mag_V_pixel_16  |    pointer   |
+|mag_V_pixel_17_TDATA     | out |    8|    axis    |  mag_V_pixel_17  |    pointer   |
+|mag_V_pixel_17_TVALID    | out |    1|    axis    |  mag_V_pixel_17  |    pointer   |
+|mag_V_pixel_17_TREADY    |  in |    1|    axis    |  mag_V_pixel_17  |    pointer   |
+|mag_V_pixel_18_TDATA     | out |    8|    axis    |  mag_V_pixel_18  |    pointer   |
+|mag_V_pixel_18_TVALID    | out |    1|    axis    |  mag_V_pixel_18  |    pointer   |
+|mag_V_pixel_18_TREADY    |  in |    1|    axis    |  mag_V_pixel_18  |    pointer   |
+|mag_V_pixel_19_TDATA     | out |    8|    axis    |  mag_V_pixel_19  |    pointer   |
+|mag_V_pixel_19_TVALID    | out |    1|    axis    |  mag_V_pixel_19  |    pointer   |
+|mag_V_pixel_19_TREADY    |  in |    1|    axis    |  mag_V_pixel_19  |    pointer   |
+|mag_V_pixel_20_TDATA     | out |    8|    axis    |  mag_V_pixel_20  |    pointer   |
+|mag_V_pixel_20_TVALID    | out |    1|    axis    |  mag_V_pixel_20  |    pointer   |
+|mag_V_pixel_20_TREADY    |  in |    1|    axis    |  mag_V_pixel_20  |    pointer   |
+|mag_V_pixel_21_TDATA     | out |    8|    axis    |  mag_V_pixel_21  |    pointer   |
+|mag_V_pixel_21_TVALID    | out |    1|    axis    |  mag_V_pixel_21  |    pointer   |
+|mag_V_pixel_21_TREADY    |  in |    1|    axis    |  mag_V_pixel_21  |    pointer   |
+|mag_V_pixel_22_TDATA     | out |    8|    axis    |  mag_V_pixel_22  |    pointer   |
+|mag_V_pixel_22_TVALID    | out |    1|    axis    |  mag_V_pixel_22  |    pointer   |
+|mag_V_pixel_22_TREADY    |  in |    1|    axis    |  mag_V_pixel_22  |    pointer   |
+|mag_V_pixel_23_TDATA     | out |    8|    axis    |  mag_V_pixel_23  |    pointer   |
+|mag_V_pixel_23_TVALID    | out |    1|    axis    |  mag_V_pixel_23  |    pointer   |
+|mag_V_pixel_23_TREADY    |  in |    1|    axis    |  mag_V_pixel_23  |    pointer   |
+|mag_V_pixel_24_TDATA     | out |    8|    axis    |  mag_V_pixel_24  |    pointer   |
+|mag_V_pixel_24_TVALID    | out |    1|    axis    |  mag_V_pixel_24  |    pointer   |
+|mag_V_pixel_24_TREADY    |  in |    1|    axis    |  mag_V_pixel_24  |    pointer   |
+|mag_V_pixel_25_TDATA     | out |    8|    axis    |  mag_V_pixel_25  |    pointer   |
+|mag_V_pixel_25_TVALID    | out |    1|    axis    |  mag_V_pixel_25  |    pointer   |
+|mag_V_pixel_25_TREADY    |  in |    1|    axis    |  mag_V_pixel_25  |    pointer   |
+|mag_V_pixel_26_TDATA     | out |    8|    axis    |  mag_V_pixel_26  |    pointer   |
+|mag_V_pixel_26_TVALID    | out |    1|    axis    |  mag_V_pixel_26  |    pointer   |
+|mag_V_pixel_26_TREADY    |  in |    1|    axis    |  mag_V_pixel_26  |    pointer   |
+|mag_V_pixel_27_TDATA     | out |    8|    axis    |  mag_V_pixel_27  |    pointer   |
+|mag_V_pixel_27_TVALID    | out |    1|    axis    |  mag_V_pixel_27  |    pointer   |
+|mag_V_pixel_27_TREADY    |  in |    1|    axis    |  mag_V_pixel_27  |    pointer   |
+|mag_V_pixel_28_TDATA     | out |    8|    axis    |  mag_V_pixel_28  |    pointer   |
+|mag_V_pixel_28_TVALID    | out |    1|    axis    |  mag_V_pixel_28  |    pointer   |
+|mag_V_pixel_28_TREADY    |  in |    1|    axis    |  mag_V_pixel_28  |    pointer   |
+|mag_V_pixel_29_TDATA     | out |    8|    axis    |  mag_V_pixel_29  |    pointer   |
+|mag_V_pixel_29_TVALID    | out |    1|    axis    |  mag_V_pixel_29  |    pointer   |
+|mag_V_pixel_29_TREADY    |  in |    1|    axis    |  mag_V_pixel_29  |    pointer   |
+|mag_V_pixel_30_TDATA     | out |    8|    axis    |  mag_V_pixel_30  |    pointer   |
+|mag_V_pixel_30_TVALID    | out |    1|    axis    |  mag_V_pixel_30  |    pointer   |
+|mag_V_pixel_30_TREADY    |  in |    1|    axis    |  mag_V_pixel_30  |    pointer   |
+|mag_V_pixel_31_TDATA     | out |    8|    axis    |  mag_V_pixel_31  |    pointer   |
+|mag_V_pixel_31_TVALID    | out |    1|    axis    |  mag_V_pixel_31  |    pointer   |
+|mag_V_pixel_31_TREADY    |  in |    1|    axis    |  mag_V_pixel_31  |    pointer   |
+|mag_V_pixel_32_TDATA     | out |    8|    axis    |  mag_V_pixel_32  |    pointer   |
+|mag_V_pixel_32_TVALID    | out |    1|    axis    |  mag_V_pixel_32  |    pointer   |
+|mag_V_pixel_32_TREADY    |  in |    1|    axis    |  mag_V_pixel_32  |    pointer   |
+|mag_V_pixel_33_TDATA     | out |    8|    axis    |  mag_V_pixel_33  |    pointer   |
+|mag_V_pixel_33_TVALID    | out |    1|    axis    |  mag_V_pixel_33  |    pointer   |
+|mag_V_pixel_33_TREADY    |  in |    1|    axis    |  mag_V_pixel_33  |    pointer   |
+|mag_V_pixel_34_TDATA     | out |    8|    axis    |  mag_V_pixel_34  |    pointer   |
+|mag_V_pixel_34_TVALID    | out |    1|    axis    |  mag_V_pixel_34  |    pointer   |
+|mag_V_pixel_34_TREADY    |  in |    1|    axis    |  mag_V_pixel_34  |    pointer   |
+|mag_V_pixel_35_TDATA     | out |    8|    axis    |  mag_V_pixel_35  |    pointer   |
+|mag_V_pixel_35_TVALID    | out |    1|    axis    |  mag_V_pixel_35  |    pointer   |
+|mag_V_pixel_35_TREADY    |  in |    1|    axis    |  mag_V_pixel_35  |    pointer   |
+|mag_V_pixel_36_TDATA     | out |    8|    axis    |  mag_V_pixel_36  |    pointer   |
+|mag_V_pixel_36_TVALID    | out |    1|    axis    |  mag_V_pixel_36  |    pointer   |
+|mag_V_pixel_36_TREADY    |  in |    1|    axis    |  mag_V_pixel_36  |    pointer   |
+|mag_V_pixel_37_TDATA     | out |    8|    axis    |  mag_V_pixel_37  |    pointer   |
+|mag_V_pixel_37_TVALID    | out |    1|    axis    |  mag_V_pixel_37  |    pointer   |
+|mag_V_pixel_37_TREADY    |  in |    1|    axis    |  mag_V_pixel_37  |    pointer   |
+|mag_V_pixel_38_TDATA     | out |    8|    axis    |  mag_V_pixel_38  |    pointer   |
+|mag_V_pixel_38_TVALID    | out |    1|    axis    |  mag_V_pixel_38  |    pointer   |
+|mag_V_pixel_38_TREADY    |  in |    1|    axis    |  mag_V_pixel_38  |    pointer   |
+|mag_V_pixel_39_TDATA     | out |    8|    axis    |  mag_V_pixel_39  |    pointer   |
+|mag_V_pixel_39_TVALID    | out |    1|    axis    |  mag_V_pixel_39  |    pointer   |
+|mag_V_pixel_39_TREADY    |  in |    1|    axis    |  mag_V_pixel_39  |    pointer   |
+|mag_V_pixel_40_TDATA     | out |    8|    axis    |  mag_V_pixel_40  |    pointer   |
+|mag_V_pixel_40_TVALID    | out |    1|    axis    |  mag_V_pixel_40  |    pointer   |
+|mag_V_pixel_40_TREADY    |  in |    1|    axis    |  mag_V_pixel_40  |    pointer   |
+|mag_V_pixel_41_TDATA     | out |    8|    axis    |  mag_V_pixel_41  |    pointer   |
+|mag_V_pixel_41_TVALID    | out |    1|    axis    |  mag_V_pixel_41  |    pointer   |
+|mag_V_pixel_41_TREADY    |  in |    1|    axis    |  mag_V_pixel_41  |    pointer   |
+|pha_V_pixel_0_TDATA      | out |    8|    axis    |   pha_V_pixel_0  |    pointer   |
+|pha_V_pixel_0_TVALID     | out |    1|    axis    |   pha_V_pixel_0  |    pointer   |
+|pha_V_pixel_0_TREADY     |  in |    1|    axis    |   pha_V_pixel_0  |    pointer   |
+|pha_V_pixel_1_TDATA      | out |    8|    axis    |   pha_V_pixel_1  |    pointer   |
+|pha_V_pixel_1_TVALID     | out |    1|    axis    |   pha_V_pixel_1  |    pointer   |
+|pha_V_pixel_1_TREADY     |  in |    1|    axis    |   pha_V_pixel_1  |    pointer   |
+|pha_V_pixel_2_TDATA      | out |    8|    axis    |   pha_V_pixel_2  |    pointer   |
+|pha_V_pixel_2_TVALID     | out |    1|    axis    |   pha_V_pixel_2  |    pointer   |
+|pha_V_pixel_2_TREADY     |  in |    1|    axis    |   pha_V_pixel_2  |    pointer   |
+|pha_V_pixel_3_TDATA      | out |    8|    axis    |   pha_V_pixel_3  |    pointer   |
+|pha_V_pixel_3_TVALID     | out |    1|    axis    |   pha_V_pixel_3  |    pointer   |
+|pha_V_pixel_3_TREADY     |  in |    1|    axis    |   pha_V_pixel_3  |    pointer   |
+|pha_V_pixel_4_TDATA      | out |    8|    axis    |   pha_V_pixel_4  |    pointer   |
+|pha_V_pixel_4_TVALID     | out |    1|    axis    |   pha_V_pixel_4  |    pointer   |
+|pha_V_pixel_4_TREADY     |  in |    1|    axis    |   pha_V_pixel_4  |    pointer   |
+|pha_V_pixel_5_TDATA      | out |    8|    axis    |   pha_V_pixel_5  |    pointer   |
+|pha_V_pixel_5_TVALID     | out |    1|    axis    |   pha_V_pixel_5  |    pointer   |
+|pha_V_pixel_5_TREADY     |  in |    1|    axis    |   pha_V_pixel_5  |    pointer   |
+|pha_V_pixel_6_TDATA      | out |    8|    axis    |   pha_V_pixel_6  |    pointer   |
+|pha_V_pixel_6_TVALID     | out |    1|    axis    |   pha_V_pixel_6  |    pointer   |
+|pha_V_pixel_6_TREADY     |  in |    1|    axis    |   pha_V_pixel_6  |    pointer   |
+|pha_V_pixel_7_TDATA      | out |    8|    axis    |   pha_V_pixel_7  |    pointer   |
+|pha_V_pixel_7_TVALID     | out |    1|    axis    |   pha_V_pixel_7  |    pointer   |
+|pha_V_pixel_7_TREADY     |  in |    1|    axis    |   pha_V_pixel_7  |    pointer   |
+|pha_V_pixel_8_TDATA      | out |    8|    axis    |   pha_V_pixel_8  |    pointer   |
+|pha_V_pixel_8_TVALID     | out |    1|    axis    |   pha_V_pixel_8  |    pointer   |
+|pha_V_pixel_8_TREADY     |  in |    1|    axis    |   pha_V_pixel_8  |    pointer   |
+|pha_V_pixel_9_TDATA      | out |    8|    axis    |   pha_V_pixel_9  |    pointer   |
+|pha_V_pixel_9_TVALID     | out |    1|    axis    |   pha_V_pixel_9  |    pointer   |
+|pha_V_pixel_9_TREADY     |  in |    1|    axis    |   pha_V_pixel_9  |    pointer   |
+|pha_V_pixel_10_TDATA     | out |    8|    axis    |  pha_V_pixel_10  |    pointer   |
+|pha_V_pixel_10_TVALID    | out |    1|    axis    |  pha_V_pixel_10  |    pointer   |
+|pha_V_pixel_10_TREADY    |  in |    1|    axis    |  pha_V_pixel_10  |    pointer   |
+|pha_V_pixel_11_TDATA     | out |    8|    axis    |  pha_V_pixel_11  |    pointer   |
+|pha_V_pixel_11_TVALID    | out |    1|    axis    |  pha_V_pixel_11  |    pointer   |
+|pha_V_pixel_11_TREADY    |  in |    1|    axis    |  pha_V_pixel_11  |    pointer   |
+|pha_V_pixel_12_TDATA     | out |    8|    axis    |  pha_V_pixel_12  |    pointer   |
+|pha_V_pixel_12_TVALID    | out |    1|    axis    |  pha_V_pixel_12  |    pointer   |
+|pha_V_pixel_12_TREADY    |  in |    1|    axis    |  pha_V_pixel_12  |    pointer   |
+|pha_V_pixel_13_TDATA     | out |    8|    axis    |  pha_V_pixel_13  |    pointer   |
+|pha_V_pixel_13_TVALID    | out |    1|    axis    |  pha_V_pixel_13  |    pointer   |
+|pha_V_pixel_13_TREADY    |  in |    1|    axis    |  pha_V_pixel_13  |    pointer   |
+|pha_V_pixel_14_TDATA     | out |    8|    axis    |  pha_V_pixel_14  |    pointer   |
+|pha_V_pixel_14_TVALID    | out |    1|    axis    |  pha_V_pixel_14  |    pointer   |
+|pha_V_pixel_14_TREADY    |  in |    1|    axis    |  pha_V_pixel_14  |    pointer   |
+|pha_V_pixel_15_TDATA     | out |    8|    axis    |  pha_V_pixel_15  |    pointer   |
+|pha_V_pixel_15_TVALID    | out |    1|    axis    |  pha_V_pixel_15  |    pointer   |
+|pha_V_pixel_15_TREADY    |  in |    1|    axis    |  pha_V_pixel_15  |    pointer   |
+|pha_V_pixel_16_TDATA     | out |    8|    axis    |  pha_V_pixel_16  |    pointer   |
+|pha_V_pixel_16_TVALID    | out |    1|    axis    |  pha_V_pixel_16  |    pointer   |
+|pha_V_pixel_16_TREADY    |  in |    1|    axis    |  pha_V_pixel_16  |    pointer   |
+|pha_V_pixel_17_TDATA     | out |    8|    axis    |  pha_V_pixel_17  |    pointer   |
+|pha_V_pixel_17_TVALID    | out |    1|    axis    |  pha_V_pixel_17  |    pointer   |
+|pha_V_pixel_17_TREADY    |  in |    1|    axis    |  pha_V_pixel_17  |    pointer   |
+|pha_V_pixel_18_TDATA     | out |    8|    axis    |  pha_V_pixel_18  |    pointer   |
+|pha_V_pixel_18_TVALID    | out |    1|    axis    |  pha_V_pixel_18  |    pointer   |
+|pha_V_pixel_18_TREADY    |  in |    1|    axis    |  pha_V_pixel_18  |    pointer   |
+|pha_V_pixel_19_TDATA     | out |    8|    axis    |  pha_V_pixel_19  |    pointer   |
+|pha_V_pixel_19_TVALID    | out |    1|    axis    |  pha_V_pixel_19  |    pointer   |
+|pha_V_pixel_19_TREADY    |  in |    1|    axis    |  pha_V_pixel_19  |    pointer   |
+|pha_V_pixel_20_TDATA     | out |    8|    axis    |  pha_V_pixel_20  |    pointer   |
+|pha_V_pixel_20_TVALID    | out |    1|    axis    |  pha_V_pixel_20  |    pointer   |
+|pha_V_pixel_20_TREADY    |  in |    1|    axis    |  pha_V_pixel_20  |    pointer   |
+|pha_V_pixel_21_TDATA     | out |    8|    axis    |  pha_V_pixel_21  |    pointer   |
+|pha_V_pixel_21_TVALID    | out |    1|    axis    |  pha_V_pixel_21  |    pointer   |
+|pha_V_pixel_21_TREADY    |  in |    1|    axis    |  pha_V_pixel_21  |    pointer   |
+|pha_V_pixel_22_TDATA     | out |    8|    axis    |  pha_V_pixel_22  |    pointer   |
+|pha_V_pixel_22_TVALID    | out |    1|    axis    |  pha_V_pixel_22  |    pointer   |
+|pha_V_pixel_22_TREADY    |  in |    1|    axis    |  pha_V_pixel_22  |    pointer   |
+|pha_V_pixel_23_TDATA     | out |    8|    axis    |  pha_V_pixel_23  |    pointer   |
+|pha_V_pixel_23_TVALID    | out |    1|    axis    |  pha_V_pixel_23  |    pointer   |
+|pha_V_pixel_23_TREADY    |  in |    1|    axis    |  pha_V_pixel_23  |    pointer   |
+|pha_V_pixel_24_TDATA     | out |    8|    axis    |  pha_V_pixel_24  |    pointer   |
+|pha_V_pixel_24_TVALID    | out |    1|    axis    |  pha_V_pixel_24  |    pointer   |
+|pha_V_pixel_24_TREADY    |  in |    1|    axis    |  pha_V_pixel_24  |    pointer   |
+|pha_V_pixel_25_TDATA     | out |    8|    axis    |  pha_V_pixel_25  |    pointer   |
+|pha_V_pixel_25_TVALID    | out |    1|    axis    |  pha_V_pixel_25  |    pointer   |
+|pha_V_pixel_25_TREADY    |  in |    1|    axis    |  pha_V_pixel_25  |    pointer   |
+|pha_V_pixel_26_TDATA     | out |    8|    axis    |  pha_V_pixel_26  |    pointer   |
+|pha_V_pixel_26_TVALID    | out |    1|    axis    |  pha_V_pixel_26  |    pointer   |
+|pha_V_pixel_26_TREADY    |  in |    1|    axis    |  pha_V_pixel_26  |    pointer   |
+|pha_V_pixel_27_TDATA     | out |    8|    axis    |  pha_V_pixel_27  |    pointer   |
+|pha_V_pixel_27_TVALID    | out |    1|    axis    |  pha_V_pixel_27  |    pointer   |
+|pha_V_pixel_27_TREADY    |  in |    1|    axis    |  pha_V_pixel_27  |    pointer   |
+|pha_V_pixel_28_TDATA     | out |    8|    axis    |  pha_V_pixel_28  |    pointer   |
+|pha_V_pixel_28_TVALID    | out |    1|    axis    |  pha_V_pixel_28  |    pointer   |
+|pha_V_pixel_28_TREADY    |  in |    1|    axis    |  pha_V_pixel_28  |    pointer   |
+|pha_V_pixel_29_TDATA     | out |    8|    axis    |  pha_V_pixel_29  |    pointer   |
+|pha_V_pixel_29_TVALID    | out |    1|    axis    |  pha_V_pixel_29  |    pointer   |
+|pha_V_pixel_29_TREADY    |  in |    1|    axis    |  pha_V_pixel_29  |    pointer   |
+|pha_V_pixel_30_TDATA     | out |    8|    axis    |  pha_V_pixel_30  |    pointer   |
+|pha_V_pixel_30_TVALID    | out |    1|    axis    |  pha_V_pixel_30  |    pointer   |
+|pha_V_pixel_30_TREADY    |  in |    1|    axis    |  pha_V_pixel_30  |    pointer   |
+|pha_V_pixel_31_TDATA     | out |    8|    axis    |  pha_V_pixel_31  |    pointer   |
+|pha_V_pixel_31_TVALID    | out |    1|    axis    |  pha_V_pixel_31  |    pointer   |
+|pha_V_pixel_31_TREADY    |  in |    1|    axis    |  pha_V_pixel_31  |    pointer   |
+|pha_V_pixel_32_TDATA     | out |    8|    axis    |  pha_V_pixel_32  |    pointer   |
+|pha_V_pixel_32_TVALID    | out |    1|    axis    |  pha_V_pixel_32  |    pointer   |
+|pha_V_pixel_32_TREADY    |  in |    1|    axis    |  pha_V_pixel_32  |    pointer   |
+|pha_V_pixel_33_TDATA     | out |    8|    axis    |  pha_V_pixel_33  |    pointer   |
+|pha_V_pixel_33_TVALID    | out |    1|    axis    |  pha_V_pixel_33  |    pointer   |
+|pha_V_pixel_33_TREADY    |  in |    1|    axis    |  pha_V_pixel_33  |    pointer   |
+|pha_V_pixel_34_TDATA     | out |    8|    axis    |  pha_V_pixel_34  |    pointer   |
+|pha_V_pixel_34_TVALID    | out |    1|    axis    |  pha_V_pixel_34  |    pointer   |
+|pha_V_pixel_34_TREADY    |  in |    1|    axis    |  pha_V_pixel_34  |    pointer   |
+|pha_V_pixel_35_TDATA     | out |    8|    axis    |  pha_V_pixel_35  |    pointer   |
+|pha_V_pixel_35_TVALID    | out |    1|    axis    |  pha_V_pixel_35  |    pointer   |
+|pha_V_pixel_35_TREADY    |  in |    1|    axis    |  pha_V_pixel_35  |    pointer   |
+|pha_V_pixel_36_TDATA     | out |    8|    axis    |  pha_V_pixel_36  |    pointer   |
+|pha_V_pixel_36_TVALID    | out |    1|    axis    |  pha_V_pixel_36  |    pointer   |
+|pha_V_pixel_36_TREADY    |  in |    1|    axis    |  pha_V_pixel_36  |    pointer   |
+|pha_V_pixel_37_TDATA     | out |    8|    axis    |  pha_V_pixel_37  |    pointer   |
+|pha_V_pixel_37_TVALID    | out |    1|    axis    |  pha_V_pixel_37  |    pointer   |
+|pha_V_pixel_37_TREADY    |  in |    1|    axis    |  pha_V_pixel_37  |    pointer   |
+|pha_V_pixel_38_TDATA     | out |    8|    axis    |  pha_V_pixel_38  |    pointer   |
+|pha_V_pixel_38_TVALID    | out |    1|    axis    |  pha_V_pixel_38  |    pointer   |
+|pha_V_pixel_38_TREADY    |  in |    1|    axis    |  pha_V_pixel_38  |    pointer   |
+|pha_V_pixel_39_TDATA     | out |    8|    axis    |  pha_V_pixel_39  |    pointer   |
+|pha_V_pixel_39_TVALID    | out |    1|    axis    |  pha_V_pixel_39  |    pointer   |
+|pha_V_pixel_39_TREADY    |  in |    1|    axis    |  pha_V_pixel_39  |    pointer   |
+|pha_V_pixel_40_TDATA     | out |    8|    axis    |  pha_V_pixel_40  |    pointer   |
+|pha_V_pixel_40_TVALID    | out |    1|    axis    |  pha_V_pixel_40  |    pointer   |
+|pha_V_pixel_40_TREADY    |  in |    1|    axis    |  pha_V_pixel_40  |    pointer   |
+|pha_V_pixel_41_TDATA     | out |    8|    axis    |  pha_V_pixel_41  |    pointer   |
+|pha_V_pixel_41_TVALID    | out |    1|    axis    |  pha_V_pixel_41  |    pointer   |
+|pha_V_pixel_41_TREADY    |  in |    1|    axis    |  pha_V_pixel_41  |    pointer   |
+|ap_clk                   |  in |    1| ap_ctrl_hs |       Sobel      | return value |
+|ap_rst_n                 |  in |    1| ap_ctrl_hs |       Sobel      | return value |
+|ap_done                  | out |    1| ap_ctrl_hs |       Sobel      | return value |
+|ap_start                 |  in |    1| ap_ctrl_hs |       Sobel      | return value |
+|ap_ready                 | out |    1| ap_ctrl_hs |       Sobel      | return value |
+|ap_idle                  | out |    1| ap_ctrl_hs |       Sobel      | return value |
++-------------------------+-----+-----+------------+------------------+--------------+
+

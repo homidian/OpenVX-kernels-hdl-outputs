@@ -1,0 +1,472 @@
+
+
+================================================================
+== Vivado HLS Report for 'Sobel_upstrm2downstrm_array_of_pixel_2'
+================================================================
+* Date:           Tue Aug 29 16:13:11 2017
+
+* Version:        2016.1 (Build 1538259 on Fri Apr 08 16:12:49 MDT 2016)
+* Project:        Sobel_df_inline_l2_p_l2_u_l1_p
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      8.75|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |  481|  481|  481|  481|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- l1      |  480|  480|         1|          -|          -|   480|    no    |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       0|     16|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      -|       -|      -|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|     94|
+|Register         |        -|      -|      12|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      0|      12|    110|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      0|   ~0   |   ~0  |
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------+----------+-------+---+----+------------+------------+
+    |     Variable Name    | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------+----------+-------+---+----+------------+------------+
+    |i_3_fu_1103_p2        |     +    |      0|  0|   9|           9|           1|
+    |dst_V_pixel1_status   |    and   |      0|  0|   1|           1|           1|
+    |src_V_pixel0_status   |    and   |      0|  0|   1|           1|           1|
+    |exitcond4_fu_1097_p2  |   icmp   |      0|  0|   3|           9|           7|
+    |ap_sig_467            |    or    |      0|  0|   1|           1|           1|
+    |ap_sig_476            |    or    |      0|  0|   1|           1|           1|
+    +----------------------+----------+-------+---+----+------------+------------+
+    |Total                 |          |      0|  0|  16|          22|          12|
+    +----------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +---------------------+----+-----------+-----+-----------+
+    |         Name        | LUT| Input Size| Bits| Total Bits|
+    +---------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm            |   1|          3|    1|          3|
+    |dst_V_pixel42_blk_n  |   1|          2|    1|          2|
+    |dst_V_pixel43_blk_n  |   1|          2|    1|          2|
+    |dst_V_pixel44_blk_n  |   1|          2|    1|          2|
+    |dst_V_pixel45_blk_n  |   1|          2|    1|          2|
+    |dst_V_pixel46_blk_n  |   1|          2|    1|          2|
+    |dst_V_pixel47_blk_n  |   1|          2|    1|          2|
+    |dst_V_pixel48_blk_n  |   1|          2|    1|          2|
+    |dst_V_pixel49_blk_n  |   1|          2|    1|          2|
+    |dst_V_pixel50_blk_n  |   1|          2|    1|          2|
+    |dst_V_pixel51_blk_n  |   1|          2|    1|          2|
+    |dst_V_pixel52_blk_n  |   1|          2|    1|          2|
+    |dst_V_pixel53_blk_n  |   1|          2|    1|          2|
+    |dst_V_pixel54_blk_n  |   1|          2|    1|          2|
+    |dst_V_pixel55_blk_n  |   1|          2|    1|          2|
+    |dst_V_pixel56_blk_n  |   1|          2|    1|          2|
+    |dst_V_pixel57_blk_n  |   1|          2|    1|          2|
+    |dst_V_pixel58_blk_n  |   1|          2|    1|          2|
+    |dst_V_pixel59_blk_n  |   1|          2|    1|          2|
+    |dst_V_pixel60_blk_n  |   1|          2|    1|          2|
+    |dst_V_pixel61_blk_n  |   1|          2|    1|          2|
+    |dst_V_pixel62_blk_n  |   1|          2|    1|          2|
+    |dst_V_pixel63_blk_n  |   1|          2|    1|          2|
+    |dst_V_pixel64_blk_n  |   1|          2|    1|          2|
+    |dst_V_pixel65_blk_n  |   1|          2|    1|          2|
+    |dst_V_pixel66_blk_n  |   1|          2|    1|          2|
+    |dst_V_pixel67_blk_n  |   1|          2|    1|          2|
+    |dst_V_pixel68_blk_n  |   1|          2|    1|          2|
+    |dst_V_pixel69_blk_n  |   1|          2|    1|          2|
+    |dst_V_pixel70_blk_n  |   1|          2|    1|          2|
+    |dst_V_pixel71_blk_n  |   1|          2|    1|          2|
+    |dst_V_pixel72_blk_n  |   1|          2|    1|          2|
+    |dst_V_pixel73_blk_n  |   1|          2|    1|          2|
+    |dst_V_pixel74_blk_n  |   1|          2|    1|          2|
+    |dst_V_pixel75_blk_n  |   1|          2|    1|          2|
+    |dst_V_pixel76_blk_n  |   1|          2|    1|          2|
+    |dst_V_pixel77_blk_n  |   1|          2|    1|          2|
+    |dst_V_pixel78_blk_n  |   1|          2|    1|          2|
+    |dst_V_pixel79_blk_n  |   1|          2|    1|          2|
+    |dst_V_pixel80_blk_n  |   1|          2|    1|          2|
+    |dst_V_pixel81_blk_n  |   1|          2|    1|          2|
+    |dst_V_pixel82_blk_n  |   1|          2|    1|          2|
+    |dst_V_pixel_blk_n    |   1|          2|    1|          2|
+    |i_reg_1086           |   9|          2|    9|         18|
+    |src_V_pixel10_blk_n  |   1|          2|    1|          2|
+    |src_V_pixel11_blk_n  |   1|          2|    1|          2|
+    |src_V_pixel12_blk_n  |   1|          2|    1|          2|
+    |src_V_pixel13_blk_n  |   1|          2|    1|          2|
+    |src_V_pixel14_blk_n  |   1|          2|    1|          2|
+    |src_V_pixel15_blk_n  |   1|          2|    1|          2|
+    |src_V_pixel16_blk_n  |   1|          2|    1|          2|
+    |src_V_pixel17_blk_n  |   1|          2|    1|          2|
+    |src_V_pixel18_blk_n  |   1|          2|    1|          2|
+    |src_V_pixel19_blk_n  |   1|          2|    1|          2|
+    |src_V_pixel1_blk_n   |   1|          2|    1|          2|
+    |src_V_pixel20_blk_n  |   1|          2|    1|          2|
+    |src_V_pixel21_blk_n  |   1|          2|    1|          2|
+    |src_V_pixel22_blk_n  |   1|          2|    1|          2|
+    |src_V_pixel23_blk_n  |   1|          2|    1|          2|
+    |src_V_pixel24_blk_n  |   1|          2|    1|          2|
+    |src_V_pixel25_blk_n  |   1|          2|    1|          2|
+    |src_V_pixel26_blk_n  |   1|          2|    1|          2|
+    |src_V_pixel27_blk_n  |   1|          2|    1|          2|
+    |src_V_pixel28_blk_n  |   1|          2|    1|          2|
+    |src_V_pixel29_blk_n  |   1|          2|    1|          2|
+    |src_V_pixel2_blk_n   |   1|          2|    1|          2|
+    |src_V_pixel30_blk_n  |   1|          2|    1|          2|
+    |src_V_pixel31_blk_n  |   1|          2|    1|          2|
+    |src_V_pixel32_blk_n  |   1|          2|    1|          2|
+    |src_V_pixel33_blk_n  |   1|          2|    1|          2|
+    |src_V_pixel34_blk_n  |   1|          2|    1|          2|
+    |src_V_pixel35_blk_n  |   1|          2|    1|          2|
+    |src_V_pixel36_blk_n  |   1|          2|    1|          2|
+    |src_V_pixel37_blk_n  |   1|          2|    1|          2|
+    |src_V_pixel38_blk_n  |   1|          2|    1|          2|
+    |src_V_pixel39_blk_n  |   1|          2|    1|          2|
+    |src_V_pixel3_blk_n   |   1|          2|    1|          2|
+    |src_V_pixel40_blk_n  |   1|          2|    1|          2|
+    |src_V_pixel41_blk_n  |   1|          2|    1|          2|
+    |src_V_pixel4_blk_n   |   1|          2|    1|          2|
+    |src_V_pixel5_blk_n   |   1|          2|    1|          2|
+    |src_V_pixel6_blk_n   |   1|          2|    1|          2|
+    |src_V_pixel7_blk_n   |   1|          2|    1|          2|
+    |src_V_pixel8_blk_n   |   1|          2|    1|          2|
+    |src_V_pixel9_blk_n   |   1|          2|    1|          2|
+    |src_V_pixel_blk_n    |   1|          2|    1|          2|
+    +---------------------+----+-----------+-----+-----------+
+    |Total                |  94|        173|   94|        189|
+    +---------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------+---+----+-----+-----------+
+    |     Name    | FF| LUT| Bits| Const Bits|
+    +-------------+---+----+-----+-----------+
+    |ap_CS_fsm    |  2|   0|    2|          0|
+    |ap_done_reg  |  1|   0|    1|          0|
+    |i_reg_1086   |  9|   0|    9|          0|
+    +-------------+---+----+-----+-----------+
+    |Total        | 12|   0|   12|          0|
+    +-------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------+-----+-----+------------+----------------------------------------+--------------+
+|       RTL Ports       | Dir | Bits|  Protocol  |              Source Object             |    C Type    |
++-----------------------+-----+-----+------------+----------------------------------------+--------------+
+|ap_clk                 |  in |    1| ap_ctrl_hs | Sobel_upstrm2downstrm_array_of_pixel.2 | return value |
+|ap_rst                 |  in |    1| ap_ctrl_hs | Sobel_upstrm2downstrm_array_of_pixel.2 | return value |
+|ap_start               |  in |    1| ap_ctrl_hs | Sobel_upstrm2downstrm_array_of_pixel.2 | return value |
+|ap_done                | out |    1| ap_ctrl_hs | Sobel_upstrm2downstrm_array_of_pixel.2 | return value |
+|ap_continue            |  in |    1| ap_ctrl_hs | Sobel_upstrm2downstrm_array_of_pixel.2 | return value |
+|ap_idle                | out |    1| ap_ctrl_hs | Sobel_upstrm2downstrm_array_of_pixel.2 | return value |
+|ap_ready               | out |    1| ap_ctrl_hs | Sobel_upstrm2downstrm_array_of_pixel.2 | return value |
+|src_V_pixel_dout       |  in |    8|   ap_fifo  |               src_V_pixel              |    pointer   |
+|src_V_pixel_empty_n    |  in |    1|   ap_fifo  |               src_V_pixel              |    pointer   |
+|src_V_pixel_read       | out |    1|   ap_fifo  |               src_V_pixel              |    pointer   |
+|src_V_pixel1_dout      |  in |    8|   ap_fifo  |              src_V_pixel1              |    pointer   |
+|src_V_pixel1_empty_n   |  in |    1|   ap_fifo  |              src_V_pixel1              |    pointer   |
+|src_V_pixel1_read      | out |    1|   ap_fifo  |              src_V_pixel1              |    pointer   |
+|src_V_pixel2_dout      |  in |    8|   ap_fifo  |              src_V_pixel2              |    pointer   |
+|src_V_pixel2_empty_n   |  in |    1|   ap_fifo  |              src_V_pixel2              |    pointer   |
+|src_V_pixel2_read      | out |    1|   ap_fifo  |              src_V_pixel2              |    pointer   |
+|src_V_pixel3_dout      |  in |    8|   ap_fifo  |              src_V_pixel3              |    pointer   |
+|src_V_pixel3_empty_n   |  in |    1|   ap_fifo  |              src_V_pixel3              |    pointer   |
+|src_V_pixel3_read      | out |    1|   ap_fifo  |              src_V_pixel3              |    pointer   |
+|src_V_pixel4_dout      |  in |    8|   ap_fifo  |              src_V_pixel4              |    pointer   |
+|src_V_pixel4_empty_n   |  in |    1|   ap_fifo  |              src_V_pixel4              |    pointer   |
+|src_V_pixel4_read      | out |    1|   ap_fifo  |              src_V_pixel4              |    pointer   |
+|src_V_pixel5_dout      |  in |    8|   ap_fifo  |              src_V_pixel5              |    pointer   |
+|src_V_pixel5_empty_n   |  in |    1|   ap_fifo  |              src_V_pixel5              |    pointer   |
+|src_V_pixel5_read      | out |    1|   ap_fifo  |              src_V_pixel5              |    pointer   |
+|src_V_pixel6_dout      |  in |    8|   ap_fifo  |              src_V_pixel6              |    pointer   |
+|src_V_pixel6_empty_n   |  in |    1|   ap_fifo  |              src_V_pixel6              |    pointer   |
+|src_V_pixel6_read      | out |    1|   ap_fifo  |              src_V_pixel6              |    pointer   |
+|src_V_pixel7_dout      |  in |    8|   ap_fifo  |              src_V_pixel7              |    pointer   |
+|src_V_pixel7_empty_n   |  in |    1|   ap_fifo  |              src_V_pixel7              |    pointer   |
+|src_V_pixel7_read      | out |    1|   ap_fifo  |              src_V_pixel7              |    pointer   |
+|src_V_pixel8_dout      |  in |    8|   ap_fifo  |              src_V_pixel8              |    pointer   |
+|src_V_pixel8_empty_n   |  in |    1|   ap_fifo  |              src_V_pixel8              |    pointer   |
+|src_V_pixel8_read      | out |    1|   ap_fifo  |              src_V_pixel8              |    pointer   |
+|src_V_pixel9_dout      |  in |    8|   ap_fifo  |              src_V_pixel9              |    pointer   |
+|src_V_pixel9_empty_n   |  in |    1|   ap_fifo  |              src_V_pixel9              |    pointer   |
+|src_V_pixel9_read      | out |    1|   ap_fifo  |              src_V_pixel9              |    pointer   |
+|src_V_pixel10_dout     |  in |    8|   ap_fifo  |              src_V_pixel10             |    pointer   |
+|src_V_pixel10_empty_n  |  in |    1|   ap_fifo  |              src_V_pixel10             |    pointer   |
+|src_V_pixel10_read     | out |    1|   ap_fifo  |              src_V_pixel10             |    pointer   |
+|src_V_pixel11_dout     |  in |    8|   ap_fifo  |              src_V_pixel11             |    pointer   |
+|src_V_pixel11_empty_n  |  in |    1|   ap_fifo  |              src_V_pixel11             |    pointer   |
+|src_V_pixel11_read     | out |    1|   ap_fifo  |              src_V_pixel11             |    pointer   |
+|src_V_pixel12_dout     |  in |    8|   ap_fifo  |              src_V_pixel12             |    pointer   |
+|src_V_pixel12_empty_n  |  in |    1|   ap_fifo  |              src_V_pixel12             |    pointer   |
+|src_V_pixel12_read     | out |    1|   ap_fifo  |              src_V_pixel12             |    pointer   |
+|src_V_pixel13_dout     |  in |    8|   ap_fifo  |              src_V_pixel13             |    pointer   |
+|src_V_pixel13_empty_n  |  in |    1|   ap_fifo  |              src_V_pixel13             |    pointer   |
+|src_V_pixel13_read     | out |    1|   ap_fifo  |              src_V_pixel13             |    pointer   |
+|src_V_pixel14_dout     |  in |    8|   ap_fifo  |              src_V_pixel14             |    pointer   |
+|src_V_pixel14_empty_n  |  in |    1|   ap_fifo  |              src_V_pixel14             |    pointer   |
+|src_V_pixel14_read     | out |    1|   ap_fifo  |              src_V_pixel14             |    pointer   |
+|src_V_pixel15_dout     |  in |    8|   ap_fifo  |              src_V_pixel15             |    pointer   |
+|src_V_pixel15_empty_n  |  in |    1|   ap_fifo  |              src_V_pixel15             |    pointer   |
+|src_V_pixel15_read     | out |    1|   ap_fifo  |              src_V_pixel15             |    pointer   |
+|src_V_pixel16_dout     |  in |    8|   ap_fifo  |              src_V_pixel16             |    pointer   |
+|src_V_pixel16_empty_n  |  in |    1|   ap_fifo  |              src_V_pixel16             |    pointer   |
+|src_V_pixel16_read     | out |    1|   ap_fifo  |              src_V_pixel16             |    pointer   |
+|src_V_pixel17_dout     |  in |    8|   ap_fifo  |              src_V_pixel17             |    pointer   |
+|src_V_pixel17_empty_n  |  in |    1|   ap_fifo  |              src_V_pixel17             |    pointer   |
+|src_V_pixel17_read     | out |    1|   ap_fifo  |              src_V_pixel17             |    pointer   |
+|src_V_pixel18_dout     |  in |    8|   ap_fifo  |              src_V_pixel18             |    pointer   |
+|src_V_pixel18_empty_n  |  in |    1|   ap_fifo  |              src_V_pixel18             |    pointer   |
+|src_V_pixel18_read     | out |    1|   ap_fifo  |              src_V_pixel18             |    pointer   |
+|src_V_pixel19_dout     |  in |    8|   ap_fifo  |              src_V_pixel19             |    pointer   |
+|src_V_pixel19_empty_n  |  in |    1|   ap_fifo  |              src_V_pixel19             |    pointer   |
+|src_V_pixel19_read     | out |    1|   ap_fifo  |              src_V_pixel19             |    pointer   |
+|src_V_pixel20_dout     |  in |    8|   ap_fifo  |              src_V_pixel20             |    pointer   |
+|src_V_pixel20_empty_n  |  in |    1|   ap_fifo  |              src_V_pixel20             |    pointer   |
+|src_V_pixel20_read     | out |    1|   ap_fifo  |              src_V_pixel20             |    pointer   |
+|src_V_pixel21_dout     |  in |    8|   ap_fifo  |              src_V_pixel21             |    pointer   |
+|src_V_pixel21_empty_n  |  in |    1|   ap_fifo  |              src_V_pixel21             |    pointer   |
+|src_V_pixel21_read     | out |    1|   ap_fifo  |              src_V_pixel21             |    pointer   |
+|src_V_pixel22_dout     |  in |    8|   ap_fifo  |              src_V_pixel22             |    pointer   |
+|src_V_pixel22_empty_n  |  in |    1|   ap_fifo  |              src_V_pixel22             |    pointer   |
+|src_V_pixel22_read     | out |    1|   ap_fifo  |              src_V_pixel22             |    pointer   |
+|src_V_pixel23_dout     |  in |    8|   ap_fifo  |              src_V_pixel23             |    pointer   |
+|src_V_pixel23_empty_n  |  in |    1|   ap_fifo  |              src_V_pixel23             |    pointer   |
+|src_V_pixel23_read     | out |    1|   ap_fifo  |              src_V_pixel23             |    pointer   |
+|src_V_pixel24_dout     |  in |    8|   ap_fifo  |              src_V_pixel24             |    pointer   |
+|src_V_pixel24_empty_n  |  in |    1|   ap_fifo  |              src_V_pixel24             |    pointer   |
+|src_V_pixel24_read     | out |    1|   ap_fifo  |              src_V_pixel24             |    pointer   |
+|src_V_pixel25_dout     |  in |    8|   ap_fifo  |              src_V_pixel25             |    pointer   |
+|src_V_pixel25_empty_n  |  in |    1|   ap_fifo  |              src_V_pixel25             |    pointer   |
+|src_V_pixel25_read     | out |    1|   ap_fifo  |              src_V_pixel25             |    pointer   |
+|src_V_pixel26_dout     |  in |    8|   ap_fifo  |              src_V_pixel26             |    pointer   |
+|src_V_pixel26_empty_n  |  in |    1|   ap_fifo  |              src_V_pixel26             |    pointer   |
+|src_V_pixel26_read     | out |    1|   ap_fifo  |              src_V_pixel26             |    pointer   |
+|src_V_pixel27_dout     |  in |    8|   ap_fifo  |              src_V_pixel27             |    pointer   |
+|src_V_pixel27_empty_n  |  in |    1|   ap_fifo  |              src_V_pixel27             |    pointer   |
+|src_V_pixel27_read     | out |    1|   ap_fifo  |              src_V_pixel27             |    pointer   |
+|src_V_pixel28_dout     |  in |    8|   ap_fifo  |              src_V_pixel28             |    pointer   |
+|src_V_pixel28_empty_n  |  in |    1|   ap_fifo  |              src_V_pixel28             |    pointer   |
+|src_V_pixel28_read     | out |    1|   ap_fifo  |              src_V_pixel28             |    pointer   |
+|src_V_pixel29_dout     |  in |    8|   ap_fifo  |              src_V_pixel29             |    pointer   |
+|src_V_pixel29_empty_n  |  in |    1|   ap_fifo  |              src_V_pixel29             |    pointer   |
+|src_V_pixel29_read     | out |    1|   ap_fifo  |              src_V_pixel29             |    pointer   |
+|src_V_pixel30_dout     |  in |    8|   ap_fifo  |              src_V_pixel30             |    pointer   |
+|src_V_pixel30_empty_n  |  in |    1|   ap_fifo  |              src_V_pixel30             |    pointer   |
+|src_V_pixel30_read     | out |    1|   ap_fifo  |              src_V_pixel30             |    pointer   |
+|src_V_pixel31_dout     |  in |    8|   ap_fifo  |              src_V_pixel31             |    pointer   |
+|src_V_pixel31_empty_n  |  in |    1|   ap_fifo  |              src_V_pixel31             |    pointer   |
+|src_V_pixel31_read     | out |    1|   ap_fifo  |              src_V_pixel31             |    pointer   |
+|src_V_pixel32_dout     |  in |    8|   ap_fifo  |              src_V_pixel32             |    pointer   |
+|src_V_pixel32_empty_n  |  in |    1|   ap_fifo  |              src_V_pixel32             |    pointer   |
+|src_V_pixel32_read     | out |    1|   ap_fifo  |              src_V_pixel32             |    pointer   |
+|src_V_pixel33_dout     |  in |    8|   ap_fifo  |              src_V_pixel33             |    pointer   |
+|src_V_pixel33_empty_n  |  in |    1|   ap_fifo  |              src_V_pixel33             |    pointer   |
+|src_V_pixel33_read     | out |    1|   ap_fifo  |              src_V_pixel33             |    pointer   |
+|src_V_pixel34_dout     |  in |    8|   ap_fifo  |              src_V_pixel34             |    pointer   |
+|src_V_pixel34_empty_n  |  in |    1|   ap_fifo  |              src_V_pixel34             |    pointer   |
+|src_V_pixel34_read     | out |    1|   ap_fifo  |              src_V_pixel34             |    pointer   |
+|src_V_pixel35_dout     |  in |    8|   ap_fifo  |              src_V_pixel35             |    pointer   |
+|src_V_pixel35_empty_n  |  in |    1|   ap_fifo  |              src_V_pixel35             |    pointer   |
+|src_V_pixel35_read     | out |    1|   ap_fifo  |              src_V_pixel35             |    pointer   |
+|src_V_pixel36_dout     |  in |    8|   ap_fifo  |              src_V_pixel36             |    pointer   |
+|src_V_pixel36_empty_n  |  in |    1|   ap_fifo  |              src_V_pixel36             |    pointer   |
+|src_V_pixel36_read     | out |    1|   ap_fifo  |              src_V_pixel36             |    pointer   |
+|src_V_pixel37_dout     |  in |    8|   ap_fifo  |              src_V_pixel37             |    pointer   |
+|src_V_pixel37_empty_n  |  in |    1|   ap_fifo  |              src_V_pixel37             |    pointer   |
+|src_V_pixel37_read     | out |    1|   ap_fifo  |              src_V_pixel37             |    pointer   |
+|src_V_pixel38_dout     |  in |    8|   ap_fifo  |              src_V_pixel38             |    pointer   |
+|src_V_pixel38_empty_n  |  in |    1|   ap_fifo  |              src_V_pixel38             |    pointer   |
+|src_V_pixel38_read     | out |    1|   ap_fifo  |              src_V_pixel38             |    pointer   |
+|src_V_pixel39_dout     |  in |    8|   ap_fifo  |              src_V_pixel39             |    pointer   |
+|src_V_pixel39_empty_n  |  in |    1|   ap_fifo  |              src_V_pixel39             |    pointer   |
+|src_V_pixel39_read     | out |    1|   ap_fifo  |              src_V_pixel39             |    pointer   |
+|src_V_pixel40_dout     |  in |    8|   ap_fifo  |              src_V_pixel40             |    pointer   |
+|src_V_pixel40_empty_n  |  in |    1|   ap_fifo  |              src_V_pixel40             |    pointer   |
+|src_V_pixel40_read     | out |    1|   ap_fifo  |              src_V_pixel40             |    pointer   |
+|src_V_pixel41_dout     |  in |    8|   ap_fifo  |              src_V_pixel41             |    pointer   |
+|src_V_pixel41_empty_n  |  in |    1|   ap_fifo  |              src_V_pixel41             |    pointer   |
+|src_V_pixel41_read     | out |    1|   ap_fifo  |              src_V_pixel41             |    pointer   |
+|dst_V_pixel_din        | out |    8|   ap_fifo  |               dst_V_pixel              |    pointer   |
+|dst_V_pixel_full_n     |  in |    1|   ap_fifo  |               dst_V_pixel              |    pointer   |
+|dst_V_pixel_write      | out |    1|   ap_fifo  |               dst_V_pixel              |    pointer   |
+|dst_V_pixel42_din      | out |    8|   ap_fifo  |              dst_V_pixel42             |    pointer   |
+|dst_V_pixel42_full_n   |  in |    1|   ap_fifo  |              dst_V_pixel42             |    pointer   |
+|dst_V_pixel42_write    | out |    1|   ap_fifo  |              dst_V_pixel42             |    pointer   |
+|dst_V_pixel43_din      | out |    8|   ap_fifo  |              dst_V_pixel43             |    pointer   |
+|dst_V_pixel43_full_n   |  in |    1|   ap_fifo  |              dst_V_pixel43             |    pointer   |
+|dst_V_pixel43_write    | out |    1|   ap_fifo  |              dst_V_pixel43             |    pointer   |
+|dst_V_pixel44_din      | out |    8|   ap_fifo  |              dst_V_pixel44             |    pointer   |
+|dst_V_pixel44_full_n   |  in |    1|   ap_fifo  |              dst_V_pixel44             |    pointer   |
+|dst_V_pixel44_write    | out |    1|   ap_fifo  |              dst_V_pixel44             |    pointer   |
+|dst_V_pixel45_din      | out |    8|   ap_fifo  |              dst_V_pixel45             |    pointer   |
+|dst_V_pixel45_full_n   |  in |    1|   ap_fifo  |              dst_V_pixel45             |    pointer   |
+|dst_V_pixel45_write    | out |    1|   ap_fifo  |              dst_V_pixel45             |    pointer   |
+|dst_V_pixel46_din      | out |    8|   ap_fifo  |              dst_V_pixel46             |    pointer   |
+|dst_V_pixel46_full_n   |  in |    1|   ap_fifo  |              dst_V_pixel46             |    pointer   |
+|dst_V_pixel46_write    | out |    1|   ap_fifo  |              dst_V_pixel46             |    pointer   |
+|dst_V_pixel47_din      | out |    8|   ap_fifo  |              dst_V_pixel47             |    pointer   |
+|dst_V_pixel47_full_n   |  in |    1|   ap_fifo  |              dst_V_pixel47             |    pointer   |
+|dst_V_pixel47_write    | out |    1|   ap_fifo  |              dst_V_pixel47             |    pointer   |
+|dst_V_pixel48_din      | out |    8|   ap_fifo  |              dst_V_pixel48             |    pointer   |
+|dst_V_pixel48_full_n   |  in |    1|   ap_fifo  |              dst_V_pixel48             |    pointer   |
+|dst_V_pixel48_write    | out |    1|   ap_fifo  |              dst_V_pixel48             |    pointer   |
+|dst_V_pixel49_din      | out |    8|   ap_fifo  |              dst_V_pixel49             |    pointer   |
+|dst_V_pixel49_full_n   |  in |    1|   ap_fifo  |              dst_V_pixel49             |    pointer   |
+|dst_V_pixel49_write    | out |    1|   ap_fifo  |              dst_V_pixel49             |    pointer   |
+|dst_V_pixel50_din      | out |    8|   ap_fifo  |              dst_V_pixel50             |    pointer   |
+|dst_V_pixel50_full_n   |  in |    1|   ap_fifo  |              dst_V_pixel50             |    pointer   |
+|dst_V_pixel50_write    | out |    1|   ap_fifo  |              dst_V_pixel50             |    pointer   |
+|dst_V_pixel51_din      | out |    8|   ap_fifo  |              dst_V_pixel51             |    pointer   |
+|dst_V_pixel51_full_n   |  in |    1|   ap_fifo  |              dst_V_pixel51             |    pointer   |
+|dst_V_pixel51_write    | out |    1|   ap_fifo  |              dst_V_pixel51             |    pointer   |
+|dst_V_pixel52_din      | out |    8|   ap_fifo  |              dst_V_pixel52             |    pointer   |
+|dst_V_pixel52_full_n   |  in |    1|   ap_fifo  |              dst_V_pixel52             |    pointer   |
+|dst_V_pixel52_write    | out |    1|   ap_fifo  |              dst_V_pixel52             |    pointer   |
+|dst_V_pixel53_din      | out |    8|   ap_fifo  |              dst_V_pixel53             |    pointer   |
+|dst_V_pixel53_full_n   |  in |    1|   ap_fifo  |              dst_V_pixel53             |    pointer   |
+|dst_V_pixel53_write    | out |    1|   ap_fifo  |              dst_V_pixel53             |    pointer   |
+|dst_V_pixel54_din      | out |    8|   ap_fifo  |              dst_V_pixel54             |    pointer   |
+|dst_V_pixel54_full_n   |  in |    1|   ap_fifo  |              dst_V_pixel54             |    pointer   |
+|dst_V_pixel54_write    | out |    1|   ap_fifo  |              dst_V_pixel54             |    pointer   |
+|dst_V_pixel55_din      | out |    8|   ap_fifo  |              dst_V_pixel55             |    pointer   |
+|dst_V_pixel55_full_n   |  in |    1|   ap_fifo  |              dst_V_pixel55             |    pointer   |
+|dst_V_pixel55_write    | out |    1|   ap_fifo  |              dst_V_pixel55             |    pointer   |
+|dst_V_pixel56_din      | out |    8|   ap_fifo  |              dst_V_pixel56             |    pointer   |
+|dst_V_pixel56_full_n   |  in |    1|   ap_fifo  |              dst_V_pixel56             |    pointer   |
+|dst_V_pixel56_write    | out |    1|   ap_fifo  |              dst_V_pixel56             |    pointer   |
+|dst_V_pixel57_din      | out |    8|   ap_fifo  |              dst_V_pixel57             |    pointer   |
+|dst_V_pixel57_full_n   |  in |    1|   ap_fifo  |              dst_V_pixel57             |    pointer   |
+|dst_V_pixel57_write    | out |    1|   ap_fifo  |              dst_V_pixel57             |    pointer   |
+|dst_V_pixel58_din      | out |    8|   ap_fifo  |              dst_V_pixel58             |    pointer   |
+|dst_V_pixel58_full_n   |  in |    1|   ap_fifo  |              dst_V_pixel58             |    pointer   |
+|dst_V_pixel58_write    | out |    1|   ap_fifo  |              dst_V_pixel58             |    pointer   |
+|dst_V_pixel59_din      | out |    8|   ap_fifo  |              dst_V_pixel59             |    pointer   |
+|dst_V_pixel59_full_n   |  in |    1|   ap_fifo  |              dst_V_pixel59             |    pointer   |
+|dst_V_pixel59_write    | out |    1|   ap_fifo  |              dst_V_pixel59             |    pointer   |
+|dst_V_pixel60_din      | out |    8|   ap_fifo  |              dst_V_pixel60             |    pointer   |
+|dst_V_pixel60_full_n   |  in |    1|   ap_fifo  |              dst_V_pixel60             |    pointer   |
+|dst_V_pixel60_write    | out |    1|   ap_fifo  |              dst_V_pixel60             |    pointer   |
+|dst_V_pixel61_din      | out |    8|   ap_fifo  |              dst_V_pixel61             |    pointer   |
+|dst_V_pixel61_full_n   |  in |    1|   ap_fifo  |              dst_V_pixel61             |    pointer   |
+|dst_V_pixel61_write    | out |    1|   ap_fifo  |              dst_V_pixel61             |    pointer   |
+|dst_V_pixel62_din      | out |    8|   ap_fifo  |              dst_V_pixel62             |    pointer   |
+|dst_V_pixel62_full_n   |  in |    1|   ap_fifo  |              dst_V_pixel62             |    pointer   |
+|dst_V_pixel62_write    | out |    1|   ap_fifo  |              dst_V_pixel62             |    pointer   |
+|dst_V_pixel63_din      | out |    8|   ap_fifo  |              dst_V_pixel63             |    pointer   |
+|dst_V_pixel63_full_n   |  in |    1|   ap_fifo  |              dst_V_pixel63             |    pointer   |
+|dst_V_pixel63_write    | out |    1|   ap_fifo  |              dst_V_pixel63             |    pointer   |
+|dst_V_pixel64_din      | out |    8|   ap_fifo  |              dst_V_pixel64             |    pointer   |
+|dst_V_pixel64_full_n   |  in |    1|   ap_fifo  |              dst_V_pixel64             |    pointer   |
+|dst_V_pixel64_write    | out |    1|   ap_fifo  |              dst_V_pixel64             |    pointer   |
+|dst_V_pixel65_din      | out |    8|   ap_fifo  |              dst_V_pixel65             |    pointer   |
+|dst_V_pixel65_full_n   |  in |    1|   ap_fifo  |              dst_V_pixel65             |    pointer   |
+|dst_V_pixel65_write    | out |    1|   ap_fifo  |              dst_V_pixel65             |    pointer   |
+|dst_V_pixel66_din      | out |    8|   ap_fifo  |              dst_V_pixel66             |    pointer   |
+|dst_V_pixel66_full_n   |  in |    1|   ap_fifo  |              dst_V_pixel66             |    pointer   |
+|dst_V_pixel66_write    | out |    1|   ap_fifo  |              dst_V_pixel66             |    pointer   |
+|dst_V_pixel67_din      | out |    8|   ap_fifo  |              dst_V_pixel67             |    pointer   |
+|dst_V_pixel67_full_n   |  in |    1|   ap_fifo  |              dst_V_pixel67             |    pointer   |
+|dst_V_pixel67_write    | out |    1|   ap_fifo  |              dst_V_pixel67             |    pointer   |
+|dst_V_pixel68_din      | out |    8|   ap_fifo  |              dst_V_pixel68             |    pointer   |
+|dst_V_pixel68_full_n   |  in |    1|   ap_fifo  |              dst_V_pixel68             |    pointer   |
+|dst_V_pixel68_write    | out |    1|   ap_fifo  |              dst_V_pixel68             |    pointer   |
+|dst_V_pixel69_din      | out |    8|   ap_fifo  |              dst_V_pixel69             |    pointer   |
+|dst_V_pixel69_full_n   |  in |    1|   ap_fifo  |              dst_V_pixel69             |    pointer   |
+|dst_V_pixel69_write    | out |    1|   ap_fifo  |              dst_V_pixel69             |    pointer   |
+|dst_V_pixel70_din      | out |    8|   ap_fifo  |              dst_V_pixel70             |    pointer   |
+|dst_V_pixel70_full_n   |  in |    1|   ap_fifo  |              dst_V_pixel70             |    pointer   |
+|dst_V_pixel70_write    | out |    1|   ap_fifo  |              dst_V_pixel70             |    pointer   |
+|dst_V_pixel71_din      | out |    8|   ap_fifo  |              dst_V_pixel71             |    pointer   |
+|dst_V_pixel71_full_n   |  in |    1|   ap_fifo  |              dst_V_pixel71             |    pointer   |
+|dst_V_pixel71_write    | out |    1|   ap_fifo  |              dst_V_pixel71             |    pointer   |
+|dst_V_pixel72_din      | out |    8|   ap_fifo  |              dst_V_pixel72             |    pointer   |
+|dst_V_pixel72_full_n   |  in |    1|   ap_fifo  |              dst_V_pixel72             |    pointer   |
+|dst_V_pixel72_write    | out |    1|   ap_fifo  |              dst_V_pixel72             |    pointer   |
+|dst_V_pixel73_din      | out |    8|   ap_fifo  |              dst_V_pixel73             |    pointer   |
+|dst_V_pixel73_full_n   |  in |    1|   ap_fifo  |              dst_V_pixel73             |    pointer   |
+|dst_V_pixel73_write    | out |    1|   ap_fifo  |              dst_V_pixel73             |    pointer   |
+|dst_V_pixel74_din      | out |    8|   ap_fifo  |              dst_V_pixel74             |    pointer   |
+|dst_V_pixel74_full_n   |  in |    1|   ap_fifo  |              dst_V_pixel74             |    pointer   |
+|dst_V_pixel74_write    | out |    1|   ap_fifo  |              dst_V_pixel74             |    pointer   |
+|dst_V_pixel75_din      | out |    8|   ap_fifo  |              dst_V_pixel75             |    pointer   |
+|dst_V_pixel75_full_n   |  in |    1|   ap_fifo  |              dst_V_pixel75             |    pointer   |
+|dst_V_pixel75_write    | out |    1|   ap_fifo  |              dst_V_pixel75             |    pointer   |
+|dst_V_pixel76_din      | out |    8|   ap_fifo  |              dst_V_pixel76             |    pointer   |
+|dst_V_pixel76_full_n   |  in |    1|   ap_fifo  |              dst_V_pixel76             |    pointer   |
+|dst_V_pixel76_write    | out |    1|   ap_fifo  |              dst_V_pixel76             |    pointer   |
+|dst_V_pixel77_din      | out |    8|   ap_fifo  |              dst_V_pixel77             |    pointer   |
+|dst_V_pixel77_full_n   |  in |    1|   ap_fifo  |              dst_V_pixel77             |    pointer   |
+|dst_V_pixel77_write    | out |    1|   ap_fifo  |              dst_V_pixel77             |    pointer   |
+|dst_V_pixel78_din      | out |    8|   ap_fifo  |              dst_V_pixel78             |    pointer   |
+|dst_V_pixel78_full_n   |  in |    1|   ap_fifo  |              dst_V_pixel78             |    pointer   |
+|dst_V_pixel78_write    | out |    1|   ap_fifo  |              dst_V_pixel78             |    pointer   |
+|dst_V_pixel79_din      | out |    8|   ap_fifo  |              dst_V_pixel79             |    pointer   |
+|dst_V_pixel79_full_n   |  in |    1|   ap_fifo  |              dst_V_pixel79             |    pointer   |
+|dst_V_pixel79_write    | out |    1|   ap_fifo  |              dst_V_pixel79             |    pointer   |
+|dst_V_pixel80_din      | out |    8|   ap_fifo  |              dst_V_pixel80             |    pointer   |
+|dst_V_pixel80_full_n   |  in |    1|   ap_fifo  |              dst_V_pixel80             |    pointer   |
+|dst_V_pixel80_write    | out |    1|   ap_fifo  |              dst_V_pixel80             |    pointer   |
+|dst_V_pixel81_din      | out |    8|   ap_fifo  |              dst_V_pixel81             |    pointer   |
+|dst_V_pixel81_full_n   |  in |    1|   ap_fifo  |              dst_V_pixel81             |    pointer   |
+|dst_V_pixel81_write    | out |    1|   ap_fifo  |              dst_V_pixel81             |    pointer   |
+|dst_V_pixel82_din      | out |    8|   ap_fifo  |              dst_V_pixel82             |    pointer   |
+|dst_V_pixel82_full_n   |  in |    1|   ap_fifo  |              dst_V_pixel82             |    pointer   |
+|dst_V_pixel82_write    | out |    1|   ap_fifo  |              dst_V_pixel82             |    pointer   |
++-----------------------+-----+-----+------------+----------------------------------------+--------------+
+
